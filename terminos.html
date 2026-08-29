@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2314213D'/%3E%3Cpath d='M15 35V19h18' fill='none' stroke='%23E0B563' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Términos de Uso — OpsChess</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #14213D; --ink-light: #2A3A5C; --accent: #C08A2E; --accent-light: #E0B563; --paper: #FAF9F5; --surface: #FFFEF9; --border: #E5E1D8; --muted: #6B6558; --success: #2F6F4E; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+  h1, h2, h3 { font-family: 'Newsreader', serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,245,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .logo { display: flex; align-items: center; gap: 9px; font-family: 'Inter', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+  .logo-ops { transition: color 0.15s; }
+  .logo:hover .logo-ops { color: var(--accent); }
+  .logo-mark { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-mark svg { width: 26px; height: 26px; }
+  .btn-solid { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; background: var(--accent); color: white; text-decoration: none; }
+  main { padding: 64px 0 100px; }
+  .doc-header { margin-bottom: 48px; }
+  .doc-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-size: 34px; font-weight: 500; margin-bottom: 10px; }
+  .doc-updated { font-size: 13.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  section.block { margin-bottom: 36px; }
+  h2 { font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--ink); font-family: 'Inter', sans-serif; }
+  p { font-size: 15px; color: #2c3550; margin-bottom: 12px; }
+  ul, ol { margin: 0 0 12px 22px; }
+  li { font-size: 15px; color: #2c3550; margin-bottom: 8px; }
+  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 18px 20px; margin-bottom: 24px; font-size: 14px; color: var(--muted); }
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 40px 0; font-size: 13px; text-align: center; }
+  footer a { color: rgba(255,255,255,0.7); margin: 0 10px; }
+  .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .lang-toggle span { padding: 5px 9px; cursor: pointer; }
+  .lang-toggle span.active { background: var(--ink); color: white; }
+  .lang-block { display: none; }
+  .lang-block.active { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#14213D"/></svg></div>
+      <span style="font-weight:700;"><span class="logo-ops">Ops</span><span style="font-weight:400; color:var(--muted); font-family:'Inter',sans-serif;">Chess</span></span>
+    </a>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="lang-toggle" id="langToggle">
+        <span class="active" data-lang="es">ES</span><span data-lang="en">EN</span>
+      </div>
+      <a href="https://app.opschess.com/login" class="btn-solid">Entrar a la plataforma →</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+  <div class="lang-block active" id="block-es">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1>Términos de Uso</h1>
+      <p class="doc-updated">Última actualización: 28 de agosto de 2026</p>
+    </div>
+
+    <div class="callout">
+      Al crear una cuenta en OpsChess, aceptas estos Términos de Uso. Si tienes menos de 18 años, un padre, madre, o tutor legal debe revisar y aceptar estos términos junto contigo.
+    </div>
+
+    <section class="block">
+      <h2>1. Aceptación de los términos</h2>
+      <p>Estos Términos de Uso rigen tu acceso y uso de OpsChess, incluyendo el panel de administración para Organizadores y el portal para Usuarios (jugadores, padres, madres, capitanes, delegados, y directivos). Al crear una cuenta, confirmas que has leído, entendido, y aceptado estos términos.</p>
+    </section>
+
+    <section class="block">
+      <h2>2. Quién puede usar OpsChess</h2>
+      <ul>
+        <li>Debes tener al menos 18 años para crear una cuenta de Organizador o de Usuario por ti mismo.</li>
+        <li>Si eres menor de 18 años y quieres inscribirte a un torneo, un padre, madre, tutor legal, capitán de equipo, o delegado debe crear la cuenta e inscribirte, o supervisar el proceso.</li>
+        <li>Debes proporcionar información veraz al crear tu cuenta y al inscribirte a un torneo.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>3. Cuentas de Organizador</h2>
+      <p>Al crear una organización en OpsChess (federación, club, academia, escuela, liga, u organizador independiente), eres responsable de:</p>
+      <ul>
+        <li>La veracidad de la información que publiques sobre tus torneos.</li>
+        <li>Revisar y aprobar (o rechazar) las inscripciones que reciban a través del formulario público, antes de considerarlas oficiales.</li>
+        <li>Cumplir con las normas de la federación o entidad rectora correspondiente (FIDE, confederaciones continentales, federaciones nacionales) para los torneos que organices.</li>
+        <li>Mantener la confidencialidad de tu contraseña y notificarnos de inmediato ante cualquier uso no autorizado de tu cuenta.</li>
+      </ul>
+      <p>Actualmente, la creación de nuevas organizaciones puede requerir un código de invitación proporcionado por OpsChess, como parte de nuestro proceso de incorporación controlada durante esta etapa de la plataforma.</p>
+    </section>
+
+    <section class="block">
+      <h2>4. Cuentas de Usuario (jugadores, padres, capitanes, delegados)</h2>
+      <p>Al crear una cuenta de Usuario para inscribirte a torneos, aceptas que:</p>
+      <ul>
+        <li>Tu inscripción queda sujeta a la revisión y aprobación del Organizador del torneo correspondiente — crear una cuenta o enviar el formulario de inscripción no garantiza tu participación.</li>
+        <li>Eres responsable de la exactitud de la información de los jugadores que inscribas, incluyendo cuando inscribas a varios jugadores a la vez como capitán o delegado.</li>
+        <li>Los pagos de inscripción, cuando aplican, se coordinan directamente con el Organizador — OpsChess no procesa cobros con tarjeta en esta etapa de la plataforma.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>5. Contenido generado por inteligencia artificial</h2>
+      <p>Algunas funciones de OpsChess (como la generación de propuestas de patrocinio o reportes finales) utilizan inteligencia artificial para producir contenido a partir de la información que el Organizador ingresa. Este contenido es un punto de partida sugerido — el Organizador es responsable de revisarlo, editarlo, y confirmar su exactitud antes de usarlo o compartirlo con terceros.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Uso aceptable</h2>
+      <p>Al usar OpsChess, te comprometes a no:</p>
+      <ul>
+        <li>Usar la plataforma para fines distintos a la organización o participación legítima en torneos de ajedrez.</li>
+        <li>Intentar acceder a cuentas, torneos, u organizaciones que no te pertenecen o para los que no tienes autorización.</li>
+        <li>Cargar información falsa, ofensiva, o que infrinja los derechos de terceros.</li>
+        <li>Usar sistemas automatizados para extraer datos de la plataforma sin autorización expresa.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>7. Disponibilidad del servicio</h2>
+      <p>Trabajamos para mantener OpsChess disponible de forma continua, pero no garantizamos que el servicio esté libre de interrupciones o errores en todo momento. Podemos realizar mantenimiento, actualizaciones, o cambios a las funciones de la plataforma sin previo aviso, especialmente durante esta etapa temprana del producto.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Propiedad intelectual</h2>
+      <p>OpsChess, su marca, diseño, y código son propiedad de sus creadores. La información que ingreses sobre tus propios torneos, jugadores, y organización sigue siendo tuya — nosotros la almacenamos y procesamos únicamente para brindarte el servicio.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Limitación de responsabilidad</h2>
+      <p>OpsChess se ofrece "tal cual". En la medida permitida por la ley, no somos responsables por decisiones tomadas con base en el contenido generado por inteligencia artificial, por disputas entre Organizadores y Usuarios sobre inscripciones o pagos, ni por el cumplimiento de normativas deportivas específicas de cada federación.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Terminación de cuenta</h2>
+      <p>Puedes eliminar tu cuenta en cualquier momento desde la sección de Configuración. Podemos suspender o eliminar cuentas que incumplan estos Términos de Uso, o que representen un riesgo para la seguridad de la plataforma o de otros usuarios.</p>
+    </section>
+
+    <section class="block">
+      <h2>11. Cambios a estos términos</h2>
+      <p>Podemos actualizar estos Términos de Uso ocasionalmente. Te notificaremos de cambios significativos a través de la plataforma o por correo electrónico antes de que entren en vigor.</p>
+    </section>
+
+    <section class="block">
+      <h2>12. Contacto</h2>
+      <p>Si tienes preguntas sobre estos términos, escríbenos a <a href="mailto:legal@opschess.com">legal@opschess.com</a>.</p>
+    </section>
+  </div>
+  <div class="lang-block" id="block-en">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1>Terms of Use</h1>
+      <p class="doc-updated">Last updated: August 28, 2026</p>
+    </div>
+
+    <div class="callout">
+      By creating an OpsChess account, you agree to these Terms of Use. If you are under 18, a parent or legal guardian must review and agree to these terms together with you.
+    </div>
+
+    <section class="block">
+      <h2>1. Acceptance of terms</h2>
+      <p>These Terms of Use govern your access to and use of OpsChess, including the admin dashboard for Organizers and the portal for Users (players, parents, captains, delegates, and officials). By creating an account, you confirm that you have read, understood, and agreed to these terms.</p>
+    </section>
+
+    <section class="block">
+      <h2>2. Who can use OpsChess</h2>
+      <ul>
+        <li>You must be at least 18 years old to create an Organizer or User account by yourself.</li>
+        <li>If you are under 18 and want to register for a tournament, a parent, legal guardian, team captain, or delegate must create the account and register you, or supervise the process.</li>
+        <li>You must provide truthful information when creating your account and registering for a tournament.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>3. Organizer accounts</h2>
+      <p>By creating an organization on OpsChess (federation, club, academy, school, league, or independent organizer), you are responsible for:</p>
+      <ul>
+        <li>The accuracy of the information you publish about your tournaments.</li>
+        <li>Reviewing and approving (or rejecting) registrations received through the public form, before considering them official.</li>
+        <li>Complying with the rules of the relevant governing body (FIDE, continental confederations, national federations) for the tournaments you organize.</li>
+        <li>Keeping your password confidential and notifying us immediately of any unauthorized use of your account.</li>
+      </ul>
+      <p>Creating new organizations may currently require an invitation code provided by OpsChess, as part of our controlled onboarding process during this stage of the platform.</p>
+    </section>
+
+    <section class="block">
+      <h2>4. User accounts (players, parents, captains, delegates)</h2>
+      <p>By creating a User account to register for tournaments, you agree that:</p>
+      <ul>
+        <li>Your registration is subject to review and approval by the Organizer of the relevant tournament — creating an account or submitting the registration form does not guarantee your participation.</li>
+        <li>You are responsible for the accuracy of the player information you register, including when you register multiple players at once as a captain or delegate.</li>
+        <li>Registration payments, when applicable, are coordinated directly with the Organizer — OpsChess does not process card payments at this stage of the platform.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>5. AI-generated content</h2>
+      <p>Some OpsChess features (such as sponsorship proposal or final report generation) use artificial intelligence to produce content based on information entered by the Organizer. This content is a suggested starting point — the Organizer is responsible for reviewing, editing, and confirming its accuracy before using or sharing it with third parties.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Acceptable use</h2>
+      <p>By using OpsChess, you agree not to:</p>
+      <ul>
+        <li>Use the platform for purposes other than legitimate chess tournament organization or participation.</li>
+        <li>Attempt to access accounts, tournaments, or organizations that do not belong to you or for which you are not authorized.</li>
+        <li>Upload false, offensive information, or information that infringes on third-party rights.</li>
+        <li>Use automated systems to extract data from the platform without express authorization.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>7. Service availability</h2>
+      <p>We work to keep OpsChess continuously available, but we do not guarantee the service will be free of interruptions or errors at all times. We may perform maintenance, updates, or changes to platform features without prior notice, especially during this early product stage.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Intellectual property</h2>
+      <p>OpsChess, its brand, design, and code are the property of its creators. The information you enter about your own tournaments, players, and organization remains yours — we store and process it solely to provide you the service.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Limitation of liability</h2>
+      <p>OpsChess is provided "as is". To the extent permitted by law, we are not liable for decisions made based on AI-generated content, disputes between Organizers and Users regarding registrations or payments, or compliance with sport-specific regulations of each federation.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Account termination</h2>
+      <p>You may delete your account at any time from the Settings section. We may suspend or delete accounts that violate these Terms of Use, or that pose a risk to the security of the platform or other users.</p>
+    </section>
+
+    <section class="block">
+      <h2>11. Changes to these terms</h2>
+      <p>We may update these Terms of Use from time to time. We will notify you of significant changes through the platform or by email before they take effect.</p>
+    </section>
+
+    <section class="block">
+      <h2>12. Contact</h2>
+      <p>If you have questions about these terms, write to us at <a href="mailto:legal@opschess.com">legal@opschess.com</a>.</p>
+    </section>
+  </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 OpsChess</p>
+    <p style="margin-top:10px;"><a href="index.html">Inicio</a><a href="privacidad.html">Política de Privacidad</a></p>
+  </div>
+</footer>
+
+
+<script>
+  (function () {
+    var toggle = document.getElementById('langToggle');
+    if (!toggle) return;
+    var blocks = { es: document.getElementById('block-es'), en: document.getElementById('block-en') };
+    toggle.querySelectorAll('span').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = btn.getAttribute('data-lang');
+        toggle.querySelectorAll('span').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        Object.keys(blocks).forEach(function (k) { blocks[k].classList.toggle('active', k === lang); });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

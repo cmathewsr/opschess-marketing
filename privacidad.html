@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2314213D'/%3E%3Cpath d='M15 35V19h18' fill='none' stroke='%23E0B563' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Política de Privacidad — OpsChess</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #14213D; --ink-light: #2A3A5C; --accent: #C08A2E; --accent-light: #E0B563; --paper: #FAF9F5; --surface: #FFFEF9; --border: #E5E1D8; --muted: #6B6558; --success: #2F6F4E; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+  h1, h2, h3 { font-family: 'Newsreader', serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,245,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .logo { display: flex; align-items: center; gap: 9px; font-family: 'Inter', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; color: var(--ink); }
+  .logo-ops { transition: color 0.15s; }
+  .logo:hover .logo-ops { color: var(--accent); }
+  .logo-mark { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-mark svg { width: 26px; height: 26px; }
+  .btn-solid { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; background: var(--accent); color: white; text-decoration: none; }
+  main { padding: 64px 0 100px; }
+  .doc-header { margin-bottom: 48px; }
+  .doc-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-size: 34px; font-weight: 500; margin-bottom: 10px; }
+  .doc-updated { font-size: 13.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  section.block { margin-bottom: 36px; }
+  h2 { font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--ink); font-family: 'Inter', sans-serif; }
+  p { font-size: 15px; color: #2c3550; margin-bottom: 12px; }
+  ul, ol { margin: 0 0 12px 22px; }
+  li { font-size: 15px; color: #2c3550; margin-bottom: 8px; }
+  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 18px 20px; margin-bottom: 24px; font-size: 14px; color: var(--muted); }
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 40px 0; font-size: 13px; text-align: center; }
+  footer a { color: rgba(255,255,255,0.7); margin: 0 10px; }
+  .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .lang-toggle span { padding: 5px 9px; cursor: pointer; }
+  .lang-toggle span.active { background: var(--ink); color: white; }
+  .lang-block { display: none; }
+  .lang-block.active { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#14213D"/></svg></div>
+      <span style="font-weight:700;"><span class="logo-ops">Ops</span><span style="font-weight:400; color:var(--muted); font-family:'Inter',sans-serif;">Chess</span></span>
+    </a>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="lang-toggle" id="langToggle">
+        <span class="active" data-lang="es">ES</span><span data-lang="en">EN</span>
+      </div>
+      <a href="https://app.opschess.com/login" class="btn-solid">Entrar a la plataforma →</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+  <div class="lang-block active" id="block-es">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1>Política de Privacidad</h1>
+      <p class="doc-updated">Última actualización: 28 de agosto de 2026</p>
+    </div>
+
+    <div class="callout">
+      Este documento describe cómo OpsChess recopila, usa, y protege tu información. Si tienes menos de 18 años, debes revisar esta política junto con tu padre, madre, o tutor legal antes de usar la plataforma.
+    </div>
+
+    <section class="block">
+      <h2>1. Quiénes somos</h2>
+      <p>OpsChess ("nosotros", "la plataforma") es un software de gestión operativa para torneos de ajedrez, usado por federaciones, clubes, academias, escuelas, ligas, y organizadores independientes ("Organizadores"), así como por jugadores, padres o madres de familia, capitanes, delegados, y directivos que se inscriben a través de ella ("Usuarios").</p>
+    </section>
+
+    <section class="block">
+      <h2>2. Qué información recopilamos</h2>
+      <p>Recopilamos distintos tipos de información según cómo uses la plataforma:</p>
+      <ul>
+        <li><strong>Datos de cuenta:</strong> nombre completo, correo electrónico, contraseña (almacenada de forma cifrada, nunca en texto plano), teléfono, y país.</li>
+        <li><strong>Datos específicos de ajedrez:</strong> ID FIDE, categoría de edad, rol dentro de la organización o el torneo (jugador, padre/madre, capitán, delegado, árbitro, presidente de federación/club/academia, entre otros).</li>
+        <li><strong>Datos de inscripción a torneos:</strong> nombre del inscrito, tipo de organización, información de contacto, cantidad de jugadores, y estado de pago (registrado manualmente por el Organizador; OpsChess no procesa pagos con tarjeta directamente en esta etapa).</li>
+        <li><strong>Datos operativos del torneo:</strong> información de logística que el Organizador ingresa — itinerarios de viaje, hospedaje, presupuesto, personal, y patrocinios.</li>
+        <li><strong>Datos técnicos:</strong> dirección IP, tipo de navegador, y registros de uso básicos, para mantener la seguridad y el funcionamiento del servicio.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>3. Datos de menores de edad</h2>
+      <p>Muchas de las categorías de competencia en ajedrez incluyen a niños, niñas, y adolescentes (por ejemplo, categorías Sub-7 a Sub-20). Cuando un Organizador registra a un jugador menor de edad, o cuando un padre, madre, o tutor legal inscribe a un menor a través del formulario público de inscripción, se aplican las siguientes reglas:</p>
+      <ul>
+        <li>La cuenta de usuario para inscribirse debe ser creada por un adulto responsable (padre, madre, tutor legal, capitán, o delegado) — no está diseñada para que un menor cree su propia cuenta de forma independiente.</li>
+        <li>Los datos del menor que se recopilan se limitan a lo necesario para la participación en el torneo: nombre completo, ID FIDE (si aplica), y categoría de edad.</li>
+        <li>No solicitamos ni almacenamos deliberadamente fotografías, ubicación en tiempo real, ni ningún otro dato sensible de menores más allá de lo estrictamente necesario para la inscripción deportiva.</li>
+        <li>El padre, madre, o tutor legal puede solicitar en cualquier momento la corrección o eliminación de los datos de un menor bajo su responsabilidad, escribiendo a <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>4. Cómo usamos tu información</h2>
+      <ul>
+        <li>Para crear y administrar tu cuenta, y permitirte usar las funciones de la plataforma.</li>
+        <li>Para que los Organizadores puedan gestionar sus torneos (checklist, cronograma, presupuesto, delegaciones, personal, patrocinios).</li>
+        <li>Para procesar y mostrar el estado de las inscripciones a torneos.</li>
+        <li>Para enviarte notificaciones operativas relacionadas con tu cuenta o tus torneos (por ejemplo, confirmación de correo, o recordatorios de tareas próximas a vencer).</li>
+        <li>Para generar contenido de apoyo mediante inteligencia artificial (por ejemplo, propuestas de patrocinio o reportes finales) a partir de la información que el propio Organizador ingresa sobre su torneo.</li>
+        <li>Para mantener la seguridad de la plataforma y prevenir el uso indebido.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>5. Con quién compartimos tu información</h2>
+      <p>No vendemos tu información personal a terceros. Compartimos datos únicamente con proveedores de servicio que nos ayudan a operar la plataforma, bajo sus propias obligaciones de confidencialidad:</p>
+      <ul>
+        <li><strong>Alojamiento y base de datos</strong> — para almacenar la información de forma segura.</li>
+        <li><strong>Envío de correo electrónico</strong> — para notificaciones transaccionales (verificación de cuenta, confirmaciones).</li>
+        <li><strong>Generación de contenido con inteligencia artificial</strong> — cuando un Organizador usa la función de propuestas de patrocinio o reportes generados por IA, la información relevante del torneo se envía a un proveedor de modelos de lenguaje para producir ese contenido.</li>
+      </ul>
+      <p>También podemos compartir información dentro de una misma organización — por ejemplo, un jugador que se inscribe a un torneo puede ver su información compartida con el Organizador de ese torneo específico, como parte natural del proceso de inscripción.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Tus derechos</h2>
+      <p>Dependiendo de tu país de residencia, puedes tener derecho a:</p>
+      <ul>
+        <li>Acceder a la información que tenemos sobre ti.</li>
+        <li>Corregir información inexacta o desactualizada.</li>
+        <li>Solicitar la eliminación de tu cuenta y tus datos personales.</li>
+        <li>Oponerte a ciertos usos de tu información.</li>
+      </ul>
+      <p>Puedes ejercer estos derechos directamente desde la sección de Configuración de tu cuenta, o escribiendo a <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>7. Seguridad</h2>
+      <p>Usamos medidas técnicas razonables para proteger tu información, incluyendo cifrado de contraseñas y conexiones seguras (HTTPS) en toda la plataforma. Ningún sistema es 100% infalible, y trabajamos de forma continua para mejorar nuestras prácticas de seguridad.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Retención de datos</h2>
+      <p>Conservamos tu información mientras tu cuenta esté activa, o mientras sea necesario para cumplir con los fines descritos en esta política. Si solicitas la eliminación de tu cuenta, eliminamos o anonimizamos tu información personal, salvo que debamos conservar cierta información por obligaciones legales o para resolver disputas.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Cambios a esta política</h2>
+      <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Si hacemos cambios significativos, te lo notificaremos a través de la plataforma o por correo electrónico antes de que entren en vigor.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Contacto</h2>
+      <p>Si tienes preguntas sobre esta política, escríbenos a <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</p>
+    </section>
+  </div>
+  <div class="lang-block" id="block-en">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="doc-updated">Last updated: August 28, 2026</p>
+    </div>
+
+    <div class="callout">
+      This document describes how OpsChess collects, uses, and protects your information. If you are under 18, you should review this policy together with a parent or legal guardian before using the platform.
+    </div>
+
+    <section class="block">
+      <h2>1. Who we are</h2>
+      <p>OpsChess ("we", "the platform") is operations management software for chess tournaments, used by federations, clubs, academies, schools, leagues, and independent organizers ("Organizers"), as well as by players, parents, team captains, delegates, and officials who register through it ("Users").</p>
+    </section>
+
+    <section class="block">
+      <h2>2. What information we collect</h2>
+      <p>We collect different types of information depending on how you use the platform:</p>
+      <ul>
+        <li><strong>Account data:</strong> full name, email address, password (stored encrypted, never in plain text), phone number, and country.</li>
+        <li><strong>Chess-specific data:</strong> FIDE ID, age category, and your role within the organization or tournament (player, parent, captain, delegate, arbiter, federation/club/academy president, among others).</li>
+        <li><strong>Tournament registration data:</strong> registrant name, organization type, contact information, number of players, and payment status (recorded manually by the Organizer; OpsChess does not process card payments directly at this stage).</li>
+        <li><strong>Tournament operations data:</strong> logistics information entered by the Organizer — travel itineraries, accommodation, budget, staff, and sponsorships.</li>
+        <li><strong>Technical data:</strong> IP address, browser type, and basic usage logs, to keep the service secure and functioning.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>3. Data of minors</h2>
+      <p>Many chess competition categories include children and adolescents (for example, Under-7 through Under-20 categories). When an Organizer registers a minor player, or when a parent or legal guardian registers a minor through the public registration form, the following rules apply:</p>
+      <ul>
+        <li>The account used to register must be created by a responsible adult (parent, guardian, captain, or delegate) — it is not designed for a minor to create their own account independently.</li>
+        <li>The data collected about a minor is limited to what is necessary for tournament participation: full name, FIDE ID (if applicable), and age category.</li>
+        <li>We do not deliberately request or store photographs, real-time location, or any other sensitive data about minors beyond what is strictly necessary for sports registration.</li>
+        <li>A parent or legal guardian may request the correction or deletion of a minor's data under their responsibility at any time, by writing to <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>4. How we use your information</h2>
+      <ul>
+        <li>To create and manage your account, and let you use the platform's features.</li>
+        <li>To let Organizers manage their tournaments (checklist, schedule, budget, delegations, staff, sponsorships).</li>
+        <li>To process and display the status of tournament registrations.</li>
+        <li>To send you operational notifications related to your account or your tournaments (for example, email confirmation, or reminders for upcoming tasks).</li>
+        <li>To generate supporting content through artificial intelligence (for example, sponsorship proposals or final reports) based on the information the Organizer enters about their tournament.</li>
+        <li>To keep the platform secure and prevent misuse.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>5. Who we share your information with</h2>
+      <p>We do not sell your personal information to third parties. We share data only with service providers who help us operate the platform, under their own confidentiality obligations:</p>
+      <ul>
+        <li><strong>Hosting and database</strong> — to store information securely.</li>
+        <li><strong>Email delivery</strong> — for transactional notifications (account verification, confirmations).</li>
+        <li><strong>AI content generation</strong> — when an Organizer uses the sponsorship proposal or AI-generated report feature, the relevant tournament information is sent to a language model provider to produce that content.</li>
+      </ul>
+      <p>We may also share information within the same organization — for example, a player registering for a tournament may have their information shared with that tournament's Organizer, as a natural part of the registration process.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Your rights</h2>
+      <p>Depending on your country of residence, you may have the right to:</p>
+      <ul>
+        <li>Access the information we hold about you.</li>
+        <li>Correct inaccurate or outdated information.</li>
+        <li>Request deletion of your account and personal data.</li>
+        <li>Object to certain uses of your information.</li>
+      </ul>
+      <p>You can exercise these rights directly from your account Settings, or by writing to <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>7. Security</h2>
+      <p>We use reasonable technical measures to protect your information, including password encryption and secure connections (HTTPS) across the platform. No system is completely infallible, and we continuously work to improve our security practices.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Data retention</h2>
+      <p>We keep your information for as long as your account is active, or as needed to fulfill the purposes described in this policy. If you request deletion of your account, we delete or anonymize your personal information, except where we must retain certain information for legal obligations or to resolve disputes.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. If we make significant changes, we will notify you through the platform or by email before they take effect.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Contact</h2>
+      <p>If you have questions about this policy, write to us at <a href="mailto:privacidad@opschess.com">privacidad@opschess.com</a>.</p>
+    </section>
+  </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 OpsChess</p>
+    <p style="margin-top:10px;"><a href="index.html">Inicio</a><a href="terminos.html">Términos de Uso</a></p>
+  </div>
+</footer>
+
+
+<script>
+  (function () {
+    var toggle = document.getElementById('langToggle');
+    if (!toggle) return;
+    var blocks = { es: document.getElementById('block-es'), en: document.getElementById('block-en') };
+    toggle.querySelectorAll('span').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = btn.getAttribute('data-lang');
+        toggle.querySelectorAll('span').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        Object.keys(blocks).forEach(function (k) { blocks[k].classList.toggle('active', k === lang); });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
