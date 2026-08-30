@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2314213D'/%3E%3Cpath d='M15 35V19h18' fill='none' stroke='%23E0B563' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>OpsChess — Todo lo que hay detrás del tablero</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -40,11 +39,9 @@
     border-bottom: 1px solid var(--border);
   }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 9px; font-family: 'Inter', sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
-  .logo-ops { transition: color 0.15s; }
-  .logo:hover .logo-ops { color: var(--accent); }
-  .logo-mark { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .logo-mark svg { width: 26px; height: 26px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Newsreader', serif; font-size: 20px; font-weight: 600; }
+  .logo-mark { width: 34px; height: 34px; border-radius: 8px; background: var(--ink); display: flex; align-items: center; justify-content: center; }
+  .logo-mark svg { width: 18px; height: 18px; }
   .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 500; }
   .nav-links a { color: var(--ink); opacity: 0.75; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; }
@@ -52,11 +49,6 @@
   .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
   .lang-toggle span { padding: 5px 9px; }
   .lang-toggle span.active { background: var(--ink); color: white; }
-  .lang-toggle span { cursor: pointer; }
-  .lang-block { display: none; }
-  .lang-block.active { display: block; }
-  .lang-inline { display: none; }
-  .lang-inline.active { display: inline; }
   .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 8px; font-size: 14.5px; font-weight: 600; transition: all 0.15s; cursor: pointer; border: none; }
   .btn-ghost { color: var(--ink); background: transparent; }
   .btn-ghost:hover { background: rgba(20,33,61,0.06); }
@@ -67,7 +59,7 @@
 
   /* ===== HERO ===== */
   .hero { background: var(--ink); color: white; padding: 100px 0 130px; position: relative; overflow: hidden; }
-  .hero-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 60px; align-items: center; }
   .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-light); display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
   .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); }
   .hero h1 { font-size: 52px; line-height: 1.12; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 24px; }
@@ -88,12 +80,8 @@
   .hero-note { font-size: 13px; color: rgba(255,255,255,0.45); font-family: 'JetBrains Mono', monospace; }
 
   /* floating proof card */
-  .proof-card { background: var(--surface); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.45); position: relative; }
-  .browser-bar { background: #EDEAE2; padding: 10px 14px; display: flex; align-items: center; gap: 7px; }
-  .browser-dot { width: 9px; height: 9px; border-radius: 50%; }
-  .browser-dot.red { background: #ED6A5E; } .browser-dot.yellow { background: #F4BF50; } .browser-dot.green { background: #61C454; }
-  .browser-url { flex: 1; background: white; border-radius: 6px; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--muted); margin-left: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .screen-body { padding: 20px 20px 22px; min-height: 260px; color: var(--ink); }
+  .proof-card { background: var(--surface); border-radius: 16px; padding: 24px; color: var(--ink); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); position: relative; }
+  .proof-card::before { content: 'a1 → h8'; position: absolute; top: -14px; right: 20px; background: var(--accent); color: white; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px; border-radius: 6px; }
   .proof-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
   .proof-row:last-child { border-bottom: none; }
   .proof-label { font-size: 13px; color: var(--muted); }
@@ -102,6 +90,15 @@
   .ring { width: 44px; height: 44px; border-radius: 50%; background: conic-gradient(var(--accent) 0% 78%, var(--border) 78% 100%); display: flex; align-items: center; justify-content: center; position: relative; }
   .ring::after { content: ''; position: absolute; inset: 5px; background: var(--surface); border-radius: 50%; }
   .ring span { position: relative; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; }
+
+  .donut-wrap { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .donut { width: 62px; height: 62px; border-radius: 50%; flex-shrink: 0; position: relative; }
+  .donut::after { content: ''; position: absolute; inset: 11px; background: var(--surface); border-radius: 50%; }
+  .donut-legend { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .donut-legend-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; }
+  .donut-legend-row .dot-label { display: flex; align-items: center; gap: 6px; color: var(--muted); min-width: 0; }
+  .donut-legend-row .dot-label .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .donut-legend-row .amt { font-family: 'JetBrains Mono', monospace; color: var(--ink); font-weight: 500; flex-shrink: 0; }
 
   /* ===== SECTIONS SHARED ===== */
   section { padding: 96px 0; }
@@ -171,65 +168,24 @@
   .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
 
   /* ===== CARRUSEL DEL HÉROE ===== */
-  .proof-card { min-height: auto; position: relative; }
-  .proof-slide { display: none; animation: fadeIn 0.4s ease; }
+  .proof-card { min-height: 210px; position: relative; }
+  .proof-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+  .proof-slides-wrap { position: relative; height: 195px; }
+  .proof-slide { display: none; position: absolute; inset: 0; animation: fadeIn 0.4s ease; }
   .proof-slide.active { display: block; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-  .proof-dots { display: flex; gap: 8px; justify-content: center; padding: 14px 0 18px; background: var(--surface); }
+  .proof-dots { display: flex; gap: 8px; justify-content: center; margin-top: 20px; }
   .proof-dot { width: 7px; height: 7px; border-radius: 50%; border: none; background: var(--border); cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
   .proof-dot.active { background: var(--accent); transform: scale(1.3); }
-
-  /* elementos internos de las "capturas" */
-  .mini-tabs { display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; }
-  .mini-tab { font-size: 10.5px; padding: 5px 10px; border-radius: 14px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
-  .mini-tab.active { background: var(--ink); color: white; border-color: var(--ink); }
-  .mini-ring-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-  .mini-ring { width: 46px; height: 46px; border-radius: 50%; position: relative; flex-shrink: 0; }
-  .mini-ring::after { content: ''; position: absolute; inset: 5px; background: var(--surface); border-radius: 50%; }
-  .mini-ring span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; }
-  .mini-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-  .mini-item:last-child { border-bottom: none; }
-  .mini-status { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; }
-  .mini-status.done { background: var(--success); border-color: var(--success); color: white; }
-  .mini-status.progress { background: var(--accent); border-color: var(--accent); color: white; }
-  .mini-balance { display: flex; align-items: center; gap: 10px; background: var(--ink); border-radius: 10px; padding: 14px; margin-bottom: 16px; flex-wrap: wrap; }
-  .mini-balance-item { color: white; }
-  .mini-balance-item .l { font-size: 9.5px; color: rgba(255,255,255,0.55); }
-  .mini-balance-item .v { font-family: 'Newsreader', serif; font-size: 15px; }
-  .mini-balance-op { color: rgba(255,255,255,0.3); font-size: 14px; }
-  .mini-bar-row { margin-bottom: 10px; }
-  .mini-bar-label { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
-  .mini-bar-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
-  .mini-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; }
-  .mini-cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
-  .mini-stat-card { background: var(--paper); border-radius: 8px; padding: 10px; }
-  .mini-stat-card .l { font-size: 9.5px; color: var(--muted); margin-bottom: 3px; }
-  .mini-stat-card .v { font-family: 'Newsreader', serif; font-size: 17px; }
-  .mini-deleg-row { display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--paper); border-radius: 8px; }
-  .mini-flag { width: 22px; height: 15px; border-radius: 2px; background: linear-gradient(180deg, #C08A2E 33%, white 33%, white 66%, #14213D 66%); flex-shrink: 0; }
-  .mini-badge { font-size: 9.5px; padding: 2px 8px; border-radius: 10px; background: rgba(47,111,78,0.12); color: var(--success); margin-left: auto; white-space: nowrap; }
-  .mini-pending-banner { background: rgba(192,138,46,0.12); border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 11.5px; color: var(--accent); gap: 8px; }
-  .mini-pending-actions { display: flex; gap: 6px; }
-  .mini-pending-actions span { font-size: 10px; padding: 3px 8px; border-radius: 5px; }
-  .mini-pending-actions .approve { background: var(--success); color: white; }
-  .mini-pending-actions .reject { border: 1px solid var(--border); color: var(--muted); }
-  .mini-kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .mini-kanban-col { background: var(--paper); border-radius: 8px; padding: 6px; min-height: 90px; }
-  .mini-kanban-col .col-title { font-size: 9px; color: var(--muted); margin-bottom: 6px; text-align: center; }
-  .mini-kanban-card { background: white; border-radius: 6px; padding: 6px 7px; font-size: 9.5px; margin-bottom: 5px; border-top: 2px solid var(--border); }
-  .mini-kanban-card.signed { border-top-color: var(--success); }
-  .mini-tier-card { background: var(--paper); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
-  .mini-tier-head { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 3px; }
-  .mini-tier-head .name { font-weight: 600; }
-  .mini-tier-head .range { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
-  .mini-tier-desc { font-size: 10.5px; color: var(--muted); }
-  .mini-narrative { font-style: italic; font-size: 12.5px; color: var(--muted); border-left: 2px solid var(--accent); padding-left: 12px; margin-top: 14px; line-height: 1.6; }
 
   /* ===== MENÚ MÓVIL ===== */
   .hamburger { display: none; background: none; border: none; color: var(--ink); width: 38px; height: 38px; align-items: center; justify-content: center; cursor: pointer; }
   .hamburger svg { width: 22px; height: 22px; }
   .mobile-menu { display: none; flex-direction: column; gap: 4px; padding: 16px 32px 24px; border-top: 1px solid var(--border); background: var(--paper); }
   .mobile-menu.open { display: flex; }
+  .mobile-lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 12px; width: fit-content; margin: 6px 0 4px; }
+  .mobile-lang-toggle span { padding: 6px 12px; }
+  .mobile-lang-toggle span.active { background: var(--ink); color: white; }
   .mobile-menu a:not(.btn) { padding: 10px 0; font-size: 15px; font-weight: 500; border-bottom: 1px solid var(--border); }
   .mobile-menu .btn { text-align: center; }
 
@@ -238,6 +194,7 @@
     .wrap { padding: 0 24px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .btn-label-short { display: none; }
     .hero-grid { grid-template-columns: 1fr; gap: 44px; }
     .hero { padding: 64px 0 80px; }
     .hero h1 { font-size: 40px; }
@@ -253,9 +210,12 @@
     .wrap { padding: 0 20px; }
     .nav-inner { height: 64px; }
     .logo { font-size: 17px; }
-    .logo-mark { width: 24px; height: 24px; }
+    .logo-mark { width: 30px; height: 30px; }
+    nav .logo-text { display: none; }
+    .lang-toggle span { padding: 4px 7px; font-size: 10px; }
     .nav-cta .btn { padding: 9px 14px; font-size: 13.5px; }
-    .lang-toggle { display: none; }
+    .btn-label-full { display: none; }
+    .btn-label-short { display: inline; }
     .hero { padding: 48px 0 64px; }
     .hero h1 { font-size: 30px; line-height: 1.25; }
     .hero p.lead { font-size: 15.5px; }
@@ -274,10 +234,6 @@
     .price-card { padding: 28px 22px; }
     .chaos-row { gap: 8px; }
     .chaos-tag { font-size: 12px; padding: 7px 12px; }
-    .mini-kanban { grid-template-columns: repeat(2, 1fr); }
-    .mini-cards-row { grid-template-columns: repeat(2, 1fr); }
-    .screen-body { padding: 16px 16px 18px; min-height: auto; }
-    .mini-tabs { flex-wrap: nowrap; }
   }
 </style>
 </head>
@@ -287,153 +243,124 @@
   <div class="wrap nav-inner">
     <a href="#" class="logo">
       <div class="logo-mark">
-        <svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#14213D"/></svg>
+        <svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#FFFEF9"/></svg>
       </div>
-      <span style="font-weight:700;"><span class="logo-ops">Ops</span><span style="font-weight:400; color:var(--muted); font-family:'Inter',sans-serif;">Chess</span></span>
+      <span class="logo-text">OpsChess</span>
     </a>
     <div class="nav-links">
-      <a href="#producto"><span class="lang-inline active" data-lang="es">Producto</span><span class="lang-inline" data-lang="en">Product</span></a>
-      <a href="#audiencias"><span class="lang-inline active" data-lang="es">Para quién es</span><span class="lang-inline" data-lang="en">Who it&#39;s for</span></a>
-      <a href="#precios"><span class="lang-inline active" data-lang="es">Precios</span><span class="lang-inline" data-lang="en">Pricing</span></a>
-      <a href="#"><span class="lang-inline active" data-lang="es">Nosotros</span><span class="lang-inline" data-lang="en">About</span></a>
+      <a href="#producto">Producto</a>
+      <a href="#audiencias">Para quién es</a>
+      <a href="#precios">Precios</a>
+      <a href="#">Nosotros</a>
     </div>
     <div class="nav-cta">
-      <div class="lang-toggle" id="langToggle"><span class="active" data-lang="es">ES</span><span data-lang="en">EN</span></div>
-      <a href="https://app.opschess.com/login" class="btn btn-solid"><span class="lang-inline active" data-lang="es">Entrar a la plataforma →</span><span class="lang-inline" data-lang="en">Go to platform →</span></a>
+      <div class="lang-toggle"><span class="active">ES</span><span>EN</span></div>
+      <a href="https://app.opschess.com/login" class="btn btn-solid"><span class="btn-label-full">Entrar a la plataforma →</span><span class="btn-label-short">Entrar →</span></a>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#producto"><span class="lang-inline active" data-lang="es">Producto</span><span class="lang-inline" data-lang="en">Product</span></a>
-    <a href="#audiencias"><span class="lang-inline active" data-lang="es">Para quién es</span><span class="lang-inline" data-lang="en">Who it&#39;s for</span></a>
-    <a href="#precios"><span class="lang-inline active" data-lang="es">Precios</span><span class="lang-inline" data-lang="en">Pricing</span></a>
-    <a href="#"><span class="lang-inline active" data-lang="es">Nosotros</span><span class="lang-inline" data-lang="en">About</span></a>
-    <a href="https://app.opschess.com/login" class="btn btn-solid" style="margin-top:8px;"><span class="lang-inline active" data-lang="es">Entrar a la plataforma →</span><span class="lang-inline" data-lang="en">Go to platform →</span></a>
+    <a href="#producto">Producto</a>
+    <a href="#audiencias">Para quién es</a>
+    <a href="#precios">Precios</a>
+    <a href="#">Nosotros</a>
+    <div class="mobile-lang-toggle"><span class="active">ES</span><span>EN</span></div>
+    <a href="https://app.opschess.com/login" class="btn btn-solid" style="margin-top:8px;">Entrar a la plataforma →</a>
   </div>
 </nav>
 
 <section class="hero" style="padding-bottom:130px;">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><span class="dot"></span> a1 → h8 · <span class="lang-inline active" data-lang="es">gestión de torneos de ajedrez</span><span class="lang-inline" data-lang="en">chess tournament operations</span></div>
-      <h1><span class="lang-block active" data-lang="es">Todo lo que hay<br><span class="coord-highlight">detrás</span> del tablero.</span><span class="lang-block" data-lang="en" ">Everything <span class="coord-highlight">behind</span><br>the board.</span></h1>
-      <p class="lead"><span class="lang-inline active" data-lang="es">Checklist, cronograma, presupuesto, delegaciones e inscripciones — en un solo lugar, para federaciones, clubes, academias y organizadores independientes.</span><span class="lang-inline" data-lang="en">Checklist, schedule, budget, delegations, and registrations — all in one place, for federations, clubs, academies, and independent organizers.</span></p>
+      <div class="eyebrow"><span class="dot"></span> a1 → h8 · gestión de torneos de ajedrez</div>
+      <h1>Todo lo que hay<br><span class="coord-highlight">detrás</span> del tablero.</h1>
+      <p class="lead">Checklist, cronograma, presupuesto, delegaciones e inscripciones — en un solo lugar, para federaciones, clubes, academias y organizadores independientes.</p>
       <div class="hero-ctas">
-        <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid" style="padding:14px 26px; font-size:15.5px;"><span class="lang-inline active" data-lang="es">Crear cuenta gratis →</span><span class="lang-inline" data-lang="en">Create free account →</span></a>
-        <a href="#producto" class="btn btn-outline-light" style="padding:14px 26px; font-size:15.5px;"><span class="lang-inline active" data-lang="es">Ver cómo funciona</span><span class="lang-inline" data-lang="en">See how it works</span></a>
+        <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid" style="padding:14px 26px; font-size:15.5px;">Crear cuenta gratis →</a>
+        <a href="#producto" class="btn btn-outline-light" style="padding:14px 26px; font-size:15.5px;">Ver cómo funciona</a>
       </div>
-      <p class="hero-note"><span class="lang-inline active" data-lang="es">Sin tarjeta de crédito · Bilingüe ES/EN · Listo en minutos</span><span class="lang-inline" data-lang="en">No credit card · Bilingual ES/EN · Ready in minutes</span></p>
+      <p class="hero-note">Sin tarjeta de crédito · Bilingüe ES/EN · Listo en minutos</p>
     </div>
     <div class="proof-card">
-      <div class="browser-bar">
-        <div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div>
-        <div class="browser-url" id="browserUrl">app.opschess.com/torneo/checklist</div>
-      </div>
-
-      <div class="proof-slide active" data-slide="0">
-        <div class="screen-body">
-          <div class="mini-tabs">
-            <span class="mini-tab active">01 Infraestructura</span>
-            <span class="mini-tab">02 Material Técnico</span>
-            <span class="mini-tab">03 Personal</span>
+      <div class="proof-slides-wrap">
+        <div class="proof-slide active" data-slide="0">
+          <p class="proof-tag">Checklist · Panamericano Sub-20</p>
+          <div class="proof-row"><div class="proof-ring"><div class="ring"><span>78%</span></div><span class="proof-label">Tareas completadas</span></div></div>
+          <div class="proof-row"><span class="proof-label">Categoría</span><span class="proof-value" style="font-size:15px;">Infraestructura</span></div>
+          <div class="proof-row"><span class="proof-label">Pendientes</span><span class="proof-value" style="color:var(--accent);">9 de 41</span></div>
+        </div>
+        <div class="proof-slide" data-slide="1">
+          <p class="proof-tag">Presupuesto · Panamericano Sub-20</p>
+          <div class="donut-wrap">
+            <div class="donut" style="background:conic-gradient(#14213D 0% 25%, #C08A2E 25% 48%, #E0B563 48% 66%, #8FA6C7 66% 78%, #C0483B 78% 86%, #C9C2B2 86% 100%);"></div>
+            <div class="donut-legend">
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#14213D;"></span>Personal y árbitros</span><span class="amt">25%</span></div>
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#C08A2E;"></span>Premios</span><span class="amt">23%</span></div>
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#E0B563;"></span>Logística</span><span class="amt">18%</span></div>
+            </div>
           </div>
-          <div class="mini-ring-row">
-            <div class="mini-ring" style="background: conic-gradient(var(--accent) 0% 78%, var(--border) 78% 100%);"><span>78%</span></div>
-            <div><p style="font-size:13px; font-weight:500;">32 de 41 tareas completadas</p><p style="font-size:11.5px; color:var(--muted);">9 tareas por resolver</p></div>
+          <div class="proof-row"><span class="proof-label">Balance neto</span><span class="proof-value" style="color:var(--success);">+$4,850</span></div>
+        </div>
+        <div class="proof-slide" data-slide="2">
+          <p class="proof-tag">Delegaciones · Panamericano Sub-20</p>
+          <div class="proof-row"><span class="proof-label">Delegaciones registradas</span><span class="proof-value">24</span></div>
+          <div class="proof-row"><span class="proof-label">Jugadores totales</span><span class="proof-value">186</span></div>
+          <div class="proof-row"><span class="proof-label">Visas pendientes</span><span class="proof-value" style="color:var(--accent);">3</span></div>
+        </div>
+        <div class="proof-slide" data-slide="3">
+          <p class="proof-tag">Inscripciones · Panamericano Sub-20</p>
+          <div class="donut-wrap">
+            <div class="donut" style="background:conic-gradient(#14213D 0% 14%, #C08A2E 14% 28%, #E0B563 28% 85%, #8FA6C7 85% 100%);"></div>
+            <div class="donut-legend">
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#14213D;"></span>Federación</span><span class="amt">1</span></div>
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#C08A2E;"></span>Academia</span><span class="amt">1</span></div>
+              <div class="donut-legend-row"><span class="dot-label"><span class="dot" style="background:#E0B563;"></span>Individual</span><span class="amt">4</span></div>
+            </div>
           </div>
-          <div class="mini-item"><div class="mini-status done">✓</div> Señalización visible (entrada/salida)</div>
-          <div class="mini-item"><div class="mini-status progress">◐</div> Generador eléctrico o UPS</div>
-          <div class="mini-item"><div class="mini-status">○</div> Sala para Comité de Apelaciones</div>
+          <div class="proof-row"><span class="proof-label">Aprobadas</span><span class="proof-value" style="color:var(--success);">31 de 37</span></div>
+        </div>
+        <div class="proof-slide" data-slide="4">
+          <p class="proof-tag">Patrocinios · Panamericano Sub-20</p>
+          <div class="proof-row"><span class="proof-label">Contrato firmado</span><span class="proof-value">3</span></div>
+          <div class="proof-row"><span class="proof-label">En negociación</span><span class="proof-value" style="color:var(--accent);">5</span></div>
+          <div class="proof-row"><span class="proof-label">Monto total en pipeline</span><span class="proof-value">$31,200</span></div>
+        </div>
+        <div class="proof-slide" data-slide="5">
+          <p class="proof-tag">Propuesta con IA · generada en segundos</p>
+          <div class="proof-row"><span class="proof-label">Tiers sugeridos</span><span class="proof-value">4</span></div>
+          <div class="proof-row"><span class="proof-label">Ideas de activación</span><span class="proof-value">6</span></div>
+          <div class="proof-row"><span class="proof-label">Tiempo de generación</span><span class="proof-value" style="color:var(--success);">~12 seg</span></div>
+        </div>
+        <div class="proof-slide" data-slide="6">
+          <p class="proof-tag">Reporte Final · listo para la federación</p>
+          <div class="proof-row"><span class="proof-label">Evaluación cualitativa</span><span class="proof-value">11 áreas</span></div>
+          <div class="proof-row"><span class="proof-label">Formato</span><span class="proof-value">PDF oficial</span></div>
+          <div class="proof-row"><span class="proof-label">Envío</span><span class="proof-value" style="color:var(--success);">Directo por correo</span></div>
+        </div>
+        <div class="proof-slide" data-slide="7">
+          <p class="proof-tag">Resumen · Salud del evento</p>
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div class="ring" style="background:conic-gradient(var(--success) 0% 82%, var(--border) 82% 100%); width:52px; height:52px;"><span>82</span></div>
+            <div>
+              <div class="proof-label" style="margin-bottom:2px;">Score compuesto</div>
+              <div class="proof-value" style="font-size:16px; color:var(--success);">Saludable</div>
+            </div>
+          </div>
+          <div class="proof-row"><span class="proof-label">Financiero</span><span class="proof-value" style="font-size:15px;">88</span></div>
+          <div class="proof-row"><span class="proof-label">Cronograma</span><span class="proof-value" style="font-size:15px; color:var(--accent);">64</span></div>
         </div>
       </div>
-
-      <div class="proof-slide" data-slide="1">
-        <div class="screen-body">
-          <div class="mini-balance">
-            <div class="mini-balance-item"><div class="l">Patrocinios</div><div class="v">$18,400</div></div>
-            <div class="mini-balance-op">+</div>
-            <div class="mini-balance-item"><div class="l">Inscripciones</div><div class="v">$6,200</div></div>
-            <div class="mini-balance-op">−</div>
-            <div class="mini-balance-item"><div class="l">Gasto</div><div class="v">$19,750</div></div>
-            <div class="mini-balance-op">=</div>
-            <div class="mini-balance-item"><div class="l">Balance</div><div class="v" style="color:#7FD9A8;">+$4,850</div></div>
-          </div>
-          <div class="mini-bar-row"><div class="mini-bar-label"><span>Sede</span><span>$8,200 / $9,000</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:91%;"></div></div></div>
-          <div class="mini-bar-row"><div class="mini-bar-label"><span>Premios</span><span>$5,000 / $5,000</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%;"></div></div></div>
-          <div class="mini-bar-row"><div class="mini-bar-label"><span>Transporte</span><span>$3,100 / $4,500</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:69%;"></div></div></div>
-        </div>
-      </div>
-
-      <div class="proof-slide" data-slide="2">
-        <div class="screen-body">
-          <div class="mini-cards-row">
-            <div class="mini-stat-card"><div class="l">Delegaciones</div><div class="v">24</div></div>
-            <div class="mini-stat-card"><div class="l">Jugadores</div><div class="v">186</div></div>
-            <div class="mini-stat-card"><div class="l">Visas pend.</div><div class="v" style="color:var(--accent);">3</div></div>
-          </div>
-          <div class="mini-deleg-row" style="margin-bottom:8px;"><div class="mini-flag"></div><div><p style="font-size:12.5px; font-weight:500;">Federación Mexicana de Ajedrez</p><p style="font-size:10.5px; color:var(--muted);">18 jugadores · 4 oficiales</p></div><span class="mini-badge">Registrada en sede</span></div>
-          <div class="mini-deleg-row"><div class="mini-flag" style="background:linear-gradient(180deg,#14213D 50%, white 50%);"></div><div><p style="font-size:12.5px; font-weight:500;">Federación Colombiana de Ajedrez</p><p style="font-size:10.5px; color:var(--muted);">22 jugadores · 5 oficiales</p></div><span class="mini-badge" style="background:rgba(192,138,46,0.12); color:var(--accent);">Pendiente</span></div>
-        </div>
-      </div>
-
-      <div class="proof-slide" data-slide="3">
-        <div class="screen-body">
-          <div class="mini-pending-banner">
-            <span>🌐 Pendiente de revisión — formulario público</span>
-            <div class="mini-pending-actions"><span class="approve">Aprobar</span><span class="reject">Rechazar</span></div>
-          </div>
-          <div class="mini-item"><span style="flex:1;">Club Deportivo Azteca</span><span style="font-size:11px; color:var(--muted);">5 jugadores</span><span style="font-family:'JetBrains Mono',monospace; font-size:11px;">$250</span></div>
-          <div class="mini-item"><span style="flex:1;">Academia Torre Blanca</span><span style="font-size:11px; color:var(--muted);">3 jugadores</span><span style="font-family:'JetBrains Mono',monospace; font-size:11px;">$150</span></div>
-          <div class="mini-item"><span style="flex:1;">Liga Escolar del Valle</span><span style="font-size:11px; color:var(--muted);">12 jugadores</span><span style="font-family:'JetBrains Mono',monospace; font-size:11px;">$600</span></div>
-        </div>
-      </div>
-
-      <div class="proof-slide" data-slide="4">
-        <div class="screen-body">
-          <div class="mini-kanban">
-            <div class="mini-kanban-col"><div class="col-title">Prospecto</div><div class="mini-kanban-card">Banco Nacional</div></div>
-            <div class="mini-kanban-col"><div class="col-title">Propuesta</div><div class="mini-kanban-card">AeroLínea Continental</div></div>
-            <div class="mini-kanban-col"><div class="col-title">Negociando</div><div class="mini-kanban-card">Hotel Central</div><div class="mini-kanban-card">Café Andino</div></div>
-            <div class="mini-kanban-col"><div class="col-title">Firmado</div><div class="mini-kanban-card signed">Marca Deportiva XY</div></div>
-          </div>
-          <p style="font-size:11px; color:var(--muted); margin-top:10px;">$31,200 en pipeline total</p>
-        </div>
-      </div>
-
-      <div class="proof-slide" data-slide="5">
-        <div class="screen-body">
-          <div class="mini-tier-card"><div class="mini-tier-head"><span class="name">Platino</span><span class="range">$8,000 – $12,000</span></div><div class="mini-tier-desc">Logo en banner principal, mención en ceremonia, stand exclusivo</div></div>
-          <div class="mini-tier-card"><div class="mini-tier-head"><span class="name">Oro</span><span class="range">$4,000 – $6,000</span></div><div class="mini-tier-desc">Logo en material impreso, publicación en redes sociales</div></div>
-          <div class="mini-tier-card"><div class="mini-tier-head"><span class="name">Plata</span><span class="range">$1,500 – $2,500</span></div><div class="mini-tier-desc">Mención en agradecimientos y certificado de patrocinio</div></div>
-        </div>
-      </div>
-
-      <div class="proof-slide" data-slide="6">
-        <div class="screen-body">
-          <div class="mini-cards-row">
-            <div class="mini-stat-card"><div class="l">Checklist</div><div class="v">92%</div></div>
-            <div class="mini-stat-card"><div class="l">Patrocinios</div><div class="v" style="font-size:14px;">$18,400</div></div>
-            <div class="mini-stat-card"><div class="l">Delegaciones</div><div class="v">24</div></div>
-          </div>
-          <div class="mini-cards-row">
-            <div class="mini-stat-card"><div class="l">Personal</div><div class="v">38</div></div>
-            <div class="mini-stat-card"><div class="l">Cronograma</div><div class="v" style="font-size:14px;">41/41</div></div>
-            <div class="mini-stat-card"><div class="l">Satisfacción</div><div class="v" style="font-size:14px;">4.6/5</div></div>
-          </div>
-          <p class="mini-narrative">"El torneo cumplió con los estándares de organización FIDE, destacando la coordinación logística entre delegaciones..."</p>
-        </div>
-      </div>
-
       <div class="proof-dots">
-        <button class="proof-dot active" data-dot="0" aria-label="Checklist" data-url="app.opschess.com/torneo/checklist"></button>
-        <button class="proof-dot" data-dot="1" aria-label="Presupuesto" data-url="app.opschess.com/torneo/presupuesto"></button>
-        <button class="proof-dot" data-dot="2" aria-label="Delegaciones" data-url="app.opschess.com/torneo/delegaciones"></button>
-        <button class="proof-dot" data-dot="3" aria-label="Inscripciones" data-url="app.opschess.com/torneo/inscripciones"></button>
-        <button class="proof-dot" data-dot="4" aria-label="Patrocinios" data-url="app.opschess.com/torneo/patrocinios"></button>
-        <button class="proof-dot" data-dot="5" aria-label="Propuesta IA" data-url="app.opschess.com/torneo/propuesta-ia"></button>
-        <button class="proof-dot" data-dot="6" aria-label="Reporte Final" data-url="app.opschess.com/torneo/reporte-final"></button>
+        <button class="proof-dot active" data-dot="0" aria-label="Checklist"></button>
+        <button class="proof-dot" data-dot="1" aria-label="Presupuesto"></button>
+        <button class="proof-dot" data-dot="2" aria-label="Delegaciones"></button>
+        <button class="proof-dot" data-dot="3" aria-label="Inscripciones"></button>
+        <button class="proof-dot" data-dot="4" aria-label="Patrocinios"></button>
+        <button class="proof-dot" data-dot="5" aria-label="Propuesta IA"></button>
+        <button class="proof-dot" data-dot="6" aria-label="Reporte Final"></button>
+        <button class="proof-dot" data-dot="7" aria-label="Resumen"></button>
       </div>
     </div>
   </div>
@@ -442,15 +369,15 @@
 <section id="producto">
   <div class="wrap">
     <div class="chaos-row">
-      <span class="chaos-tag"><span class="lang-inline active" data-lang="es">grupo de WhatsApp "Torneo 2026"</span><span class="lang-inline" data-lang="en">WhatsApp group &quot;Tournament 2026&quot;</span></span>
+      <span class="chaos-tag">grupo de WhatsApp "Torneo 2026"</span>
       <span class="chaos-tag">Excel_final_v3_ESTE.xlsx</span>
-      <span class="chaos-tag"><span class="lang-inline active" data-lang="es">correos sueltos con hoteles</span><span class="lang-inline" data-lang="en">scattered hotel emails</span></span>
-      <span class="chaos-tag"><span class="lang-inline active" data-lang="es">"¿quién tiene la lista actualizada?"</span><span class="lang-inline" data-lang="en">&quot;who has the updated list?&quot;</span></span>
+      <span class="chaos-tag">correos sueltos con hoteles</span>
+      <span class="chaos-tag">"¿quién tiene la lista actualizada?"</span>
     </div>
     <div class="section-head" style="margin-bottom:0;">
-      <div class="section-eyebrow"><span class="lang-inline active" data-lang="es">El problema real</span><span class="lang-inline" data-lang="en">The real problem</span></div>
-      <h2><span class="lang-inline active" data-lang="es">Organizar bien un torneo no debería sentirse así.</span><span class="lang-inline" data-lang="en">Running a good tournament shouldn&#39;t feel like this.</span></h2>
-      <p><span class="lang-inline active" data-lang="es">La logística de un evento de ajedrez vive hoy repartida entre hojas de cálculo, chats, y memoria de quien lo organiza. OpsChess la reúne en un solo lugar — para que nada se pierda, y nadie tenga que recordarlo todo.</span><span class="lang-inline" data-lang="en">Chess event logistics today live scattered across spreadsheets, chats, and the organizer's own memory. OpsChess brings it all into one place — so nothing gets lost, and no one has to remember it all.</span></p>
+      <div class="section-eyebrow">El problema real</div>
+      <h2>Organizar bien un torneo no debería sentirse así.</h2>
+      <p>La logística de un evento de ajedrez vive hoy repartida entre hojas de cálculo, chats, y memoria de quien lo organiza. OpsChess la reúne en un solo lugar — para que nada se pierda, y nadie tenga que recordarlo todo.</p>
     </div>
   </div>
 </section>
@@ -458,49 +385,49 @@
 <section style="padding-top:0;">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow"><span class="lang-inline active" data-lang="es">Todo en un solo lugar</span><span class="lang-inline" data-lang="en">Everything in one place</span></div>
-      <h2><span class="lang-inline active" data-lang="es">Cada pieza de la operación, resuelta.</span><span class="lang-inline" data-lang="en">Every piece of the operation, handled.</span></h2>
+      <div class="section-eyebrow">Todo en un solo lugar</div>
+      <h2>Cada pieza de la operación, resuelta.</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Checklist</span><span class="lang-inline" data-lang="en">Checklist</span></h3>
-        <p><span class="lang-inline active" data-lang="es">112 tareas del estándar FIDE, organizadas por categoría, con seguimiento en tiempo real.</span><span class="lang-inline" data-lang="en">112 FIDE-standard tasks, organized by category, tracked in real time.</span></p>
+        <h3>Checklist</h3>
+        <p>112 tareas del estándar CCA/FIDE, organizadas por categoría, con seguimiento en tiempo real.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v3M16 3v3"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Cronograma</span><span class="lang-inline" data-lang="en">Schedule</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Línea de tiempo visual de todas las tareas, con responsables y fechas de vencimiento.</span><span class="lang-inline" data-lang="en">A visual timeline of every task, with owners and due dates.</span></p>
+        <h3>Cronograma</h3>
+        <p>Línea de tiempo visual de todas las tareas, con responsables y fechas de vencimiento.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M14.5 9.3c0-1-1-1.8-2.5-1.8s-2.5.9-2.5 2 1 1.6 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2-2.5-.8-2.5-1.8"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Presupuesto</span><span class="lang-inline" data-lang="en">Budget</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Ingresos de patrocinio e inscripciones contra gasto real, con balance neto siempre a la vista.</span><span class="lang-inline" data-lang="en">Sponsorship and registration income against real spending, with net balance always in view.</span></p>
+        <h3>Presupuesto</h3>
+        <p>Ingresos de patrocinio e inscripciones contra gasto real, con balance neto siempre a la vista.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5s-1.2 6.2-3.4 8.5c-2.2-2.3-3.4-5.3-3.4-8.5S9.8 5.8 12 3.5Z"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Delegaciones</span><span class="lang-inline" data-lang="en">Delegations</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Jugadores, itinerario de vuelo, servicio de transporte y hospedaje — todo interconectado.</span><span class="lang-inline" data-lang="en">Players, flight itinerary, transport service, and lodging — all connected.</span></p>
+        <h3>Delegaciones</h3>
+        <p>Jugadores, itinerario de vuelo, servicio de transporte y hospedaje — todo interconectado.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4" width="13" height="17" rx="2"/><path d="M8.5 12h7M8.5 15.5h7M8.5 8.7h3"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Inscripciones públicas</span><span class="lang-inline" data-lang="en">Public registration</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Un link para que jugadores, padres o capitanes se inscriban solos — tú solo apruebas.</span><span class="lang-inline" data-lang="en">One link for players, parents, or captains to register themselves — you just approve.</span></p>
+        <h3>Inscripciones públicas</h3>
+        <p>Un link para que jugadores, padres o capitanes se inscriban solos — tú solo apruebas.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="8.5" r="2.3"/><path d="M15.5 14a5 5 0 0 1 4.5 4.5"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Personal y árbitros</span><span class="lang-inline" data-lang="en">Staff and arbiters</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Acreditación, roles, y turnos de todo tu equipo organizador en un mismo panel.</span><span class="lang-inline" data-lang="en">Accreditation, roles, and shifts for your whole organizing team in one panel.</span></p>
+        <h3>Personal y árbitros</h3>
+        <p>Acreditación, roles, y turnos de todo tu equipo organizador en un mismo panel.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7l3.5 3.5V19a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5Z"/><path d="M14 3.5V7h3.5M8.5 12h7M8.5 15.5h5"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Reporte final</span><span class="lang-inline" data-lang="en">Final report</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Informe técnico oficial con evaluación cualitativa, PDF listo para enviar a la federación.</span><span class="lang-inline" data-lang="en">Official technical report with qualitative evaluation, PDF ready to send to the federation.</span></p>
+        <h3>Reporte final</h3>
+        <p>Informe técnico oficial con evaluación cualitativa, PDF listo para enviar a la federación.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.3 8l4.5 1.3-4.5 1.3L12 15l-1.3-4.4L6.2 9.3l4.5-1.3Z"/></svg></div>
-        <h3><span class="lang-inline active" data-lang="es">Propuesta de patrocinio con IA</span><span class="lang-inline" data-lang="en">AI-generated sponsorship proposal</span></h3>
-        <p><span class="lang-inline active" data-lang="es">Estructura de tiers, narrativa, y plan de seguimiento, generados en segundos.</span><span class="lang-inline" data-lang="en">Tier structure, narrative, and follow-up plan, generated in seconds.</span></p>
+        <h3>Propuesta de patrocinio con IA</h3>
+        <p>Estructura de tiers, narrativa, y plan de seguimiento, generados en segundos.</p>
       </div>
     </div>
   </div>
@@ -509,28 +436,28 @@
 <section class="audiences" id="audiencias">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow"><span class="lang-inline active" data-lang="es">Dos lados de la misma mesa</span><span class="lang-inline" data-lang="en">Two sides of the same table</span></div>
-      <h2><span class="lang-inline active" data-lang="es">Hecho para quien organiza, y para quien juega.</span><span class="lang-inline" data-lang="en">Made for those who organize, and those who play.</span></h2>
+      <div class="section-eyebrow">Dos lados de la misma mesa</div>
+      <h2>Hecho para quien organiza, y para quien juega.</h2>
     </div>
     <div class="aud-grid">
       <div class="aud-card">
-        <span class="aud-tag"><span class="lang-inline active" data-lang="es">Organizadores</span><span class="lang-inline" data-lang="en">Organizers</span></span>
-        <h3><span class="lang-inline active" data-lang="es">Federaciones, clubes, academias, escuelas, ligas.</span><span class="lang-inline" data-lang="en">Federations, clubs, academies, schools, leagues.</span></h3>
-        <p style="color:rgba(255,255,255,0.65); font-size:14.5px;"><span class="lang-inline active" data-lang="es">El panel completo de operación de tu torneo, de principio a fin.</span><span class="lang-inline" data-lang="en">The full operations panel for your tournament, start to finish.</span></p>
+        <span class="aud-tag">Organizadores</span>
+        <h3>Federaciones, clubes, academias, escuelas, ligas.</h3>
+        <p style="color:rgba(255,255,255,0.65); font-size:14.5px;">El panel completo de operación de tu torneo, de principio a fin.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Crea torneos ilimitados con checklist automático</span><span class="lang-inline" data-lang="en">Create unlimited tournaments with an automatic checklist</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Aprueba inscripciones que llegan solas</span><span class="lang-inline" data-lang="en">Approve registrations that arrive on their own</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Genera tu reporte final en un clic</span><span class="lang-inline" data-lang="en">Generate your final report in one click</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Crea torneos ilimitados con checklist automático</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Aprueba inscripciones que llegan solas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Genera tu reporte final en un clic</li>
         </ul>
       </div>
       <div class="aud-card">
-        <span class="aud-tag"><span class="lang-inline active" data-lang="es">Jugadores y delegados</span><span class="lang-inline" data-lang="en">Players and delegates</span></span>
-        <h3><span class="lang-inline active" data-lang="es">Padres, capitanes, delegados, jugadores.</span><span class="lang-inline" data-lang="en">Parents, captains, delegates, players.</span></h3>
-        <p style="color:rgba(255,255,255,0.65); font-size:14.5px;"><span class="lang-inline active" data-lang="es">Tu propia cuenta, para inscribirte tú mismo, cuando quieras.</span><span class="lang-inline" data-lang="en">Your own account, to register yourself, whenever you want.</span></p>
+        <span class="aud-tag">Jugadores y delegados</span>
+        <h3>Padres, capitanes, delegados, jugadores.</h3>
+        <p style="color:rgba(255,255,255,0.65); font-size:14.5px;">Tu propia cuenta, para inscribirte tú mismo, cuando quieras.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Regístrate a cualquier torneo con un link</span><span class="lang-inline" data-lang="en">Register for any tournament with a link</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Inscribe a todo tu equipo de una vez</span><span class="lang-inline" data-lang="en">Register your whole team at once</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Ve el estado de tus inscripciones, siempre</span><span class="lang-inline" data-lang="en">See your registration status, always</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Regístrate a cualquier torneo con un link</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Inscribe a todo tu equipo de una vez</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Ve el estado de tus inscripciones, siempre</li>
         </ul>
       </div>
     </div>
@@ -539,54 +466,54 @@
 
 <div class="strip">
   <div class="wrap strip-grid">
-    <div class="strip-item"><div class="mono"><span class="lang-inline active" data-lang="es">Idiomas</span><span class="lang-inline" data-lang="en">Languages</span></div><div class="val">ES / EN</div></div>
-    <div class="strip-item"><div class="mono"><span class="lang-inline active" data-lang="es">Estándar</span><span class="lang-inline" data-lang="en">Standard</span></div><div class="val">FIDE</div></div>
-    <div class="strip-item"><div class="mono"><span class="lang-inline active" data-lang="es">Organizaciones</span><span class="lang-inline" data-lang="en">Organizations</span></div><div class="val"><span class="lang-inline active" data-lang="es">Ilimitadas</span><span class="lang-inline" data-lang="en">Unlimited</span></div></div>
-    <div class="strip-item"><div class="mono"><span class="lang-inline active" data-lang="es">Acceso</span><span class="lang-inline" data-lang="en">Access</span></div><div class="val"><span class="lang-inline active" data-lang="es">Web, cualquier dispositivo</span><span class="lang-inline" data-lang="en">Web, any device</span></div></div>
+    <div class="strip-item"><div class="mono">Idiomas</div><div class="val">ES / EN</div></div>
+    <div class="strip-item"><div class="mono">Estándar</div><div class="val">FIDE / CCA</div></div>
+    <div class="strip-item"><div class="mono">Organizaciones</div><div class="val">Ilimitadas</div></div>
+    <div class="strip-item"><div class="mono">Acceso</div><div class="val">Web, cualquier dispositivo</div></div>
   </div>
 </div>
 
 <section id="precios">
   <div class="wrap">
     <div class="section-head" style="margin: 0 auto 56px; text-align:center; max-width: 560px;">
-      <div class="section-eyebrow" style="justify-content:center; display:flex;"><span class="lang-inline active" data-lang="es">Precios</span><span class="lang-inline" data-lang="en">Pricing</span></div>
-      <h2><span class="lang-inline active" data-lang="es">Empieza gratis. Crece cuando lo necesites.</span><span class="lang-inline" data-lang="en">Start free. Grow when you need to.</span></h2>
-      <p><span class="lang-inline active" data-lang="es">En acceso anticipado — todos los planes son gratuitos mientras completamos el lanzamiento.</span><span class="lang-inline" data-lang="en">In early access — all plans are free while we complete the launch.</span></p>
+      <div class="section-eyebrow" style="justify-content:center; display:flex;">Precios</div>
+      <h2>Empieza gratis. Crece cuando lo necesites.</h2>
+      <p>En acceso anticipado — todos los planes son gratuitos mientras completamos el lanzamiento.</p>
     </div>
     <div class="pricing-grid">
       <div class="price-card">
-        <h3><span class="lang-inline active" data-lang="es">Independiente</span><span class="lang-inline" data-lang="en">Independent</span></h3>
-        <div class="price-amount"><span class="lang-inline active" data-lang="es">Gratis</span><span class="lang-inline" data-lang="en">Free</span></div>
-        <p class="price-desc"><span class="lang-inline active" data-lang="es">Para tu primer torneo, o para probar la plataforma.</span><span class="lang-inline" data-lang="en">For your first tournament, or to try the platform.</span></p>
+        <h3>Independiente</h3>
+        <div class="price-amount">Gratis</div>
+        <p class="price-desc">Para tu primer torneo, o para probar la plataforma.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">1 torneo activo</span><span class="lang-inline" data-lang="en">1 active tournament</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Checklist y cronograma</span><span class="lang-inline" data-lang="en">Checklist and schedule</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Inscripciones públicas</span><span class="lang-inline" data-lang="en">Public registration</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> 1 torneo activo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Checklist y cronograma</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Inscripciones públicas</li>
         </ul>
-        <a href="https://app.opschess.com/login?mode=register" class="btn btn-ghost" style="border:1px solid var(--border);"><span class="lang-inline active" data-lang="es">Crear cuenta</span><span class="lang-inline" data-lang="en">Create account</span></a>
+        <a href="https://app.opschess.com/login?mode=register" class="btn btn-ghost" style="border:1px solid var(--border);">Crear cuenta</a>
       </div>
       <div class="price-card featured">
-        <span class="featured-badge"><span class="lang-inline active" data-lang="es">Más elegido</span><span class="lang-inline" data-lang="en">Most popular</span></span>
-        <h3><span class="lang-inline active" data-lang="es">Club / Academia</span><span class="lang-inline" data-lang="en">Club / Academy</span></h3>
-        <div class="price-amount"><span class="lang-inline active" data-lang="es">Acceso anticipado</span><span class="lang-inline" data-lang="en">Early access</span><span style="display:block; font-size:13px; margin-top:6px;"><span class="lang-inline active" data-lang="es">gratis por tiempo limitado</span><span class="lang-inline" data-lang="en">free for a limited time</span></span></div>
-        <p class="price-desc"><span class="lang-inline active" data-lang="es">Para clubes, escuelas, y academias con varios torneos al año.</span><span class="lang-inline" data-lang="en">For clubs, schools, and academies with several tournaments a year.</span></p>
+        <span class="featured-badge">Más elegido</span>
+        <h3>Club / Academia</h3>
+        <div class="price-amount">Acceso anticipado<span style="display:block; font-size:13px; margin-top:6px;">gratis por tiempo limitado</span></div>
+        <p class="price-desc">Para clubes, escuelas, y academias con varios torneos al año.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Torneos ilimitados</span><span class="lang-inline" data-lang="en">Unlimited tournaments</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Presupuesto y patrocinios</span><span class="lang-inline" data-lang="en">Budget and sponsorships</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Propuesta de patrocinio con IA</span><span class="lang-inline" data-lang="en">AI sponsorship proposal</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Torneos ilimitados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Presupuesto y patrocinios</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Propuesta de patrocinio con IA</li>
         </ul>
-        <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid"><span class="lang-inline active" data-lang="es">Crear cuenta gratis</span><span class="lang-inline" data-lang="en">Create free account</span></a>
+        <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid">Crear cuenta gratis</a>
       </div>
       <div class="price-card">
-        <h3><span class="lang-inline active" data-lang="es">Federación</span><span class="lang-inline" data-lang="en">Federation</span></h3>
-        <div class="price-amount"><span class="lang-inline active" data-lang="es">A medida</span><span class="lang-inline" data-lang="en">Custom</span></div>
-        <p class="price-desc"><span class="lang-inline active" data-lang="es">Para federaciones con delegaciones internacionales y necesidades específicas.</span><span class="lang-inline" data-lang="en">For federations with international delegations and specific needs.</span></p>
+        <h3>Federación</h3>
+        <div class="price-amount">A medida</div>
+        <p class="price-desc">Para federaciones con delegaciones internacionales y necesidades específicas.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Delegaciones internacionales</span><span class="lang-inline" data-lang="en">International delegations</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Reporte final oficial</span><span class="lang-inline" data-lang="en">Official final report</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> <span class="lang-inline active" data-lang="es">Soporte prioritario</span><span class="lang-inline" data-lang="en">Priority support</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Delegaciones internacionales</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Reporte final oficial</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Soporte prioritario</li>
         </ul>
-        <a href="#" class="btn btn-ghost" style="border:1px solid var(--border);"><span class="lang-inline active" data-lang="es">Hablar con nosotros</span><span class="lang-inline" data-lang="en">Talk to us</span></a>
+        <a href="#" class="btn btn-ghost" style="border:1px solid var(--border);">Hablar con nosotros</a>
       </div>
     </div>
   </div>
@@ -594,9 +521,9 @@
 
 <section class="final-cta">
   <div class="wrap">
-    <h2><span class="lang-inline active" data-lang="es">Tu próximo torneo, sin el caos de siempre.</span><span class="lang-inline" data-lang="en">Your next tournament, without the usual chaos.</span></h2>
-    <p><span class="lang-inline active" data-lang="es">Crea tu cuenta y arma el checklist de tu evento en menos de 5 minutos.</span><span class="lang-inline" data-lang="en">Create your account and build your event checklist in under 5 minutes.</span></p>
-    <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid" style="padding:15px 32px; font-size:15.5px;"><span class="lang-inline active" data-lang="es">Crear cuenta gratis →</span><span class="lang-inline" data-lang="en">Create free account →</span></a>
+    <h2>Tu próximo torneo, sin el caos de siempre.</h2>
+    <p>Crea tu cuenta y arma el checklist de tu evento en menos de 5 minutos.</p>
+    <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid" style="padding:15px 32px; font-size:15.5px;">Crear cuenta gratis →</a>
   </div>
 </section>
 
@@ -605,32 +532,32 @@
     <div class="footer-grid">
       <div class="footer-col">
         <div class="logo" style="color:white; margin-bottom:14px;">
-          <div class="logo-mark"><svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#E0B563" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#FAF9F5"/></svg></div>
-          <span style="font-weight:700;"><span class="logo-ops">Ops</span><span style="font-weight:400; color:rgba(255,255,255,0.6);">Chess</span></span>
+          <div class="logo-mark"><svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#FFFEF9"/></svg></div>
+          OpsChess
         </div>
-        <p style="max-width:220px;"><span class="lang-inline active" data-lang="es">Todo lo que hay detrás del tablero.</span><span class="lang-inline" data-lang="en">Everything behind the board.</span></p>
+        <p style="max-width:220px;">Todo lo que hay detrás del tablero.</p>
       </div>
       <div class="footer-col">
-        <h4><span class="lang-inline active" data-lang="es">Producto</span><span class="lang-inline" data-lang="en">Product</span></h4>
-        <a href="#"><span class="lang-inline active" data-lang="es">Funciones</span><span class="lang-inline" data-lang="en">Features</span></a>
+        <h4>Producto</h4>
+        <a href="#">Funciones</a>
         <a href="#">Precios</a>
-        <a href="#"><span class="lang-inline active" data-lang="es">Para organizadores</span><span class="lang-inline" data-lang="en">For organizers</span></a>
-        <a href="#"><span class="lang-inline active" data-lang="es">Para jugadores</span><span class="lang-inline" data-lang="en">For players</span></a>
+        <a href="#">Para organizadores</a>
+        <a href="#">Para jugadores</a>
       </div>
       <div class="footer-col">
-        <h4><span class="lang-inline active" data-lang="es">Compañía</span><span class="lang-inline" data-lang="en">Company</span></h4>
-        <a href="#"><span class="lang-inline active" data-lang="es">Nosotros</span><span class="lang-inline" data-lang="en">About</span></a>
-        <a href="#"><span class="lang-inline active" data-lang="es">Contacto</span><span class="lang-inline" data-lang="en">Contact</span></a>
+        <h4>Compañía</h4>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
       </div>
       <div class="footer-col">
-        <h4><span class="lang-inline active" data-lang="es">Cuenta</span><span class="lang-inline" data-lang="en">Account</span></h4>
-        <a href="https://app.opschess.com/login"><span class="lang-inline active" data-lang="es">Iniciar sesión</span><span class="lang-inline" data-lang="en">Sign in</span></a>
-        <a href="https://app.opschess.com/login?mode=register"><span class="lang-inline active" data-lang="es">Crear cuenta</span><span class="lang-inline" data-lang="en">Create account</span></a>
+        <h4>Cuenta</h4>
+        <a href="https://app.opschess.com/login">Iniciar sesión</a>
+        <a href="https://app.opschess.com/login?mode=register">Crear cuenta</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="privacidad.html"><span class="lang-inline active" data-lang="es">Política de Privacidad</span><span class="lang-inline" data-lang="en">Privacy Policy</span></a>
-        <a href="terminos.html"><span class="lang-inline active" data-lang="es">Términos de Uso</span><span class="lang-inline" data-lang="en">Terms of Use</span></a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos de Uso</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -649,14 +576,12 @@
   (function () {
     var slides = document.querySelectorAll('.proof-slide');
     var dots = document.querySelectorAll('.proof-dot');
-    var urlBar = document.getElementById('browserUrl');
     var current = 0;
     function showSlide(i) {
       slides.forEach(function (s) { s.classList.remove('active'); });
       dots.forEach(function (d) { d.classList.remove('active'); });
       slides[i].classList.add('active');
       dots[i].classList.add('active');
-      if (urlBar) urlBar.textContent = dots[i].getAttribute('data-url');
       current = i;
     }
     dots.forEach(function (dot, i) {
@@ -664,28 +589,13 @@
     });
     setInterval(function () {
       showSlide((current + 1) % slides.length);
-    }, 4200);
+    }, 4000);
 
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobileMenu');
     if (hamburger && mobileMenu) {
       hamburger.addEventListener('click', function () {
         mobileMenu.classList.toggle('open');
-      });
-    }
-
-    var langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-      langToggle.querySelectorAll('span').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var lang = btn.getAttribute('data-lang');
-          langToggle.querySelectorAll('span').forEach(function (s) { s.classList.remove('active'); });
-          btn.classList.add('active');
-          document.querySelectorAll('.lang-inline, .lang-block').forEach(function (el) {
-            el.classList.toggle('active', el.getAttribute('data-lang') === lang);
-          });
-          document.documentElement.setAttribute('lang', lang);
-        });
       });
     }
   })();
