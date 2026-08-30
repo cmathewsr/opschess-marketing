@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpsChess — Todo lo que hay detrás del tablero</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml"> <link rel="apple-touch-icon" href="apple-touch-icon-180.png"> <link rel="icon" href="favicon-32.png" type="image/png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -40,9 +42,11 @@
     border-bottom: 1px solid var(--border);
   }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Newsreader', serif; font-size: 20px; font-weight: 600; }
-  .logo-mark { width: 34px; height: 34px; border-radius: 8px; background: var(--ink); display: flex; align-items: center; justify-content: center; }
-  .logo-mark svg { width: 18px; height: 18px; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-wordmark { font-family: 'Inter', sans-serif; font-size: 20px; letter-spacing: -0.02em; }
+  .logo-ops { font-weight: 700; color: var(--ink); transition: color 0.15s; }
+  .logo-suffix { font-weight: 400; color: var(--muted); }
+  .logo:hover .logo-ops { color: var(--accent); }
   .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 500; }
   .nav-links a { color: var(--ink); opacity: 0.75; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; }
@@ -210,9 +214,7 @@
   @media (max-width: 640px) {
     .wrap { padding: 0 20px; }
     .nav-inner { height: 64px; }
-    .logo { font-size: 17px; }
-    .logo-mark { width: 30px; height: 30px; }
-    nav .logo-text { display: none; }
+    .logo-wordmark { display: none; }
     .lang-toggle span { padding: 4px 7px; font-size: 10px; }
     .nav-cta .btn { padding: 9px 14px; font-size: 13.5px; }
     .btn-label-full { display: none; }
@@ -243,10 +245,8 @@
 <nav>
   <div class="wrap nav-inner">
     <a href="#" class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#FFFEF9"/></svg>
-      </div>
-      <span class="logo-text">OpsChess</span>
+      <svg viewBox="0 0 48 48" width="26" height="26"><path d="M15 35V19h18" fill="none" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="15" cy="35" r="3.4" fill="#14213D"></circle></svg>
+      <span class="logo-wordmark"><span class="logo-ops">Ops</span><span class="logo-suffix">Chess</span></span>
     </a>
     <div class="nav-links">
       <a href="#producto">Producto</a>
@@ -453,153 +453,4 @@
       </div>
       <div class="aud-card">
         <span class="aud-tag">Jugadores y delegados</span>
-        <h3>Padres, capitanes, delegados, jugadores.</h3>
-        <p style="color:rgba(255,255,255,0.65); font-size:14.5px;">Tu propia cuenta, para inscribirte tú mismo, cuando quieras.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Regístrate a cualquier torneo con un link</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Inscribe a todo tu equipo de una vez</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Ve el estado de tus inscripciones, siempre</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="strip">
-  <div class="wrap strip-grid">
-    <div class="strip-item"><div class="mono">Idiomas</div><div class="val">ES / EN</div></div>
-    <div class="strip-item"><div class="mono">Estándar</div><div class="val">FIDE / CCA</div></div>
-    <div class="strip-item"><div class="mono">Organizaciones</div><div class="val">Ilimitadas</div></div>
-    <div class="strip-item"><div class="mono">Acceso</div><div class="val">Web, cualquier dispositivo</div></div>
-  </div>
-</div>
-
-<section id="precios">
-  <div class="wrap">
-    <div class="section-head" style="margin: 0 auto 56px; text-align:center; max-width: 560px;">
-      <div class="section-eyebrow" style="justify-content:center; display:flex;">Precios</div>
-      <h2>Empieza gratis. Crece cuando lo necesites.</h2>
-      <p>En acceso anticipado — todos los planes son gratuitos mientras completamos el lanzamiento.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Independiente</h3>
-        <div class="price-amount">Gratis</div>
-        <p class="price-desc">Para tu primer torneo, o para probar la plataforma.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> 1 torneo activo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Checklist y cronograma</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Inscripciones públicas</li>
-        </ul>
-        <a href="https://app.opschess.com/login?mode=register" class="btn btn-ghost" style="border:1px solid var(--border);">Crear cuenta</a>
-      </div>
-      <div class="price-card featured">
-        <span class="featured-badge">Más elegido</span>
-        <h3>Club / Academia</h3>
-        <div class="price-amount">Acceso anticipado<span style="display:block; font-size:13px; margin-top:6px;">gratis por tiempo limitado</span></div>
-        <p class="price-desc">Para clubes, escuelas, y academias con varios torneos al año.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Torneos ilimitados</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Presupuesto y patrocinios</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Propuesta de patrocinio con IA</li>
-        </ul>
-        <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid">Crear cuenta gratis</a>
-      </div>
-      <div class="price-card">
-        <h3>Federación</h3>
-        <div class="price-amount">A medida</div>
-        <p class="price-desc">Para federaciones con delegaciones internacionales y necesidades específicas.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Delegaciones internacionales</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Reporte final oficial</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Soporte prioritario</li>
-        </ul>
-        <a href="#" class="btn btn-ghost" style="border:1px solid var(--border);">Hablar con nosotros</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="final-cta">
-  <div class="wrap">
-    <h2>Tu próximo torneo, sin el caos de siempre.</h2>
-    <p>Crea tu cuenta y arma el checklist de tu evento en menos de 5 minutos.</p>
-    <a href="https://app.opschess.com/login?mode=register" class="btn btn-solid" style="padding:15px 32px; font-size:15.5px;">Crear cuenta gratis →</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="logo" style="color:white; margin-bottom:14px;">
-          <div class="logo-mark"><svg viewBox="0 0 48 48" fill="none"><path d="M15 35V19h18" stroke="#C08A2E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#FFFEF9"/></svg></div>
-          OpsChess
-        </div>
-        <p style="max-width:220px;">Todo lo que hay detrás del tablero.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Producto</h4>
-        <a href="#">Funciones</a>
-        <a href="#">Precios</a>
-        <a href="#">Para organizadores</a>
-        <a href="#">Para jugadores</a>
-      </div>
-      <div class="footer-col">
-        <h4>Compañía</h4>
-        <a href="#">Nosotros</a>
-        <a href="#">Contacto</a>
-      </div>
-      <div class="footer-col">
-        <h4>Cuenta</h4>
-        <a href="https://app.opschess.com/login">Iniciar sesión</a>
-        <a href="https://app.opschess.com/login?mode=register">Crear cuenta</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="privacidad.html">Política de Privacidad</a>
-        <a href="terminos.html">Términos de Uso</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 OpsChess</span>
-      <span style="display:flex; gap:20px;">
-        <a href="privacidad.html" style="color:rgba(255,255,255,0.5);">Política de Privacidad</a>
-        <a href="terminos.html" style="color:rgba(255,255,255,0.5);">Términos de Uso</a>
-      </span>
-      <span>a1 → h8</span>
-    </div>
-  </div>
-</footer>
-
-
-<script>
-  (function () {
-    var slides = document.querySelectorAll('.proof-slide');
-    var dots = document.querySelectorAll('.proof-dot');
-    var current = 0;
-    function showSlide(i) {
-      slides.forEach(function (s) { s.classList.remove('active'); });
-      dots.forEach(function (d) { d.classList.remove('active'); });
-      slides[i].classList.add('active');
-      dots[i].classList.add('active');
-      current = i;
-    }
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () { showSlide(i); });
-    });
-    setInterval(function () {
-      showSlide((current + 1) % slides.length);
-    }, 4000);
-
-    var hamburger = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobileMenu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function () {
-        mobileMenu.classList.toggle('open');
-      });
-    }
-  })();
-</script>
-</body>
-</html>
+        <h3>Padres,
