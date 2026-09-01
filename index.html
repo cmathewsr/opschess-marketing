@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpsChess — Todo lo que hay detrás del tablero</title>
+<meta property="og:title" content="OpsChess — Everything that happens behind the board"> <meta property="og:description" content="Checklist, schedule, budget, delegations, and registrations — all in one place for chess tournament organizers."> <meta property="og:type" content="website"> <meta property="og:url" content="https://www.opschess.com/"> <meta property="og:image" content="https://www.opschess.com/app-icon-512.png"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="OpsChess — Everything that happens behind the board"> <meta name="twitter:description" content="Checklist, schedule, budget, delegations, and registrations — all in one place for chess tournament organizers."> <meta name="twitter:image" content="https://www.opschess.com/app-icon-512.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
@@ -719,8 +720,7 @@
       });
     }
 
-    var savedLang = 'es';
-    try { savedLang = localStorage.getItem('opschess_lang') || 'es'; } catch (e) {}
+    var savedLang = null; try { savedLang = localStorage.getItem('opschess_lang'); } catch (e) {} if (!savedLang) { var browserLang = (navigator.language || 'en').toLowerCase(); savedLang = browserLang.indexOf('es') === 0 ? 'es' : 'en'; }
     applyLang(savedLang);
   })();
 </script>
