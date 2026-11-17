@@ -158,6 +158,39 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ocard ul{list-style:none;margin-top:16px;display:grid;gap:8px;font-size:14px}.ocard li{display:flex;gap:8px}.ocard li svg{flex:none;color:var(--ok);margin-top:4px}
 .ocard .shot{margin:24px 0 0 28px;border-radius:14px 0 0 0;overflow:hidden;box-shadow:var(--float);flex:1;background:#fff;position:relative;min-height:230px}
 .ocard .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
+.stages{margin-top:44px;border-radius:28px;background:var(--paper);padding:10px}
+.stabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stabs button{text-align:left;padding:16px 18px;border-radius:20px;font-weight:600;font-size:16px;color:var(--muted);display:flex;align-items:center;gap:12px;transition:.2s}
+.stabs button b{font-size:12px;width:30px;height:30px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted);box-shadow:var(--shadow)}
+.stabs button:hover{color:var(--ink)}
+.stabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:var(--shadow)}
+.stabs button[aria-selected="true"] b{background:var(--accent);color:#fff}
+.spanels{position:relative;margin-top:10px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+.stp{display:none;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch;min-height:440px}
+.stp.on{display:grid;animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.stx{padding:40px 36px}
+.stx .sn{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.stx h3{margin-top:12px;font-size:28px;line-height:1.15;letter-spacing:-.025em}
+.stx p{margin-top:12px;color:var(--muted);font-size:16px}
+.stx ul{list-style:none;margin-top:22px;display:grid;gap:11px;font-size:15px}
+.stx li{display:flex;gap:9px}.stx li svg{flex:none;color:var(--ok);margin-top:5px}
+.sti{position:relative;background:var(--tint);border-radius:0 22px 22px 0;overflow:hidden}
+.sti img{position:absolute;left:28px;top:28px;width:calc(100% + 40px);max-width:none;border-radius:14px;box-shadow:var(--float)}
+.trust{margin-top:48px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px}
+.tcard{border:1px solid var(--line);border-radius:24px;padding:28px;background:#fff}
+.tcard h3{margin-top:14px;font-size:19px;letter-spacing:-.02em}
+.tcard p{margin-top:6px;font-size:14.5px;color:var(--muted)}
+.tcard ul{list-style:none;margin-top:14px;display:grid;gap:9px;font-size:14px}.tcard li{display:flex;gap:8px}.tcard li svg{flex:none;color:var(--ok);margin-top:4px}
+.founder{background:var(--night);color:#fff;border:0;position:relative;overflow:hidden}
+.founder:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 100% 0,rgba(91,91,214,.4),transparent 70%)}
+.founder>*{position:relative}
+.founder blockquote{font-family:var(--serif);font-size:23px;line-height:1.3;letter-spacing:-.01em}
+.founder .who-is small{color:rgba(255,255,255,.6)}
+.founder .av{background:#fff;color:var(--ink)}
+.badges{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.badges span{font-size:12.5px;font-weight:600;border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.1);color:#fff}
+.founder a.fide{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:var(--lav)}
 .mods{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
 .mods div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .mods div:nth-child(4n){border-right:0}.mods div:nth-last-child(-n+4){border-bottom:0}
@@ -231,9 +264,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .who-is{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:14px}
 .who-is .av{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600}
 .who-is small{display:block;color:var(--muted);font-size:13px}
-.facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden}
 .facts div{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.facts div:nth-child(2n){border-right:0}.facts div:nth-last-child(-n+2){border-bottom:0}
+.facts div{border-bottom:0}.facts div:last-child{border-right:0}
 .facts b{font-size:17px;letter-spacing:-.01em}
 .facts p{font-size:13.5px;color:var(--muted);margin-top:4px}
 
@@ -280,6 +313,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 }
 @media (max-width:960px){
   .orgrid{grid-template-columns:1fr}.ocard.big{grid-row:auto}
+  .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .stabs{grid-template-columns:1fr 1fr}.stp{grid-template-columns:1fr}.sti{min-height:300px;border-radius:0 0 22px 22px}.trust{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr 1fr}.s4,.s3{grid-column:span 2}.s2{grid-column:span 1}
   .live .wrap,.about,.faq,.final{grid-template-columns:1fr}
   .who,.steps{grid-template-columns:1fr 1fr}
@@ -297,6 +332,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   .f-phone,.f-receipt{display:none}
   .f-live{font-size:12px;padding:7px 12px;top:-18px}
   .note{margin-top:22px}
+  .stx{padding:28px 22px}.stx h3{font-size:23px}.stabs button{padding:12px;font-size:14px}
   .bento,.who,.steps{grid-template-columns:1fr}.s2{grid-column:span 1}.s4,.s3{grid-column:span 1}
   .card{min-height:0}.card .shot{min-height:200px}
   .mods{grid-template-columns:1fr}.mods div{border-right:0!important;border-bottom:1px solid var(--line)!important}.mods div:last-child{border-bottom:0!important}
@@ -350,7 +386,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 <div class="top">
   <section class="hero wrap" aria-labelledby="hero-title">
     <a class="pill rv" href="#dia-del-torneo"><em data-i18n="new">NUEVO</em><span data-i18n="pill">Centro de mando para el día del torneo</span> →</a>
-    <p class="kick rv" data-i18n="kick">Sistema de gestión para federaciones, clubes y organizadores</p>
+    <p class="kick rv" data-i18n="kick">El sistema operativo del ajedrez organizado</p>
     <h1 id="hero-title" class="rv d1" data-i18n="hero_h1">Tu federación y tus torneos, <span class="grad">en un solo lugar.</span></h1>
     <p class="sub rv d2" data-i18n="hero_sub">Miembros con datos FIDE, clubes afiliados y finanzas de tu organización, junto a cada torneo: inscripciones, cobros, delegaciones, equipo y el día del torneo. Sin hojas de cálculo.</p>
     <div class="ctas rv d3">
@@ -400,10 +436,33 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   </div>
 </div>
 
+<!-- Etapas -->
+<section class="sec wrap" id="etapas" aria-labelledby="stages-title">
+  <p class="eyebrow rv" data-i18n="sg_k">Cómo funciona</p>
+  <h2 id="stages-title" class="h2 rv" style="max-width:760px" data-i18n="sg_h">Una plataforma. Cuatro etapas.</h2>
+  <p class="lead rv" data-i18n="sg_p">Todo el ciclo de un evento de ajedrez, conectado de principio a fin.</p>
+  <div class="stages rv">
+    <div class="stabs" role="tablist"><button role="tab" aria-selected="true" data-st="0"><b>01</b><span data-i18n="sg0">Planificar</span></button><button role="tab" aria-selected="false" data-st="1"><b>02</b><span data-i18n="sg1">Gestionar</span></button><button role="tab" aria-selected="false" data-st="2"><b>03</b><span data-i18n="sg2">Controlar</span></button><button role="tab" aria-selected="false" data-st="3"><b>04</b><span data-i18n="sg3">Entregar</span></button></div>
+    <div class="spanels"><div class="stp on" data-st="0" role="tabpanel">
+        <div class="stx"><p class="sn">01 · <span data-i18n="sg0">Planificar</span></p><h3 data-i18n="st_p1h">Prepara el evento con método.</h3><p data-i18n="st_p1p">Checklist basado en FIDE, cronograma por fases, presupuesto y plano de sala con medidas reglamentarias.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1a">112 tareas listas, con responsables y fechas</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1b">Plano de sala con capacidad y numeración</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1c">Duplica la edición anterior en un clic</span></li></ul></div>
+        <div class="sti"><img data-img="app-temporada.jpg" src="img/app-temporada.jpg" alt="" loading="lazy"></div>
+      </div><div class="stp" data-st="1" role="tabpanel">
+        <div class="stx"><p class="sn">02 · <span data-i18n="sg1">Gestionar</span></p><h3 data-i18n="st_p2h">Coordina personas, pagos y logística.</h3><p data-i18n="st_p2p">Inscripciones públicas, delegaciones con vuelos y hospedaje, cobros en cuotas, equipo, inventario y proveedores.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2a">Planes de pago con recordatorios automáticos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2b">Delegaciones con saldo y rooming</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2c">Turnos del staff y asistencia por QR</span></li></ul></div>
+        <div class="sti"><img data-img="app-cobros.jpg" src="img/app-cobros.jpg" alt="" loading="lazy"></div>
+      </div><div class="stp" data-st="2" role="tabpanel">
+        <div class="stx"><p class="sn">03 · <span data-i18n="sg2">Controlar</span></p><h3 data-i18n="st_p3h">Sabe qué pasa, en cada momento.</h3><p data-i18n="st_p3p">El Centro de mando en el día del torneo, la salud de cada evento y las finanzas de toda la organización.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3a">Acreditación, incidentes y cobros en vivo</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3b">Alertas de lo que pide tu atención</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3c">Ingresos, gastos y patrocinios al día</span></li></ul></div>
+        <div class="sti"><img data-img="app-mando.jpg" src="img/app-mando.jpg" alt="" loading="lazy"></div>
+      </div><div class="stp" data-st="3" role="tabpanel">
+        <div class="stx"><p class="sn">04 · <span data-i18n="sg3">Entregar</span></p><h3 data-i18n="st_p4h">Cierra con documentos que hablan por ti.</h3><p data-i18n="st_p4p">Certificados y recibos verificables por QR, encuestas de experiencia e informe final para la federación.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4a">Certificados de participación y mérito</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4b">Recibos con folio y verificación en línea</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4c">Informe final en PDF</span></li></ul></div>
+        <div class="sti"><img data-img="app-certificado.jpg" src="img/app-certificado.jpg" alt="" loading="lazy"></div>
+      </div></div>
+  </div>
+</section>
+
 <!-- Plataforma -->
 <section class="sec wrap" id="producto" aria-labelledby="prod-title">
   <p class="eyebrow rv" data-i18n="pd_k">Tus torneos</p>
-  <h2 id="prod-title" class="h2 rv" style="max-width:780px" data-i18n="pd_h">Antes, durante y después del torneo. Cada parte con su herramienta.</h2>
+  <h2 id="prod-title" class="h2 rv" style="max-width:780px" data-i18n="pd_h">Las herramientas que marcan la diferencia.</h2>
   <p class="lead rv" data-i18n="pd_p">Lo que registras en un módulo aparece donde hace falta en los demás: una inscripción pagada suma al presupuesto, una delegación confirmada aparece en la acreditación.</p>
   <div class="bento">
     <article class="card c-dark s4 rv" style="min-height:540px">
@@ -522,15 +581,33 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   <div class="player rv"><span data-i18n="player"><b>¿Eres jugador, padre o capitán?</b> Crea tu cuenta para inscribirte en torneos y seguir tu inscripción y tus pagos.</span><a class="btn btn-line btn-sm" href="https://app.opschess.com/player/login" data-i18n="player_btn">Entrar como jugador</a></div>
 </section>
 
-<!-- Cómo funciona -->
-<section class="sec wrap" aria-labelledby="how-title">
-  <p class="eyebrow rv" data-i18n="hw_k">Cómo funciona</p>
-  <h2 id="how-title" class="h2 rv" style="max-width:700px" data-i18n="hw_h">De la idea al informe final, en cuatro movimientos.</h2>
-  <div class="steps">
-    <div class="rv"><h3 data-i18n="s1_h">Crea tu torneo</h3><p data-i18n="s1_p">Fechas, sede y categorías. El checklist se genera solo, o duplica uno anterior.</p></div>
-    <div class="rv d1"><h3 data-i18n="s2_h">Abre inscripciones</h3><p data-i18n="s2_p">Comparte el enlace, recibe delegaciones y cobra en cuotas.</p></div>
-    <div class="rv d2"><h3 data-i18n="s3_h">Opera el día del torneo</h3><p data-i18n="s3_p">Acredita con QR y sigue todo desde el Centro de mando.</p></div>
-    <div class="rv d3"><h3 data-i18n="s4_h">Cierra con un informe</h3><p data-i18n="s4_p">Certificados, encuestas e informe final en PDF.</p></div>
+<!-- Confianza -->
+<section class="sec wrap" id="nosotros" aria-labelledby="about-title">
+  <p class="eyebrow rv" data-i18n="ab_k">Por qué OpsChess</p>
+  <h2 id="about-title" class="h2 rv" style="max-width:780px" data-i18n="ab_h">Hecho por un organizador, para organizadores.</h2>
+  <p class="lead rv" data-i18n="ab_p">OpsChess está en acceso anticipado. No te mostramos logos ni testimonios inventados: te mostramos quién lo construye, cómo cuidamos tus datos y cómo te atendemos.</p>
+  <div class="trust">
+    <article class="tcard founder rv">
+      <blockquote data-i18n="ab_q">“OpsChess nació organizando torneos internacionales. Cada módulo resuelve algo que vivimos en la sala de juego, en el aeropuerto o en la oficina de la federación.”</blockquote>
+      <div class="who-is"><span class="av">CM</span><div><b>César Mathews Romero</b><small data-i18n="ab_role">Fundador de OpsChess</small></div></div>
+      <div class="badges"><span data-i18n="bd1">Organizador Internacional FIDE</span><span data-i18n="bd2">Candidato a Maestro FIDE</span><span data-i18n="bd3">Asesor de organizaciones de ajedrez</span></div>
+      <a class="fide" href="https://ratings.fide.com/profile/6600360" target="_blank" rel="noopener" data-i18n="fide_link">Ver perfil en FIDE →</a>
+    </article>
+    <article class="tcard rv d1"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <h3 data-i18n="sec_h">Tus datos, protegidos</h3><p data-i18n="sec_p">La información de tu organización es tuya y solo la ve tu equipo.</p>
+      <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sec1">Cada organización ve solo sus propios datos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sec2">Conexión cifrada (HTTPS) en toda la plataforma</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sec3">Base de datos con respaldos automáticos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sec4">Exporta tus listas a Excel cuando quieras</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sec5">Documentos verificables con código QR</span></li></ul>
+    </article>
+    <article class="tcard rv d2"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v10H8l-4 4V6z"/><path d="M8 10h8M8 13h5"/></svg></span>
+      <h3 data-i18n="sup_h">Atención directa</h3><p data-i18n="sup_p">En el acceso anticipado hablas con el equipo que construye OpsChess, no con un centro de llamadas.</p>
+      <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sup1">Soporte en español e inglés</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sup2">Ayuda para configurar tu primer torneo</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sup3">Tus sugerencias entran a la hoja de ruta</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sup4">Te avisamos antes de cualquier cambio de precio</span></li></ul>
+      <a class="btn btn-line btn-sm" style="margin-top:20px" href="mailto:contacto@opschess.com">contacto@opschess.com</a>
+    </article>
+  </div>
+  <div class="facts rv" style="margin-top:18px">
+    <div><b data-i18n="fa1_b">Estándar FIDE</b><p data-i18n="fa1_p">El checklist y las medidas del plano de sala se basan en la normativa FIDE.</p></div>
+    <div><b data-i18n="fa2_b">ES / EN</b><p data-i18n="fa2_p">Toda la plataforma en español e inglés, para equipos y delegaciones de muchos países.</p></div>
+    <div><b data-i18n="fa3_b">Datos separados</b><p data-i18n="fa3_p">Cada organización solo ve su propia información.</p></div>
+    <div><b data-i18n="fa4_b">En la web</b><p data-i18n="fa4_p">Nada que instalar: desde computadora, tablet o teléfono.</p></div>
   </div>
 </section>
 
@@ -540,7 +617,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <div class="center">
       <p class="eyebrow rv" data-i18n="pc_k">Precios</p>
       <h2 id="price-title" class="h2 rv" data-i18n="pc_h">Empieza gratis. Crece cuando lo necesites.</h2>
-      <p class="lead rv" data-i18n="pc_p">Estamos en acceso anticipado: todos los planes son gratuitos mientras completamos el lanzamiento.</p>
+      <p class="lead rv" data-i18n="pc_p">Estamos en acceso anticipado: todos los planes son gratuitos mientras completamos el lanzamiento. Antes de que termine, te avisaremos con anticipación y nunca cobraremos sin tu confirmación.</p>
     </div>
     <div class="plans">
       <div class="plan-c rv"><h3 data-i18n="pl1">Independiente</h3><p class="d" data-i18n="pl1_d">Para tu primer torneo o para probar la plataforma.</p><div class="p" data-i18n="pl1_p">Gratis</div>
@@ -554,21 +631,6 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
         <a class="btn btn-line" href="mailto:contacto@opschess.com" data-i18n="pl_btn3">Hablemos</a></div>
     </div>
     <div class="onboard rv"><b data-i18n="ob_h">Al crear tu cuenta</b><span><i>1</i><span data-i18n="ob1">Verificas tu correo y entras a tu panel.</span></span><span><i>2</i><span data-i18n="ob2">Creas tu primer torneo con fechas y sede.</span></span><span><i>3</i><span data-i18n="ob3">Tu checklist queda listo para asignar.</span></span></div>
-  </div>
-</section>
-
-<!-- Nosotros -->
-<section class="wrap about" id="nosotros" aria-labelledby="about-title">
-  <div class="rv">
-    <p class="eyebrow" id="about-title" data-i18n="ab_k">Nosotros</p>
-    <blockquote style="margin-top:18px" data-i18n="ab_q">“OpsChess nació organizando torneos internacionales. Cada módulo resuelve algo que vivimos en la sala de juego, en el aeropuerto o en la oficina de la federación.”</blockquote>
-    <div class="who-is"><span class="av">CM</span><div><b>César Mathews Romero</b><small data-i18n="ab_role">Fundador · Organizador Internacional FIDE</small></div></div>
-  </div>
-  <div class="facts rv d1">
-    <div><b data-i18n="fa1_b">Estándar FIDE</b><p data-i18n="fa1_p">El checklist y las medidas del plano de sala se basan en la normativa FIDE.</p></div>
-    <div><b data-i18n="fa2_b">ES / EN</b><p data-i18n="fa2_p">Toda la plataforma en español e inglés, para equipos y delegaciones de muchos países.</p></div>
-    <div><b data-i18n="fa3_b">Datos separados</b><p data-i18n="fa3_p">Cada organización solo ve su propia información.</p></div>
-    <div><b data-i18n="fa4_b">En la web</b><p data-i18n="fa4_p">Nada que instalar: desde computadora, tablet o teléfono.</p></div>
   </div>
 </section>
 
@@ -586,6 +648,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <details><summary data-i18n="q3">¿Puedo cobrar inscripciones en cuotas?</summary><p data-i18n="a3">Sí. Defines planes de pago por porcentaje y fecha, cada inscripción o delegación elige el suyo y OpsChess envía recordatorios, aplica el recargo por mora si lo configuras y emite recibos con folio verificables por QR.</p></details>
     <details><summary data-i18n="q4">¿Los jugadores o capitanes pueden inscribirse solos?</summary><p data-i18n="a4">Sí. Compartes un enlace y los jugadores, padres o capitanes crean su cuenta e inscriben a una persona o a un equipo completo. Las delegaciones registran también vuelos, hospedaje y acompañantes. Tú revisas y confirmas.</p></details>
     <details><summary data-i18n="q5">¿Qué es el Centro de mando?</summary><p data-i18n="a5">Es una pantalla para el día del torneo que junta la agenda, la acreditación, el equipo en sede, los incidentes y los cobros del día. Se actualiza sola y tiene un modo de pantalla completa para una TV o tablet.</p></details>
+    <details><summary data-i18n="q9">¿Qué pasa cuando termine el acceso anticipado?</summary><p data-i18n="a9">Te avisaremos con anticipación y verás los precios de cada plan antes de que apliquen. Nunca se cobra sin tu confirmación, y si decides no continuar puedes exportar tus listas.</p></details>
+    <details><summary data-i18n="q10">¿Cómo protegen mis datos?</summary><p data-i18n="a10">Cada organización trabaja en su propio espacio y solo su equipo ve su información. Toda la plataforma usa conexión cifrada, la base de datos tiene respaldos automáticos y los certificados y recibos se verifican en línea con un código único.</p></details>
     <details><summary data-i18n="q6">¿Está en español e inglés?</summary><p data-i18n="a6">Sí. Toda la plataforma, incluidos los formularios públicos, funciona en español e inglés, y cada persona elige su idioma.</p></details>
     <details><summary data-i18n="q7">¿Cómo funcionan el acceso y las cuentas?</summary><p data-i18n="a7">Creas tu cuenta con tu correo y lo verificas. Los organizadores trabajan dentro de su organización y solo ven sus propios datos. Los jugadores y delegados tienen una cuenta aparte para inscribirse.</p></details>
   </div>
@@ -617,7 +681,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   /* Textos en inglés. El español está escrito directamente en el HTML. */
   var EN = {
     skip: "Skip to content",
-    nav_product: "Tournaments", nav_org: "Organization", kick: "Management system for federations, clubs and organizers", nav_day: "Tournament day", nav_who: "Who it's for", nav_pricing: "Pricing", nav_about: "About",
+    nav_product: "Tournaments", nav_org: "Organization", kick: "The operating system for organized chess", nav_day: "Tournament day", nav_who: "Who it's for", nav_pricing: "Pricing", nav_about: "About",
     nav_login: "Log in", nav_login_full: "Log in to the platform",
     cta_primary: "Create free account", cta_secondary: "Explore the platform",
     new: "NEW", pill: "Command center for tournament day",
@@ -638,7 +702,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     rc1: "Valid receipt · verified by QR", rc2: "Installment 2 of 4",
     note: "Real OpsChess views with sample data.",
     st1: "modules for tournaments and organization", st2: "FIDE-based tasks ready from day one", st3: "the command center refreshes itself", st4: "for delegations across the continent",
-    pd_k: "Your tournaments", pd_h: "Before, during and after the tournament. Every part with its own tool.",
+    pd_k: "Your tournaments", pd_h: "The tools that make the difference.",
     pd_p: "What you record in one module shows up wherever it's needed: a paid registration adds to the budget, a confirmed delegation appears at check-in.",
     b1_h: "Command center", b1_p: "The whole tournament, right now: the current round, check-in, staff on site, incidents and today's payments. On the director's tablet or the hall's TV.",
     b2_h: "Digital badge", b2_p: "Every player carries a QR badge on their phone and checks in on arrival.",
@@ -670,14 +734,25 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     s2_h: "Open registrations", s2_p: "Share the link, receive delegations and collect in installments.",
     s3_h: "Run tournament day", s3_p: "Check people in with QR and follow everything from the command center.",
     s4_h: "Close with a report", s4_p: "Certificates, surveys and a final report as a PDF.",
-    pc_k: "Pricing", pc_h: "Start free. Grow when you need to.", pc_p: "We're in early access: all plans are free while we complete the launch.",
+    pc_k: "Pricing", pc_h: "Start free. Grow when you need to.", pc_p: "We're in early access: all plans are free while we complete the launch. Before it ends, we'll let you know in advance and we'll never charge without your confirmation.",
     pl1_d: "For your first tournament or to try the platform.", pl1_p: "Free", pl1_1: "1 active tournament", pl1_2: "Checklist and schedule", pl1_3: "Public registrations", pl_btn1: "Create account",
     pl2_rec: "Recommended for clubs", pl2_d: "For clubs, schools and academies with several tournaments a year.", pl2_p: "Early access", pl2_s: "Free for a limited time",
     pl2_1: "Unlimited tournaments", pl2_2: "Installment payments and receipts", pl2_3: "Budget and sponsorships", pl2_4: "Command center and badges",
     pl3_d: "For federations with international delegations and specific needs.", pl3_p: "Custom", pl3_1: "International delegations", pl3_2: "Official report", pl3_3: "Priority support", pl_btn3: "Talk to us",
     ob_h: "When you create your account", ob1: "You verify your email and enter your dashboard.", ob2: "You create your first tournament with dates and venue.", ob3: "Your checklist is ready to assign.",
-    ab_k: "About", ab_q: "“OpsChess was born from organizing international tournaments. Every module solves something we lived in the playing hall, at the airport or in the federation office.”",
-    ab_role: "Founder · FIDE International Organizer",
+    ab_k: "Why OpsChess", ab_h: "Built by an organizer, for organizers.", ab_p: "OpsChess is in early access. We won't show you invented logos or testimonials: we show you who builds it, how we look after your data and how we support you.",
+    bd1: "FIDE International Organizer", bd2: "FIDE Candidate Master", bd3: "Advisor to chess organizations", fide_link: "View FIDE profile →",
+    sec_h: "Your data, protected", sec_p: "Your organization's information is yours and only your team sees it.", sec1: "Each organization sees only its own data", sec2: "Encrypted connection (HTTPS) across the platform", sec3: "Database with automatic backups", sec4: "Export your lists to Excel whenever you want", sec5: "Documents verifiable by QR code",
+    sup_h: "Direct support", sup_p: "During early access you talk to the team that builds OpsChess, not to a call center.", sup1: "Support in Spanish and English", sup2: "Help setting up your first tournament", sup3: "Your suggestions go into the roadmap", sup4: "We'll let you know before any price change",
+    sg_k: "How it works", sg_h: "One platform. Four stages.", sg_p: "The whole life cycle of a chess event, connected from start to finish.", sg0: "Plan", sg1: "Manage", sg2: "Control", sg3: "Deliver",
+    st_p1h: "Prepare the event with method.", st_p1p: "A FIDE-based checklist, a phased schedule, the budget and a floor plan with regulation measurements.", sp1a: "112 tasks ready, with owners and dates", sp1b: "Floor plan with capacity and numbering", sp1c: "Duplicate last year's edition in one click",
+    st_p2h: "Coordinate people, payments and logistics.", st_p2p: "Public registrations, delegations with flights and lodging, installment payments, staff, inventory and suppliers.", sp2a: "Payment plans with automatic reminders", sp2b: "Delegations with balance and rooming", sp2c: "Staff shifts and QR attendance",
+    st_p3h: "Know what's happening, at every moment.", st_p3p: "The command center on tournament day, each event's health and the whole organization's finances.", sp3a: "Live check-in, incidents and payments", sp3b: "Alerts for what needs your attention", sp3c: "Income, expenses and sponsorships up to date",
+    st_p4h: "Close with documents that speak for you.", st_p4p: "Certificates and receipts verifiable by QR, experience surveys and a final report for the federation.", sp4a: "Participation and merit certificates", sp4b: "Numbered receipts with online verification", sp4c: "Final report as a PDF",
+    q9: "What happens when early access ends?", a9: "We'll let you know in advance and you'll see each plan's prices before they apply. Nothing is charged without your confirmation, and if you decide not to continue you can export your lists.",
+    q10: "How do you protect my data?", a10: "Each organization works in its own space and only its team sees its information. The whole platform uses an encrypted connection, the database has automatic backups, and certificates and receipts are verified online with a unique code.",
+    ab_q: "“OpsChess was born from organizing international tournaments. Every module solves something we lived in the playing hall, at the airport or in the federation office.”",
+    ab_role: "Founder of OpsChess",
     fa1_b: "FIDE standard", fa1_p: "The checklist and floor-plan measurements are based on FIDE regulations.",
     fa2_b: "ES / EN", fa2_p: "The whole platform in Spanish and English, for teams and delegations from many countries.",
     fa3_b: "Separate data", fa3_p: "Each organization only sees its own information.",
@@ -753,6 +828,15 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     if (reduce) tabs.classList.add("paused");
     slides.slice(1).forEach(function (s) { var im = new Image(); im.src = s.getAttribute("src"); });
     start();
+  })();
+
+  /* Etapas */
+  (function () {
+    var bs = [].slice.call(document.querySelectorAll(".stabs button")), ps = [].slice.call(document.querySelectorAll(".stp"));
+    bs.forEach(function (b, k) { b.addEventListener("click", function () {
+      bs.forEach(function (x, j) { x.setAttribute("aria-selected", String(j === k)); });
+      ps.forEach(function (p, j) { p.classList.toggle("on", j === k); var im = p.querySelector("img"); if (j === k && im) im.loading = "eager"; });
+    }); });
   })();
 
   /* Menú móvil */
