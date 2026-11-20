@@ -21,10 +21,19 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/app-torneos.webp">
+<link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Newsreader;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Newsreader;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/newsreader-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Newsreader;font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:Newsreader;font-style:italic;font-weight:500;font-display:swap;src:url(/fonts/newsreader-latin-500-italic.woff2) format("woff2")}
+</style>
+<link rel="preload" as="image" href="img/app-torneos.webp" imagesrcset="img/app-torneos-m.webp 800w, img/app-torneos.webp 1600w" imagesizes="(max-width: 900px) 92vw, 1000px" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpsChess","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.opschess.com/","description":"Plataforma para organizar torneos de ajedrez.","inLanguage":["es","en"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Plan Independiente gratuito"}}
 </script>
@@ -401,11 +410,11 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <div class="stage rv" id="stage" data-s="0">
       <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.opschess.com</span></div>
         <div class="slides" aria-live="polite">
-          <img class="slide on" data-img="app-torneos.webp" src="img/app-torneos.webp" width="2400" height="1425" alt="Pantalla Torneos con un torneo en vivo y las cifras de la temporada" data-i18n-attr="alt:alt_s0">
-          <img class="slide" data-img="hero-mando.webp" src="img/hero-mando.webp" width="2400" height="1500" alt="Centro de mando del día del torneo" data-i18n-attr="alt:alt_s1" loading="lazy">
-          <img class="slide" data-img="hero-cobros.webp" src="img/hero-cobros.webp" width="2400" height="1500" alt="Cobros en cuotas" data-i18n-attr="alt:alt_s2" loading="lazy">
-          <img class="slide" data-img="hero-miembros.webp" src="img/hero-miembros.webp" width="2400" height="1500" alt="Directorio de miembros con datos FIDE" data-i18n-attr="alt:alt_s3" loading="lazy">
-          <img class="slide" data-img="hero-finanzas.webp" src="img/hero-finanzas.webp" width="2400" height="1500" alt="Resumen financiero de la organización" data-i18n-attr="alt:alt_s4" loading="lazy">
+          <img class="slide on" fetchpriority="high" data-img="app-torneos.webp" srcset="img/app-torneos-m.webp 800w, img/app-torneos.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-torneos.webp" width="2400" height="1425" alt="Pantalla Torneos con un torneo en vivo y las cifras de la temporada" data-i18n-attr="alt:alt_s0">
+          <img class="slide" data-img="hero-mando.webp" srcset="img/hero-mando-m.webp 800w, img/hero-mando.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/hero-mando.webp" width="2400" height="1500" alt="Centro de mando del día del torneo" data-i18n-attr="alt:alt_s1" loading="lazy">
+          <img class="slide" data-img="hero-cobros.webp" srcset="img/hero-cobros-m.webp 800w, img/hero-cobros.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/hero-cobros.webp" width="2400" height="1500" alt="Cobros en cuotas" data-i18n-attr="alt:alt_s2" loading="lazy">
+          <img class="slide" data-img="hero-miembros.webp" srcset="img/hero-miembros-m.webp 800w, img/hero-miembros.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/hero-miembros.webp" width="2400" height="1500" alt="Directorio de miembros con datos FIDE" data-i18n-attr="alt:alt_s3" loading="lazy">
+          <img class="slide" data-img="hero-finanzas.webp" srcset="img/hero-finanzas-m.webp 800w, img/hero-finanzas.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/hero-finanzas.webp" width="2400" height="1500" alt="Resumen financiero de la organización" data-i18n-attr="alt:alt_s4" loading="lazy">
         </div>
       </div>
       <div class="float f-live"><span class="dot"></span><span id="liveText" data-i18n="cap0">Ronda 7 de 9 en curso · 96% acreditados</span></div>
@@ -445,16 +454,16 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <div class="stabs" role="tablist"><button role="tab" aria-selected="true" data-st="0"><b>01</b><span data-i18n="sg0">Planificar</span></button><button role="tab" aria-selected="false" data-st="1"><b>02</b><span data-i18n="sg1">Gestionar</span></button><button role="tab" aria-selected="false" data-st="2"><b>03</b><span data-i18n="sg2">Controlar</span></button><button role="tab" aria-selected="false" data-st="3"><b>04</b><span data-i18n="sg3">Entregar</span></button></div>
     <div class="spanels"><div class="stp on" data-st="0" role="tabpanel">
         <div class="stx"><p class="sn">01 · <span data-i18n="sg0">Planificar</span></p><h3 data-i18n="st_p1h">Prepara el evento con método.</h3><p data-i18n="st_p1p">Checklist basado en FIDE, cronograma por fases, presupuesto y plano de sala con medidas reglamentarias.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1a">112 tareas listas, con responsables y fechas</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1b">Plano de sala con capacidad y numeración</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp1c">Duplica la edición anterior en un clic</span></li></ul></div>
-        <div class="sti"><img data-img="app-temporada.webp" src="img/app-temporada.webp" alt="" loading="lazy"></div>
+        <div class="sti"><img data-img="app-temporada.webp" srcset="img/app-temporada-m.webp 800w, img/app-temporada.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-temporada.webp" alt="" loading="lazy"></div>
       </div><div class="stp" data-st="1" role="tabpanel">
         <div class="stx"><p class="sn">02 · <span data-i18n="sg1">Gestionar</span></p><h3 data-i18n="st_p2h">Coordina personas, pagos y logística.</h3><p data-i18n="st_p2p">Inscripciones públicas, delegaciones con vuelos y hospedaje, cobros en cuotas, equipo, inventario y proveedores.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2a">Planes de pago con recordatorios automáticos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2b">Delegaciones con saldo y rooming</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp2c">Turnos del staff y asistencia por QR</span></li></ul></div>
-        <div class="sti"><img data-img="app-cobros.webp" src="img/app-cobros.webp" alt="" loading="lazy"></div>
+        <div class="sti"><img data-img="app-cobros.webp" srcset="img/app-cobros-m.webp 800w, img/app-cobros.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-cobros.webp" alt="" loading="lazy"></div>
       </div><div class="stp" data-st="2" role="tabpanel">
         <div class="stx"><p class="sn">03 · <span data-i18n="sg2">Controlar</span></p><h3 data-i18n="st_p3h">Sabe qué pasa, en cada momento.</h3><p data-i18n="st_p3p">El Centro de mando en el día del torneo, la salud de cada evento y las finanzas de toda la organización.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3a">Acreditación, incidentes y cobros en vivo</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3b">Alertas de lo que pide tu atención</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp3c">Ingresos, gastos y patrocinios al día</span></li></ul></div>
-        <div class="sti"><img data-img="app-mando.webp" src="img/app-mando.webp" alt="" loading="lazy"></div>
+        <div class="sti"><img data-img="app-mando.webp" srcset="img/app-mando-m.webp 800w, img/app-mando.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-mando.webp" alt="" loading="lazy"></div>
       </div><div class="stp" data-st="3" role="tabpanel">
         <div class="stx"><p class="sn">04 · <span data-i18n="sg3">Entregar</span></p><h3 data-i18n="st_p4h">Cierra con documentos que hablan por ti.</h3><p data-i18n="st_p4p">Certificados y recibos verificables por QR, encuestas de experiencia e informe final para la federación.</p><ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4a">Certificados de participación y mérito</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4b">Recibos con folio y verificación en línea</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="sp4c">Informe final en PDF</span></li></ul></div>
-        <div class="sti"><img data-img="app-certificado.webp" src="img/app-certificado.webp" alt="" loading="lazy"></div>
+        <div class="sti"><img data-img="app-certificado.webp" srcset="img/app-certificado-m.webp 800w, img/app-certificado.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-certificado.webp" alt="" loading="lazy"></div>
       </div></div>
   </div>
 </section>
@@ -468,7 +477,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <article class="card c-dark s4 rv" style="min-height:540px">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2.5-6 5 12 2.5-6h4"/></svg></span>
         <h3 data-i18n="b1_h">Centro de mando</h3><p data-i18n="b1_p">Todo el torneo, ahora: la ronda en curso, la acreditación, el equipo en sede, los incidentes y los cobros del día. En la tablet del director o en la TV de la sala.</p></div>
-      <div class="shot"><img data-img="app-mando.webp" src="img/app-mando.webp" width="2000" height="1552" alt="Centro de mando" loading="lazy"></div>
+      <div class="shot"><img data-img="app-mando.webp" srcset="img/app-mando-m.webp 800w, img/app-mando.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-mando.webp" width="2000" height="1552" alt="Centro de mando" loading="lazy"></div>
     </article>
     <article class="card c-tint s2 rv d1">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M10 18.5h4"/></svg></span>
@@ -478,22 +487,22 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     <article class="card s3 rv">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/></svg></span>
         <h3 data-i18n="b3_h">Cobros en cuotas y recibos</h3><p data-i18n="b3_p">Planes de pago, recordatorios automáticos, recargo por mora y recibos con folio verificables por QR.</p></div>
-      <div class="shot"><img data-img="app-cobros.webp" src="img/app-cobros.webp" width="2000" height="1552" alt="Cobros" loading="lazy"></div>
+      <div class="shot"><img data-img="app-cobros.webp" srcset="img/app-cobros-m.webp 800w, img/app-cobros.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-cobros.webp" width="2000" height="1552" alt="Cobros" loading="lazy"></div>
     </article>
     <article class="card s3 rv d1">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg></span>
         <h3 data-i18n="b4_h">Equipo, turnos e incidentes</h3><p data-i18n="b4_p">Árbitros y staff con turnos, asistencia por QR, canales de aviso y reporte de incidentes desde el teléfono.</p></div>
-      <div class="shot"><img data-img="app-turnos.webp" src="img/app-turnos.webp" width="2000" height="1552" alt="Turnos del equipo" loading="lazy"></div>
+      <div class="shot"><img data-img="app-turnos.webp" srcset="img/app-turnos-m.webp 800w, img/app-turnos.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-turnos.webp" width="2000" height="1552" alt="Turnos del equipo" loading="lazy"></div>
     </article>
     <article class="card s2 rv">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="5"/><path d="M8.5 13l-1.5 8 5-2.5 5 2.5-1.5-8"/></svg></span>
         <h3 data-i18n="b5_h">Certificados verificables</h3><p data-i18n="b5_p">De participación y de mérito, con código único y página de verificación.</p></div>
-      <div class="shot c"><img data-img="app-certificado.webp" src="img/app-certificado.webp" width="1180" height="1220" alt="Certificado" loading="lazy"></div>
+      <div class="shot c"><img data-img="app-certificado.webp" srcset="img/app-certificado-m.webp 800w, img/app-certificado.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-certificado.webp" width="1180" height="1220" alt="Certificado" loading="lazy"></div>
     </article>
     <article class="card s4 rv d1">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M3.5 5.5h9M7.5 12h11M5.5 18.5h8"/></svg></span>
         <h3 data-i18n="b6_h">Toda tu temporada de un vistazo</h3><p data-i18n="b6_p">Línea de tiempo de tus torneos, la salud de cada evento y lo que pide tu atención hoy. Duplica un torneo para empezar la próxima edición.</p></div>
-      <div class="shot"><img data-img="app-temporada.webp" src="img/app-temporada.webp" width="2000" height="1550" alt="Temporada" loading="lazy"></div>
+      <div class="shot"><img data-img="app-temporada.webp" srcset="img/app-temporada-m.webp 800w, img/app-temporada.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-temporada.webp" width="2000" height="1550" alt="Temporada" loading="lazy"></div>
     </article>
   </div>
   <div class="mods rv">
@@ -519,17 +528,17 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg></span>
         <h3 data-i18n="o1_h">Miembros con datos FIDE</h3><p data-i18n="o1_p">Jugadores, entrenadores, árbitros y organizadores en un directorio. Elo y títulos se traen con el FIDE ID y se actualizan solos con la lista mensual de FIDE.</p>
         <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_1">Afiliaciones con vencimiento y renovaciones</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_2">Historial de torneos de cada miembro</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_3">Exportación a Excel</span></li></ul></div>
-      <div class="shot"><img data-img="org-members.webp" src="img/org-members.webp" width="2000" height="1500" alt="Directorio de miembros" data-i18n-attr="alt:alt_s3" loading="lazy"></div>
+      <div class="shot"><img data-img="org-members.webp" srcset="img/org-members-m.webp 800w, img/org-members.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-members.webp" width="2000" height="1500" alt="Directorio de miembros" data-i18n-attr="alt:alt_s3" loading="lazy"></div>
     </article>
     <article class="ocard rv d1">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11M10 21v-6h4v6"/></svg></span>
         <h3 data-i18n="o2_h">Clubes y academias afiliadas</h3><p data-i18n="o2_p">Ficha de cada organización con su estado de afiliación, contacto, logo y miembros vinculados.</p></div>
-      <div class="shot"><img data-img="org-clubs.webp" src="img/org-clubs.webp" width="2000" height="1500" alt="Organizaciones afiliadas" loading="lazy"></div>
+      <div class="shot"><img data-img="org-clubs.webp" srcset="img/org-clubs-m.webp 800w, img/org-clubs.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-clubs.webp" width="2000" height="1500" alt="Organizaciones afiliadas" loading="lazy"></div>
     </article>
     <article class="ocard rv d2">
       <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></span>
         <h3 data-i18n="o3_h">Finanzas de toda la organización</h3><p data-i18n="o3_p">Ingresos y gastos de todos tus torneos, facturas, servicios recurrentes y proveedores en un solo resumen.</p></div>
-      <div class="shot"><img data-img="org-finance.webp" src="img/org-finance.webp" width="2000" height="1500" alt="Resumen financiero" data-i18n-attr="alt:alt_s4" loading="lazy"></div>
+      <div class="shot"><img data-img="org-finance.webp" srcset="img/org-finance-m.webp 800w, img/org-finance.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-finance.webp" width="2000" height="1500" alt="Resumen financiero" data-i18n-attr="alt:alt_s4" loading="lazy"></div>
     </article>
   </div>
 </section>
@@ -550,7 +559,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     </div>
     <div class="tv-wrap rv d1">
       <span class="badge"><span class="dot"></span><span data-i18n="lv_badge">Modo pantalla completa</span></span>
-      <div class="tv"><img data-img="app-mando-tv.webp" src="img/app-mando-tv.webp" width="2200" height="1375" alt="Centro de mando en pantalla completa" data-i18n-attr="alt:alt_tv" loading="lazy"></div>
+      <div class="tv"><img data-img="app-mando-tv.webp" srcset="img/app-mando-tv-m.webp 800w, img/app-mando-tv.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/app-mando-tv.webp" width="2200" height="1375" alt="Centro de mando en pantalla completa" data-i18n-attr="alt:alt_tv" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -786,7 +795,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     nodes.forEach(function (el) { var k = el.getAttribute("data-i18n"); el.innerHTML = en && EN[k] !== undefined ? EN[k] : el.getAttribute("data-es"); });
     attrNodes.forEach(function (el) { var p = el.getAttribute("data-i18n-attr").split(":"); el.setAttribute(p[0], en && EN[p[1]] ? EN[p[1]] : el.getAttribute("data-es-attr")); });
     document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang)); });
-    document.querySelectorAll("img[data-img]").forEach(function (im) { var src = (en ? "img/en/" : "img/") + im.getAttribute("data-img"); if (im.getAttribute("src") !== src) im.setAttribute("src", src); });
+    document.querySelectorAll("img[data-img]").forEach(function (im) { var base = en ? "img/en/" : "img/", name = im.getAttribute("data-img"), src = base + name; if (im.getAttribute("src") === src) return; if (im.hasAttribute("srcset")) im.setAttribute("srcset", base + name.replace(".webp", "-m.webp") + " 800w, " + src + " 1600w"); im.setAttribute("src", src); });
     curLang = lang; if (window.__setCap) window.__setCap();
     document.documentElement.lang = lang;
     document.title = META[lang].title;
