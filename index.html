@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpsChess — Gestión para federaciones, clubes y torneos de ajedrez</title>
-<meta name="description" content="OpsChess es el sistema de gestión para federaciones, clubes y organizadores de ajedrez: miembros con datos FIDE, clubes afiliados, finanzas y cada torneo, de las inscripciones y cobros al Centro de mando y el informe final.">
+<meta name="description" content="OpsChess es el sistema de gestión para federaciones, clubes y organizadores de ajedrez: padrón con datos FIDE, cuotas y licencias, oficiales verificados, ranking nacional oficial, asambleas y cada torneo, de las inscripciones al informe final.">
 <link rel="canonical" href="https://www.opschess.com/">
 <meta name="theme-color" content="#1E1E2E">
 <meta property="og:title" content="OpsChess — Gestión para federaciones, clubes y torneos de ajedrez">
-<meta property="og:description" content="Miembros, clubes afiliados, finanzas y cada torneo de tu organización en una sola plataforma.">
+<meta property="og:description" content="Padrón, cuotas, oficiales verificados con FIDE, ranking nacional, asambleas y cada torneo de tu federación en una sola plataforma.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.opschess.com/">
 <meta property="og:image" content="https://www.opschess.com/img/og.jpg">
@@ -35,7 +35,7 @@
 </style>
 <link rel="preload" as="image" href="img/app-torneos.webp" imagesrcset="img/app-torneos-m.webp 800w, img/app-torneos.webp 1600w" imagesizes="(max-width: 900px) 92vw, 1000px" fetchpriority="high">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpsChess","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.opschess.com/","description":"Plataforma para organizar torneos de ajedrez.","inLanguage":["es","en"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Plan Independiente gratuito"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpsChess","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.opschess.com/","description":"Sistema de gestión para federaciones, clubes y torneos de ajedrez: padrón, cuotas, oficiales verificados con FIDE, ranking nacional, asambleas y torneos.","inLanguage":["es","en"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Plan Independiente gratuito"}}
 </script>
 <style>
 :root{
@@ -159,14 +159,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ic{width:38px;height:38px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent);box-shadow:var(--shadow)}
 .c-dark .ic{background:rgba(255,255,255,.1);color:var(--lav);box-shadow:none}
 .s4{grid-column:span 4}.s3{grid-column:span 3}.s2{grid-column:span 2}
-.orgrid{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:18px}
-.ocard{background:var(--paper);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
-.ocard:hover{transform:translateY(-3px);box-shadow:var(--float)}
-.ocard.big{grid-row:span 2;background:var(--tint)}
-.ocard .t{padding:28px 28px 0}.ocard h3{font-size:21px;letter-spacing:-.02em;margin-top:12px}.ocard p{font-size:14.5px;color:var(--muted);margin-top:6px}
-.ocard ul{list-style:none;margin-top:16px;display:grid;gap:8px;font-size:14px}.ocard li{display:flex;gap:8px}.ocard li svg{flex:none;color:var(--ok);margin-top:4px}
-.ocard .shot{margin:24px 0 0 28px;border-radius:14px 0 0 0;overflow:hidden;box-shadow:var(--float);flex:1;background:#fff;position:relative;min-height:230px}
-.ocard .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
 .stages{margin-top:44px;border-radius:28px;background:var(--paper);padding:10px}
 .stabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .stabs button{text-align:left;padding:16px 18px;border-radius:20px;font-weight:600;font-size:16px;color:var(--muted);display:flex;align-items:center;gap:12px;transition:.2s}
@@ -321,7 +313,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   .mods{grid-template-columns:repeat(2,1fr)}.mods div:nth-child(4n){border-right:1px solid var(--line)}.mods div:nth-child(2n){border-right:0}.mods div:nth-last-child(-n+4){border-bottom:1px solid var(--line)}.mods div:nth-last-child(-n+2){border-bottom:0}
 }
 @media (max-width:960px){
-  .orgrid{grid-template-columns:1fr}.ocard.big{grid-row:auto}
+
   .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .stabs{grid-template-columns:1fr 1fr}.stp{grid-template-columns:1fr}.sti{min-height:300px;border-radius:0 0 22px 22px}.trust{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr 1fr}.s4,.s3{grid-column:span 2}.s2{grid-column:span 1}
@@ -355,6 +347,79 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
+<style>
+/* Sistema federativo */
+.fx{margin-top:44px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:12px;background:var(--paper);border-radius:28px;padding:12px}
+.fxlist{display:flex;flex-direction:column;gap:6px;padding:4px}
+.fxi{border-radius:20px;transition:background .25s,box-shadow .25s}
+.fxi.on{background:#fff;box-shadow:var(--shadow)}
+.fxi button{position:relative;width:100%;display:flex;align-items:center;gap:12px;padding:14px 16px;text-align:left;font-weight:600;font-size:15.5px;color:var(--muted);border-radius:20px;overflow:hidden;cursor:pointer;background:none;border:0;font-family:inherit}
+.fxi button:hover{color:var(--ink)}
+.fxi.on button{color:var(--ink)}
+.fic{flex:none;width:36px;height:36px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted);box-shadow:var(--shadow);transition:.25s}
+.fxi.on .fic{background:var(--accent);color:#fff;box-shadow:0 8px 18px -8px rgba(91,91,214,.7)}
+.fbar{position:absolute;left:16px;right:16px;bottom:0;height:2px;border-radius:2px;background:transparent;overflow:hidden}
+.fxi.on .fbar{background:var(--tint)}
+.fxi.on .fbar:after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;animation:fxfill 7s linear forwards}
+.fx.paused .fbar:after,.fx.manual .fbar:after{animation-play-state:paused}
+.fx.manual .fxi.on .fbar:after{animation:none;transform:scaleX(1)}
+@keyframes fxfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.fxd{display:none;padding:2px 20px 20px 64px}
+.fxi.on .fxd{display:block;animation:fadein .45s ease}
+.fxd h3{font-size:19px;line-height:1.25;letter-spacing:-.02em}
+.fxd p{margin-top:6px;font-size:14.5px;color:var(--muted)}
+.fxd ul{list-style:none;margin-top:12px;display:grid;gap:7px;font-size:14px}
+.fxd li{position:relative;padding-left:22px}
+.fxd li:before{content:"";position:absolute;left:2px;top:6px;width:11px;height:6px;border-left:2.2px solid var(--ok);border-bottom:2.2px solid var(--ok);transform:rotate(-45deg)}
+.fxm{display:none}
+.fxview{position:relative;background:var(--tint);border-radius:22px;padding:28px 0 0 28px;overflow:hidden;display:flex;flex-direction:column;min-height:580px}
+.fxview .browser{border-radius:16px 0 0 0;border-right:0;border-bottom:0;flex:1;display:flex;flex-direction:column}
+.fxstage{position:relative;flex:1;min-height:500px}
+.fxstage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;opacity:0;transform:scale(1.012);transition:opacity .6s ease,transform 1.2s ease}
+.fxstage img.on{opacity:1;transform:none}
+.fide{margin-top:18px;display:grid;grid-template-columns:1.1fr repeat(3,1fr);border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden}
+.fide>div{padding:22px 24px}
+.fide>div+div{border-left:1px solid var(--line)}
+.fide-b{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1E1E2E,#2E2E4A);color:#fff}
+.fide-b p{font-weight:600;font-size:15.5px;line-height:1.35;letter-spacing:-.01em}
+.fbadge{flex:none;background:#fff;color:var(--ink);font-weight:800;font-size:12px;letter-spacing:.12em;border-radius:9px;padding:7px 9px}
+.fide-s b{display:block;font-size:16px;letter-spacing:-.015em}
+.fide-s span{display:block;margin-top:4px;font-size:13.5px;color:var(--muted);line-height:1.45}
+.pub{margin-top:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;background:radial-gradient(600px 320px at 100% 0%,#E2E1FA 0%,transparent 70%),var(--paper);border-radius:28px;padding:48px 56px;overflow:hidden;position:relative}
+.pub-t h3{margin-top:12px;font-size:clamp(28px,3.2vw,38px);line-height:1.08;letter-spacing:-.03em}
+.pub-t h3 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--accent)}
+.pub-t>p{margin-top:12px;color:var(--muted);font-size:16.5px;max-width:470px}
+.pub-t ul{list-style:none;margin-top:20px;display:grid;gap:10px;font-size:15px}
+.pub-t li{position:relative;padding-left:24px}
+.pub-t li:before{content:"";position:absolute;left:2px;top:7px;width:11px;height:6px;border-left:2.2px solid var(--ok);border-bottom:2.2px solid var(--ok);transform:rotate(-45deg)}
+.pub-v{display:flex;justify-content:center;margin-bottom:-120px}
+.phone{width:260px;border-radius:38px;border:9px solid var(--ink);overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(30,30,46,.45);transform:rotate(-3deg)}
+.phone img{display:block;width:100%;height:auto}
+@media (max-width:1100px){.fx{grid-template-columns:320px minmax(0,1fr)}.fide{grid-template-columns:1fr 1fr}.fide>div+div{border-left:0}.fide>div:nth-child(n+3){border-top:1px solid var(--line)}.fide>div:nth-child(even){border-left:1px solid var(--line)}}
+@media (max-width:960px){
+  .fx{display:block;background:none;padding:0;border-radius:0;margin-top:32px}
+  .fxview{display:none}
+  .fxlist{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 16px 16px;margin:0 -16px;scrollbar-width:none}
+  .fxlist::-webkit-scrollbar{display:none}
+  .fxi{flex:none;width:min(84vw,380px);scroll-snap-align:center;background:var(--paper);box-shadow:none;display:flex;flex-direction:column}
+  .fxi.on{background:var(--paper);box-shadow:none}
+  .fxi button{pointer-events:none;color:var(--ink);padding:18px 18px 4px}
+  .fic{background:var(--accent);color:#fff}
+  .fbar{display:none}
+  .fxd{display:flex!important;flex-direction:column;flex:1;padding:4px 18px 0;animation:none!important}
+  .fxm{display:block;margin:18px -18px 0 0;border-radius:14px 0 0 0;overflow:hidden;box-shadow:var(--float);background:#fff;margin-top:auto;position:relative;top:0}
+  .fxd ul{margin-bottom:18px}
+  .fxm img{display:block;width:100%;height:auto}
+  .fdots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+  .fdots i{width:6px;height:6px;border-radius:50%;background:#D5D6E6;transition:.25s}
+  .fdots i.on{width:18px;border-radius:4px;background:var(--accent)}
+  .fide{grid-template-columns:1fr}.fide>div{border-left:0!important;border-top:1px solid var(--line)}.fide>div:first-child{border-top:0}
+  .pub{grid-template-columns:1fr;padding:32px 24px 0;gap:28px}
+  .pub-v{margin-bottom:-90px}.phone{width:220px}
+}
+@media (min-width:961px){.fdots{display:none}}
+@media (prefers-reduced-motion:reduce){.fxi.on .fbar:after{animation:none;transform:scaleX(1)}.fxstage img{transition:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -365,8 +430,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
       <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess
     </a>
     <nav class="links" aria-label="Principal">
+      <a href="#federacion" data-i18n="nav_org">Federación</a>
       <a href="#producto" data-i18n="nav_product">Torneos</a>
-      <a href="#organizacion" data-i18n="nav_org">Organización</a>
       <a href="#dia-del-torneo" data-i18n="nav_day">Día del torneo</a>
       <a href="#para-quien" data-i18n="nav_who">Para quién</a>
       <a href="#precios" data-i18n="nav_pricing">Precios</a>
@@ -381,8 +446,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   </div>
 </header>
 <div class="mmenu" id="mmenu">
+  <a href="#federacion" data-i18n="nav_org">Federación</a>
   <a href="#producto" data-i18n="nav_product">Torneos</a>
-  <a href="#organizacion" data-i18n="nav_org">Organización</a>
   <a href="#dia-del-torneo" data-i18n="nav_day">Día del torneo</a>
   <a href="#para-quien" data-i18n="nav_who">Para quién</a>
   <a href="#precios" data-i18n="nav_pricing">Precios</a>
@@ -394,7 +459,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 <main id="contenido">
 <div class="top">
   <section class="hero wrap" aria-labelledby="hero-title">
-    <a class="pill rv" href="#dia-del-torneo"><em data-i18n="new">NUEVO</em><span data-i18n="pill">Centro de mando para el día del torneo</span> →</a>
+    <a class="pill rv" href="#federacion"><em data-i18n="new">NUEVO</em><span data-i18n="pill">Ranking oficial FIDE y oficiales verificados</span> →</a>
     <p class="kick rv" data-i18n="kick">El sistema operativo del ajedrez organizado</p>
     <h1 id="hero-title" class="rv d1" data-i18n="hero_h1">Tu federación y tus torneos, <span class="grad">en un solo lugar.</span></h1>
     <p class="sub rv d2" data-i18n="hero_sub">Miembros con datos FIDE, clubes afiliados y finanzas de tu organización, junto a cada torneo: inscripciones, cobros, delegaciones, equipo y el día del torneo. Sin hojas de cálculo.</p>
@@ -438,12 +503,90 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 
 <div class="wrap">
   <div class="stats rv">
-    <div><b>15+</b><span data-i18n="st1">módulos para torneos y organización</span></div>
+    <div><b>20+</b><span data-i18n="st1">módulos para torneos y federaciones</span></div>
     <div><b>112</b><span data-i18n="st2">tareas FIDE listas desde el día uno</span></div>
-    <div><b>20 s</b><span data-i18n="st3">el Centro de mando se actualiza solo</span></div>
+    <div><b>203</b><span data-i18n="st3">federaciones FIDE, cada una con su ranking oficial</span></div>
     <div><b>ES · EN</b><span data-i18n="st4">para delegaciones de todo el continente</span></div>
   </div>
 </div>
+
+<!-- Sistema federativo -->
+<section class="sec wrap" id="federacion" aria-labelledby="fed-title">
+  <p class="eyebrow rv" data-i18n="fd_k">Sistema federativo</p>
+  <h2 id="fed-title" class="h2 rv" style="max-width:860px" data-i18n="fd_h">Toda tu federación en orden, todo el año.</h2>
+  <p class="lead rv" style="max-width:700px" data-i18n="fd_p">Padrón, cuotas, oficiales, ranking nacional y asambleas en un solo sistema, conectado a las listas oficiales de FIDE y a cada uno de tus torneos.</p>
+
+  <div class="fx rv" id="fx">
+    <div class="fxlist" role="tablist" aria-label="Módulos de la federación">
+      <div class="fxi on" data-k="0">
+        <button type="button" role="tab" aria-selected="true"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span><span class="ft" data-i18n="fx0_t">Panel federativo</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx0_h">Toda la federación en una mirada.</h3><p data-i18n="fx0_p">Clubes afiliados, federados vigentes, cuotas cobradas, oficiales y vencimientos en un solo panel.</p>
+          <ul><li data-i18n="fx0_1">Padrón con Elo y títulos sincronizados con FIDE</li><li data-i18n="fx0_2">Clubes y academias con su estado de afiliación</li><li data-i18n="fx0_3">Alertas de membresías y cuotas por vencer</li></ul>
+          <div class="fxm"><img data-img="fed-fed.webp" srcset="img/fed-fed-m.webp 800w, img/fed-fed.webp 1600w" sizes="92vw" src="img/fed-fed.webp" width="1600" height="1093" alt="Panel federativo" data-i18n-attr="alt:fx0_t" loading="lazy"></div></div>
+      </div>
+      <div class="fxi" data-k="1">
+        <button type="button" role="tab" aria-selected="false"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></span><span class="ft" data-i18n="fx1_t">Cuotas y licencias</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx1_h">Afiliaciones que se cobran solas.</h3><p data-i18n="fx1_p">La cuota anual de cada club y federado con su factura, abonos y recordatorios. Tú decides a quién cobras.</p>
+          <ul><li data-i18n="fx1_1">Generación masiva según tus tarifas</li><li data-i18n="fx1_2">Facturas y recordatorios por correo</li><li data-i18n="fx1_3">Estado al día para el padrón de la asamblea</li></ul>
+          <div class="fxm"><img data-img="fed-dues.webp" srcset="img/fed-dues-m.webp 800w, img/fed-dues.webp 1600w" sizes="92vw" src="img/fed-dues.webp" width="1600" height="1093" alt="Cuotas anuales" data-i18n-attr="alt:fx1_t" loading="lazy"></div></div>
+      </div>
+      <div class="fxi" data-k="2">
+        <button type="button" role="tab" aria-selected="false"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></span><span class="ft" data-i18n="fx2_t">Oficiales verificados</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx2_h">Árbitros, organizadores e instructores, verificados con FIDE.</h3><p data-i18n="fx2_p">Cada mes OpsChess lee las listas oficiales de FIDE, actualiza títulos y vigencias y te avisa quién falta en tu registro.</p>
+          <ul><li data-i18n="fx2_1">IA · FA · NA, PO · IO · AO, FST a DI, SI y LSI</li><li data-i18n="fx2_2">Licencias anuales numeradas y credencial en PDF</li><li data-i18n="fx2_3">Sugerencias de importación desde FIDE</li></ul>
+          <div class="fxm"><img data-img="fed-officials.webp" srcset="img/fed-officials-m.webp 800w, img/fed-officials.webp 1600w" sizes="92vw" src="img/fed-officials.webp" width="1600" height="1093" alt="Registro de oficiales" data-i18n-attr="alt:fx2_t" loading="lazy"></div></div>
+      </div>
+      <div class="fxi" data-k="3">
+        <button type="button" role="tab" aria-selected="false"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4.5a2.5 2.5 0 0 0 2.5 4M17 6h2.5a2.5 2.5 0 0 1-2.5 4"/></svg></span><span class="ft" data-i18n="fx3_t">Ranking nacional FIDE</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx3_h">El ranking oficial de tu país, cada mes.</h3><p data-i18n="fx3_p">Todos los jugadores activos de la federación según la lista de FIDE, estén o no registrados, con su cambio de puesto.</p>
+          <ul><li data-i18n="fx3_1">Estándar, rápido, blitz y femenino</li><li data-i18n="fx3_2">Sub-8 a Sub-20 y Sénior por la edad del año</li><li data-i18n="fx3_3">PDF, Excel y página pública</li></ul>
+          <div class="fxm"><img data-img="fed-ranking.webp" srcset="img/fed-ranking-m.webp 800w, img/fed-ranking.webp 1600w" sizes="92vw" src="img/fed-ranking.webp" width="1600" height="1093" alt="Ranking nacional" data-i18n-attr="alt:fx3_t" loading="lazy"></div></div>
+      </div>
+      <div class="fxi" data-k="4">
+        <button type="button" role="tab" aria-selected="false"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11M9.5 21V11M14.5 21V11M19 21V11M2.5 11L12 4l9.5 7z"/></svg></span><span class="ft" data-i18n="fx4_t">Asambleas</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx4_h">Quórum, votación y acta, sin papel.</h3><p data-i18n="fx4_p">Acreditación de delegados, quórum en vivo, votación desde el teléfono o en la mesa, y el acta lista al cerrar.</p>
+          <ul><li data-i18n="fx4_1">Derecho a voto según las cuotas al día</li><li data-i18n="fx4_2">Poderes y votos ponderados</li><li data-i18n="fx4_3">Modo proyector para la sala</li></ul>
+          <div class="fxm"><img data-img="fed-assembly.webp" srcset="img/fed-assembly-m.webp 800w, img/fed-assembly.webp 1600w" sizes="92vw" src="img/fed-assembly.webp" width="1600" height="1093" alt="Asamblea en sesión" data-i18n-attr="alt:fx4_t" loading="lazy"></div></div>
+      </div>
+      <div class="fxi" data-k="5">
+        <button type="button" role="tab" aria-selected="false"><span class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span class="ft" data-i18n="fx5_t">Reportes PDF y Excel</span><i class="fbar"></i></button>
+        <div class="fxd"><h3 data-i18n="fx5_h">Cada listado, con tu logo y el mismo formato.</h3><p data-i18n="fx5_p">Padrón, clubes, cuotas, oficiales, ranking, asambleas, torneos y finanzas, listos para la junta directiva.</p>
+          <ul><li data-i18n="fx5_1">Vista previa antes de descargar</li><li data-i18n="fx5_2">Filtros por vigencia, club y rol</li><li data-i18n="fx5_3">PDF para imprimir, Excel para calcular</li></ul>
+          <div class="fxm"><img data-img="fed-reports.webp" srcset="img/fed-reports-m.webp 800w, img/fed-reports.webp 1600w" sizes="92vw" src="img/fed-reports.webp" width="1600" height="1093" alt="Centro de reportes" data-i18n-attr="alt:fx5_t" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="fxview" aria-hidden="true">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>app.opschess.com</span></div>
+        <div class="fxstage">
+          <img class="on" data-img="fed-fed.webp" srcset="img/fed-fed-m.webp 800w, img/fed-fed.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-fed.webp" width="1600" height="1093" alt="" loading="lazy">
+          <img data-img="fed-dues.webp" srcset="img/fed-dues-m.webp 800w, img/fed-dues.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-dues.webp" width="1600" height="1093" alt="" loading="lazy">
+          <img data-img="fed-officials.webp" srcset="img/fed-officials-m.webp 800w, img/fed-officials.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-officials.webp" width="1600" height="1093" alt="" loading="lazy">
+          <img data-img="fed-ranking.webp" srcset="img/fed-ranking-m.webp 800w, img/fed-ranking.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-ranking.webp" width="1600" height="1093" alt="" loading="lazy">
+          <img data-img="fed-assembly.webp" srcset="img/fed-assembly-m.webp 800w, img/fed-assembly.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-assembly.webp" width="1600" height="1093" alt="" loading="lazy">
+          <img data-img="fed-reports.webp" srcset="img/fed-reports-m.webp 800w, img/fed-reports.webp 1600w" sizes="(max-width: 960px) 1px, 820px" src="img/fed-reports.webp" width="1600" height="1093" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fide rv">
+    <div class="fide-b"><span class="fbadge">FIDE</span><p data-i18n="fi_lead">Conectado a las listas oficiales de FIDE</p></div>
+    <div class="fide-s"><b data-i18n="fi_1b">Cada 1.º de mes</b><span data-i18n="fi_1s">Elo, títulos, árbitros, organizadores e instructores se actualizan solos</span></div>
+    <div class="fide-s"><b data-i18n="fi_2b">203 federaciones</b><span data-i18n="fi_2s">Cada organización ve su propio país, sea cual sea</span></div>
+    <div class="fide-s"><b data-i18n="fi_3b">Cero captura manual</b><span data-i18n="fi_3s">Ranking, licencias y vigencias sin hojas de cálculo</span></div>
+  </div>
+
+  <div class="pub rv">
+    <div class="pub-t">
+      <p class="eyebrow" data-i18n="pb_k">Página pública</p>
+      <h3 data-i18n="pb_h">Tu ranking y tus oficiales, <em>publicados</em>.</h3>
+      <p data-i18n="pb_p">Un enlace propio para tu sitio web y tus redes, actualizado solo con cada lista de FIDE. Tú decides qué se publica.</p>
+      <ul><li data-i18n="pb_1">Ranking oficial por ritmo, categoría y femenino</li><li data-i18n="pb_2">Registro de oficiales con licencia vigente</li><li data-i18n="pb_3">Con el logo y los colores de tu federación</li></ul>
+    </div>
+    <div class="pub-v"><div class="phone"><img data-img="fed-public.webp" src="img/fed-public.webp" width="780" height="1600" alt="Página pública del ranking en el teléfono" data-i18n-attr="alt:pb_alt" loading="lazy"></div></div>
+  </div>
+</section>
+
 
 <!-- Etapas -->
 <section class="sec wrap" id="etapas" aria-labelledby="stages-title">
@@ -518,31 +661,6 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 </section>
 
 
-<!-- Organización -->
-<section class="sec wrap" id="organizacion" aria-labelledby="org-title">
-  <p class="eyebrow rv" data-i18n="og_k">Tu organización</p>
-  <h2 id="org-title" class="h2 rv" style="max-width:820px" data-i18n="og_h">Y entre torneo y torneo, toda tu federación en orden.</h2>
-  <p class="lead rv" data-i18n="og_p">Miembros, clubes afiliados y finanzas viven en el mismo sistema que tus torneos. Cuando un miembro se inscribe o un club paga, todo queda conectado.</p>
-  <div class="orgrid">
-    <article class="ocard big rv">
-      <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg></span>
-        <h3 data-i18n="o1_h">Miembros con datos FIDE</h3><p data-i18n="o1_p">Jugadores, entrenadores, árbitros y organizadores en un directorio. Elo y títulos se traen con el FIDE ID y se actualizan solos con la lista mensual de FIDE.</p>
-        <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_1">Afiliaciones con vencimiento y renovaciones</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_2">Historial de torneos de cada miembro</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="o1_3">Exportación a Excel</span></li></ul></div>
-      <div class="shot"><img data-img="org-members.webp" srcset="img/org-members-m.webp 800w, img/org-members.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-members.webp" width="2000" height="1500" alt="Directorio de miembros" data-i18n-attr="alt:alt_s3" loading="lazy"></div>
-    </article>
-    <article class="ocard rv d1">
-      <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11M10 21v-6h4v6"/></svg></span>
-        <h3 data-i18n="o2_h">Clubes y academias afiliadas</h3><p data-i18n="o2_p">Ficha de cada organización con su estado de afiliación, contacto, logo y miembros vinculados.</p></div>
-      <div class="shot"><img data-img="org-clubs.webp" srcset="img/org-clubs-m.webp 800w, img/org-clubs.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-clubs.webp" width="2000" height="1500" alt="Organizaciones afiliadas" loading="lazy"></div>
-    </article>
-    <article class="ocard rv d2">
-      <div class="t"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></span>
-        <h3 data-i18n="o3_h">Finanzas de toda la organización</h3><p data-i18n="o3_p">Ingresos y gastos de todos tus torneos, facturas, servicios recurrentes y proveedores en un solo resumen.</p></div>
-      <div class="shot"><img data-img="org-finance.webp" srcset="img/org-finance-m.webp 800w, img/org-finance.webp 1600w" sizes="(max-width: 900px) 92vw, 1000px" src="img/org-finance.webp" width="2000" height="1500" alt="Resumen financiero" data-i18n-attr="alt:alt_s4" loading="lazy"></div>
-    </article>
-  </div>
-</section>
-
 <!-- Día del torneo -->
 <section class="live" id="dia-del-torneo" aria-labelledby="live-title">
   <div class="wrap">
@@ -571,8 +689,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   <p class="lead rv" data-i18n="wh_p">Empieza con lo que necesitas hoy. OpsChess crece con el tamaño de tus eventos.</p>
   <div class="who">
     <article class="rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></svg></span>
-      <h3 data-i18n="w1_h">Federaciones</h3><p data-i18n="w1_p">Eventos internacionales con muchas partes en movimiento.</p>
-      <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_1">Delegaciones con vuelos, hospedaje y saldo</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_2">Acreditación con QR y Centro de mando</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_3">Informe final para la federación</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_4">Miembros con FIDE y clubes afiliados</span></li></ul>
+      <h3 data-i18n="w1_h">Federaciones</h3><p data-i18n="w1_p">Gestión diaria del padrón y eventos internacionales.</p>
+      <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_1">Padrón, cuotas y licencias de oficiales</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_2">Ranking oficial FIDE y página pública</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_3">Asambleas con quórum, votación y acta</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="w1_4">Delegaciones, acreditación con QR e informe final</span></li></ul>
       <div class="space"></div><div class="plan"><span data-i18n="sug">Plan sugerido:</span> <b data-i18n="pl3">Federación</b></div></article>
     <article class="rv d1"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20h6M10 20l.5-6h3l.5 6M9 7h6M12 3v4M10 10h4"/></svg></span>
       <h3 data-i18n="w2_h">Clubes y academias</h3><p data-i18n="w2_p">Varios torneos al año con el mismo equipo.</p>
@@ -636,7 +754,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
         <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_1">Torneos ilimitados</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_2">Cobros en cuotas y recibos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_3">Presupuesto y patrocinios</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_4">Centro de mando y credenciales</span></li></ul>
         <a class="btn btn-acc" href="https://app.opschess.com/login?mode=register" data-i18n="cta_primary">Crear cuenta gratis</a></div>
       <div class="plan-c rv d2"><h3 data-i18n="pl3">Federación</h3><p class="d" data-i18n="pl3_d">Para federaciones con delegaciones internacionales y necesidades propias.</p><div class="p" data-i18n="pl3_p">A medida</div>
-        <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_0">Miembros y clubes afiliados</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_1">Delegaciones internacionales</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_2">Informe oficial</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_3">Soporte prioritario</span></li></ul>
+        <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_0">Padrón, cuotas y licencias</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_1">Oficiales y ranking oficial FIDE</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_2">Asambleas y reportes</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_3">Soporte prioritario</span></li></ul>
         <a class="btn btn-line" href="mailto:contacto@opschess.com" data-i18n="pl_btn3">Hablemos</a></div>
     </div>
     <div class="onboard rv"><b data-i18n="ob_h">Al crear tu cuenta</b><span><i>1</i><span data-i18n="ob1">Verificas tu correo y entras a tu panel.</span></span><span><i>2</i><span data-i18n="ob2">Creas tu primer torneo con fechas y sede.</span></span><span><i>3</i><span data-i18n="ob3">Tu checklist queda listo para asignar.</span></span></div>
@@ -652,7 +770,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   </div>
   <div class="rv d1">
     <details><summary data-i18n="q1">¿Para quién es OpsChess?</summary><p data-i18n="a1">Para quien organiza torneos de ajedrez: federaciones, clubes, academias, colegios y organizadores independientes. No es una plataforma para jugar ni reemplaza tu programa de emparejamientos: se ocupa de toda la operación alrededor del torneo.</p></details>
-    <details><summary data-i18n="q8">¿Sirve para gestionar una federación?</summary><p data-i18n="a8">Sí. Además de los torneos, llevas el directorio de miembros con Elo y títulos sincronizados con FIDE, los clubes y academias afiliadas con su estado de afiliación, y las finanzas de toda la organización: facturas, servicios recurrentes, proveedores e inventario. Si tu federación necesita algo específico, escríbenos.</p></details>
+    <details><summary data-i18n="q8">¿Sirve para gestionar una federación?</summary><p data-i18n="a8">Sí. Además de los torneos, llevas el padrón de federados y clubes con Elo y títulos sincronizados con FIDE, las cuotas anuales y las licencias de oficiales, el ranking oficial FIDE de tu país, las asambleas con quórum, votación y acta, y reportes en PDF y Excel con tu logo. También las finanzas de toda la organización.</p></details>
+    <details><summary data-i18n="q11">¿OpsChess se conecta con FIDE?</summary><p data-i18n="a11">Sí. Cada 1.º de mes OpsChess lee la lista oficial de rating y las listas de árbitros y organizadores de FIDE: actualiza el Elo y los títulos de tus federados, verifica a tus oficiales, arma el ranking oficial de tu país y te sugiere a quién te falta registrar. Funciona para las 203 federaciones miembro.</p></details>
     <details><summary data-i18n="q2">¿Puedo usarlo para un solo torneo?</summary><p data-i18n="a2">Sí. El plan Independiente es gratuito e incluye un torneo activo con checklist, cronograma e inscripciones públicas.</p></details>
     <details><summary data-i18n="q3">¿Puedo cobrar inscripciones en cuotas?</summary><p data-i18n="a3">Sí. Defines planes de pago por porcentaje y fecha, cada inscripción o delegación elige el suyo y OpsChess envía recordatorios, aplica el recargo por mora si lo configuras y emite recibos con folio verificables por QR.</p></details>
     <details><summary data-i18n="q4">¿Los jugadores o capitanes pueden inscribirse solos?</summary><p data-i18n="a4">Sí. Compartes un enlace y los jugadores, padres o capitanes crean su cuenta e inscriben a una persona o a un equipo completo. Las delegaciones registran también vuelos, hospedaje y acompañantes. Tú revisas y confirmas.</p></details>
@@ -676,7 +795,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   <div class="wrap">
     <div class="fgrid">
       <div><a href="#" class="brand" aria-label="OpsChess"><svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess</a><p data-i18n="ft_tag">Gestión para federaciones, clubes y torneos de ajedrez.</p></div>
-      <div><h4 data-i18n="ft_prod">Producto</h4><a href="#producto" data-i18n="ft_feat">Torneos</a><a href="#organizacion" data-i18n="nav_org">Organización</a><a href="#dia-del-torneo" data-i18n="nav_day">Día del torneo</a><a href="#precios" data-i18n="nav_pricing">Precios</a></div>
+      <div><h4 data-i18n="ft_prod">Producto</h4><a href="#producto" data-i18n="ft_feat">Torneos</a><a href="#federacion" data-i18n="nav_org">Federación</a><a href="#dia-del-torneo" data-i18n="nav_day">Día del torneo</a><a href="#precios" data-i18n="nav_pricing">Precios</a></div>
       <div><h4 data-i18n="ft_for">Para</h4><a href="#para-quien" data-i18n="ft_org">Organizadores</a><a href="https://app.opschess.com/player/login" data-i18n="ft_players">Jugadores y delegados</a></div>
       <div><h4 data-i18n="ft_acc">Cuenta</h4><a href="https://app.opschess.com/login" data-i18n="nav_login">Entrar</a><a href="https://app.opschess.com/login?mode=register" data-i18n="ft_create">Crear cuenta</a></div>
       <div><h4 data-i18n="ft_co">Empresa</h4><a href="#nosotros" data-i18n="nav_about">Nosotros</a><a href="mailto:contacto@opschess.com" data-i18n="ft_contact">Contacto</a><a href="privacidad.html" data-i18n="ft_priv">Política de privacidad</a><a href="terminos.html" data-i18n="ft_terms">Términos de uso</a></div>
@@ -689,28 +808,34 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 (function () {
   /* Textos en inglés. El español está escrito directamente en el HTML. */
   var EN = {
+    fd_k: "Federation system", fd_h: "Your whole federation in order, all year round.", fd_p: "Member roll, dues, officials, national ranking and assemblies in one system, connected to FIDE's official lists and to every one of your tournaments.",
+    fx0_t: "Federation overview", fx0_h: "Your whole federation at a glance.", fx0_p: "Affiliated clubs, members in good standing, dues collected, officials and renewals in one dashboard.", fx0_1: "Member roll with Elo and titles synced with FIDE", fx0_2: "Clubs and academies with their affiliation status", fx0_3: "Alerts for expiring memberships and dues",
+    fx1_t: "Dues and licenses", fx1_h: "Affiliations that collect themselves.", fx1_p: "Each club's and member's annual dues with invoice, partial payments and reminders. You decide who pays.", fx1_1: "Bulk generation from your fee plans", fx1_2: "Invoices and reminders by email", fx1_3: "Good standing feeds the assembly roll",
+    fx2_t: "Verified officials", fx2_h: "Arbiters, organizers and instructors, verified with FIDE.", fx2_p: "Every month OpsChess reads FIDE's official lists, updates titles and validity, and tells you who is missing from your registry.", fx2_1: "IA · FA · NA, PO · IO · AO, FST to DI, SI and LSI", fx2_2: "Numbered annual licenses and PDF ID card", fx2_3: "Import suggestions straight from FIDE",
+    fx3_t: "National FIDE ranking", fx3_h: "Your country's official ranking, every month.", fx3_p: "Every active player in the federation according to FIDE's list, registered or not, with their change in position.", fx3_1: "Standard, rapid, blitz and women", fx3_2: "U8 to U20 and Senior by age reached in the year", fx3_3: "PDF, Excel and a public page",
+    fx4_t: "Assemblies", fx4_h: "Quorum, voting and minutes, paperless.", fx4_p: "Delegate check-in, live quorum, voting by phone or at the table, and the minutes ready when you close.", fx4_1: "Voting rights based on dues in good standing", fx4_2: "Proxies and weighted votes", fx4_3: "Projector mode for the room",
+    fx5_t: "PDF and Excel reports", fx5_h: "Every list, with your logo and one format.", fx5_p: "Member roll, clubs, dues, officials, ranking, assemblies, tournaments and finance, ready for the board.", fx5_1: "Preview before downloading", fx5_2: "Filters by validity, club and role", fx5_3: "PDF to print, Excel to calculate",
+    fi_lead: "Connected to FIDE's official lists", fi_1b: "On the 1st of every month", fi_1s: "Elo, titles, arbiters, organizers and instructors update themselves", fi_2b: "203 federations", fi_2s: "Each organization sees its own country, whichever it is", fi_3b: "Zero manual entry", fi_3s: "Ranking, licenses and validity without spreadsheets",
+    pb_k: "Public page", pb_h: "Your ranking and your officials, <em>published</em>.", pb_p: "Your own link for your website and social media, updated automatically with each FIDE list. You decide what gets published.", pb_1: "Official ranking by time control, category and women", pb_2: "Registry of officials with a valid license", pb_3: "With your federation's logo and colors", pb_alt: "Public ranking page on a phone",
+    q11: "Does OpsChess connect with FIDE?", a11: "Yes. On the 1st of every month OpsChess reads FIDE's official rating list and its arbiter and organizer lists: it updates your members' Elo and titles, verifies your officials, builds your country's official ranking and suggests who you still need to register. It works for all 203 member federations.",
     skip: "Skip to content",
-    nav_product: "Tournaments", nav_org: "Organization", kick: "The operating system for organized chess", nav_day: "Tournament day", nav_who: "Who it's for", nav_pricing: "Pricing", nav_about: "About",
+    nav_product: "Tournaments", nav_org: "Federation", kick: "The operating system for organized chess", nav_day: "Tournament day", nav_who: "Who it's for", nav_pricing: "Pricing", nav_about: "About",
     nav_login: "Log in", nav_login_full: "Log in to the platform",
     cta_primary: "Create free account", cta_secondary: "Explore the platform",
-    new: "NEW", pill: "Command center for tournament day",
+    new: "NEW", pill: "Official FIDE ranking and verified officials",
     hero_h1: "Your federation and your tournaments, <span class=\"grad\">in one place.</span>",
     hero_sub: "Members with FIDE data, affiliated clubs and your organization's finances, alongside every tournament: registrations, payments, delegations, staff and tournament day. No spreadsheets.",
     cap0: "Round 7 of 9 in progress · 96% checked in", cap1: "Refreshes itself every 20 seconds", cap2: "Automatic reminders and QR-verified receipts", cap3: "Elo and titles synced with FIDE every month", cap4: "Income, expenses and balance for the whole organization",
     t0: "Tournaments", t1: "Command center", t2: "Payments", t3: "Members", t4: "Finance", rc_name: "Golden Pawn Academy",
     alt_s0: "Tournaments screen with a live tournament and season figures", alt_s1: "Tournament-day command center", alt_s2: "Installment payments", alt_s3: "Member directory with FIDE data", alt_s4: "Organization financial summary",
-    og_k: "Your organization", og_h: "And between tournaments, your whole federation in order.", og_p: "Members, affiliated clubs and finance live in the same system as your tournaments. When a member registers or a club pays, everything stays connected.",
-    o1_h: "Members with FIDE data", o1_p: "Players, coaches, arbiters and organizers in one directory. Elo and titles come in with the FIDE ID and update themselves with FIDE's monthly list.", o1_1: "Memberships with expiry dates and renewals", o1_2: "Tournament history for every member", o1_3: "Export to Excel",
-    o2_h: "Affiliated clubs and academies", o2_p: "A profile for each organization with its affiliation status, contacts, logo and linked members.",
-    o3_h: "Finance for the whole organization", o3_p: "Income and expenses across all your tournaments, invoices, recurring services and suppliers in one summary.",
-    w1_4: "Members with FIDE data and affiliated clubs", pl3_0: "Members and affiliated clubs",
-    q8: "Can I use it to manage a federation?", a8: "Yes. Beyond tournaments, you keep the member directory with Elo and titles synced with FIDE, affiliated clubs and academies with their affiliation status, and the whole organization's finances: invoices, recurring services, suppliers and inventory. If your federation needs something specific, write to us.",
+    w1_4: "Delegations, QR check-in and final report", pl3_0: "Member roll, dues and licenses",
+    q8: "Can I use it to manage a federation?", a8: "Yes. Beyond tournaments, you keep the roll of members and clubs with Elo and titles synced with FIDE, annual dues and officials\' licenses, your country\'s official FIDE ranking, assemblies with quorum, voting and minutes, and PDF and Excel reports with your logo. Plus the finances of the whole organization.",
     tr1: "No credit card", tr2: "Spanish and English", tr3: "FIDE checklist and measurements",
     alt_hero: "OpsChess Tournaments screen with a live tournament, the next one and season figures", alt_badge: "Digital badge with QR code", alt_tv: "Command center in full-screen mode",
     live_pill: "Round 7 of 9 in progress · 96% checked in",
     rc1: "Valid receipt · verified by QR", rc2: "Installment 2 of 4",
     note: "Real OpsChess views with sample data.",
-    st1: "modules for tournaments and organization", st2: "FIDE-based tasks ready from day one", st3: "the command center refreshes itself", st4: "for delegations across the continent",
+    st1: "modules for tournaments and federations", st2: "FIDE-based tasks ready from day one", st3: "FIDE federations, each with its official ranking", st4: "for delegations across the continent",
     pd_k: "Your tournaments", pd_h: "The tools that make the difference.",
     pd_p: "What you record in one module shows up wherever it's needed: a paid registration adds to the budget, a confirmed delegation appears at check-in.",
     b1_h: "Command center", b1_p: "The whole tournament, right now: the current round, check-in, staff on site, incidents and today's payments. On the director's tablet or the hall's TV.",
@@ -732,7 +857,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     lv1: "The current round, what's next and the countdown.", lv2: "Check-in with search and outstanding-balance alerts.", lv3: "Arbiters and staff on site, late arrivals and incidents.", lv4: "Today's payments and live activity, every 20 seconds.",
     lv_badge: "Full-screen mode",
     wh_k: "Who it's for", wh_h: "From the school tournament to the continental championship.", wh_p: "Start with what you need today. OpsChess grows with the size of your events.",
-    w1_h: "Federations", w1_p: "International events with many moving parts.", w1_1: "Delegations with flights, lodging and balance", w1_2: "QR check-in and command center", w1_3: "Final report for the federation",
+    w1_h: "Federations", w1_p: "Day-to-day member management and international events.", w1_1: "Member roll, dues and officials' licenses", w1_2: "Official FIDE ranking and public page", w1_3: "Assemblies with quorum, voting and minutes",
     w2_h: "Clubs and academies", w2_p: "Several tournaments a year with the same team.", w2_1: "Unlimited, duplicable tournaments", w2_2: "Registration links and installment payments", w2_3: "Reusable inventory and suppliers",
     w3_h: "Schools", w3_p: "School tournaments with many participants and families.", w3_1: "Registration by parents or teachers", w3_2: "Floor plan by category", w3_3: "Certificates for every participant",
     w4_h: "Independent organizers", w4_p: "One space for your event, with everything under control.", w4_1: "Clear tasks with owners", w4_2: "Schedule and public registrations", w4_3: "Free for one active tournament",
@@ -747,7 +872,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     pl1_d: "For your first tournament or to try the platform.", pl1_p: "Free", pl1_1: "1 active tournament", pl1_2: "Checklist and schedule", pl1_3: "Public registrations", pl_btn1: "Create account",
     pl2_rec: "Recommended for clubs", pl2_d: "For clubs, schools and academies with several tournaments a year.", pl2_p: "Early access", pl2_s: "Free for a limited time",
     pl2_1: "Unlimited tournaments", pl2_2: "Installment payments and receipts", pl2_3: "Budget and sponsorships", pl2_4: "Command center and badges",
-    pl3_d: "For federations with international delegations and specific needs.", pl3_p: "Custom", pl3_1: "International delegations", pl3_2: "Official report", pl3_3: "Priority support", pl_btn3: "Talk to us",
+    pl3_d: "For federations with international delegations and specific needs.", pl3_p: "Custom", pl3_1: "Officials and official FIDE ranking", pl3_2: "Assemblies and reports", pl3_3: "Priority support", pl_btn3: "Talk to us",
     ob_h: "When you create your account", ob1: "You verify your email and enter your dashboard.", ob2: "You create your first tournament with dates and venue.", ob3: "Your checklist is ready to assign.",
     ab_k: "Why OpsChess", ab_h: "Built by an organizer, for organizers.", ab_p: "OpsChess is in early access. We won't show you invented logos or testimonials: we show you who builds it, how we look after your data and how we support you.",
     bd1: "FIDE International Organizer", bd2: "FIDE Candidate Master", bd3: "Advisor to chess organizations", fide_link: "View FIDE profile →",
@@ -782,7 +907,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   var curLang = "es";
   var META = {
     es: { title: document.title, desc: document.querySelector('meta[name="description"]').content },
-    en: { title: "OpsChess — Management for chess federations, clubs and tournaments", desc: "OpsChess is the management system for chess federations, clubs and organizers: members with FIDE data, affiliated clubs, finance and every tournament, from registrations and payments to the command center and final report." }
+    en: { title: "OpsChess — Management for chess federations, clubs and tournaments", desc: "OpsChess is the management system for chess federations, clubs and organizers: member roll with FIDE data, dues and licenses, verified officials, the official national ranking, assemblies and every tournament, from registrations to the final report." }
   };
 
   var nodes = document.querySelectorAll("[data-i18n]");
@@ -840,6 +965,48 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
   })();
 
   /* Etapas */
+  // Sistema federativo: vitrina con avance automático (escritorio) y tarjetas deslizables (celular)
+  (function () {
+    var fx = document.getElementById("fx"); if (!fx) return;
+    var items = [].slice.call(fx.querySelectorAll(".fxi")), shots = [].slice.call(fx.querySelectorAll(".fxstage img"));
+    var list = fx.querySelector(".fxlist"), i = 0, timer = null, visible = false, hold = false, manual = false, DUR = 7000;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var mobile = function () { return window.matchMedia("(max-width: 960px)").matches; };
+    var dots = document.createElement("div"); dots.className = "fdots"; dots.setAttribute("aria-hidden", "true");
+    items.forEach(function () { dots.appendChild(document.createElement("i")); }); fx.appendChild(dots);
+    var dd = [].slice.call(dots.children);
+    function paint() {
+      items.forEach(function (it, k) {
+        var on = k === i; it.classList.toggle("on", on); it.querySelector("button").setAttribute("aria-selected", String(on));
+        if (on) { var b = it.querySelector(".fbar"); b.style.display = "none"; void b.offsetWidth; b.style.display = ""; }
+      });
+      shots.forEach(function (s, k) { var on = k === i; if (on && s.loading === "lazy") s.loading = "eager"; s.classList.toggle("on", on); });
+      dd.forEach(function (d, k) { d.classList.toggle("on", k === i); });
+    }
+    function show(n) { i = (n + items.length) % items.length; paint(); }
+    function tick() { if (!hold && visible && !manual && !mobile()) show(i + 1); }
+    function start() { if (reduce) { fx.classList.add("manual"); return; } clearInterval(timer); timer = setInterval(tick, DUR); }
+    items.forEach(function (it, k) {
+      it.querySelector("button").addEventListener("click", function () { if (mobile()) return; manual = true; fx.classList.add("manual"); show(k); });
+    });
+    fx.addEventListener("mouseenter", function () { hold = true; fx.classList.add("paused"); });
+    fx.addEventListener("mouseleave", function () { hold = false; fx.classList.remove("paused"); });
+    list.addEventListener("keydown", function (e) {
+      if (mobile()) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); manual = true; fx.classList.add("manual"); show(i + 1); items[i].querySelector("button").focus(); }
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); manual = true; fx.classList.add("manual"); show(i - 1); items[i].querySelector("button").focus(); }
+    });
+    // Celular: el punto activo sigue a la tarjeta visible
+    list.addEventListener("scroll", function () {
+      if (!mobile()) return;
+      var w = items[0].getBoundingClientRect().width + 12, k = Math.round(list.scrollLeft / w);
+      if (k !== i && k >= 0 && k < items.length) { i = k; dd.forEach(function (d, j) { d.classList.toggle("on", j === i); }); }
+    }, { passive: true });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; fx.classList.toggle("paused", !visible || hold); }, { threshold: 0.35 }).observe(fx);
+    } else { visible = true; }
+    paint(); start();
+  })();
   (function () {
     var bs = [].slice.call(document.querySelectorAll(".stabs button")), ps = [].slice.call(document.querySelectorAll(".stp"));
     bs.forEach(function (b, k) { b.addEventListener("click", function () {
