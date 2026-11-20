@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · OpsChess</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1E1E2E;--ink-2:#2E2E42;--accent:#5B5BD6;--tint:#EEEEFC;--paper:#F4F5F8;--line:#E7E8EE;--muted:#6E7085;--serif:"Newsreader",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(1100px 520px at 0% -10%,#E9E9FB 0%,var(--paper) 58%);min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;width:100%}
+.nav .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.lang{margin-left:auto;display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:2px;background:#fff}
+.lang button{font:inherit;font-size:12px;font-weight:600;padding:4px 9px;border-radius:8px;color:var(--muted);background:none;border:0;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+main{flex:1;display:flex;align-items:center}
+.card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center;padding:40px 0 64px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-.025em;margin-top:14px}
+h1 em{font-style:italic;color:var(--accent)}
+p.lead{margin-top:16px;font-size:17px;line-height:1.6;color:var(--muted);max-width:30em}
+.actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:14px;font-weight:600;font-size:15px}
+.btn.primary{background:var(--ink);color:#fff}.btn.primary:hover{background:var(--ink-2)}
+.btn.ghost{background:#fff;border:1px solid var(--line)}.btn.ghost:hover{border-color:#C9C9F2}
+.help{margin-top:22px;font-size:13.5px;color:var(--muted)}.help a{color:var(--accent);font-weight:600}
+.board{justify-self:center;width:min(340px,100%);aspect-ratio:1;display:grid;grid-template-columns:repeat(4,1fr);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(30,30,46,.04),0 30px 60px -30px rgba(30,30,46,.35)}
+.board span{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;color:#C5C5E8}
+.board span:nth-child(8n+2),.board span:nth-child(8n+4),.board span:nth-child(8n+5),.board span:nth-child(8n+7){background:var(--tint)}
+.board .hit{background:var(--accent)!important;color:#fff;font-family:Inter,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
+[data-lang-block="en"]{display:none}
+html[lang="en"] [data-lang-block="es"]{display:none}
+html[lang="en"] [data-lang-block="en"]{display:block}
+@media (max-width:760px){.card{grid-template-columns:1fr;gap:32px;padding:16px 0 48px}.board{width:min(240px,70%);order:-1}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="OpsChess"><svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess</a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+<main>
+  <div class="wrap card">
+    <div>
+      <div data-lang-block="es">
+        <p class="eyebrow">Error 404</p>
+        <h1>Esta casilla <em>está vacía</em></h1>
+        <p class="lead">La página que busca no existe o cambió de dirección. Puede volver al inicio o entrar directamente a la plataforma.</p>
+        <div class="actions">
+          <a class="btn primary" href="/">Volver al inicio</a>
+          <a class="btn ghost" href="https://app.opschess.com/login">Entrar a la plataforma</a>
+        </div>
+        <p class="help">¿Llegó aquí desde un enlace nuestro? Avísenos a <a href="mailto:contacto@opschess.com">contacto@opschess.com</a>.</p>
+      </div>
+      <div data-lang-block="en">
+        <p class="eyebrow">Error 404</p>
+        <h1>This square <em>is empty</em></h1>
+        <p class="lead">The page you're looking for doesn't exist or has moved. Go back home or log straight into the platform.</p>
+        <div class="actions">
+          <a class="btn primary" href="/">Back to home</a>
+          <a class="btn ghost" href="https://app.opschess.com/login">Log in to the platform</a>
+        </div>
+        <p class="help">Did one of our links bring you here? Let us know at <a href="mailto:contacto@opschess.com">contacto@opschess.com</a>.</p>
+      </div>
+    </div>
+    <div class="board" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span class="hit">404</span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</main>
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("opschess_lang"); } catch (e) {}
+  var lang = saved || ((navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
+  function apply(l) {
+    document.documentElement.lang = l;
+    document.title = l === "en" ? "Page not found · OpsChess" : "Página no encontrada · OpsChess";
+    document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === l)); });
+  }
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () { var l = b.getAttribute("data-lang"); try { localStorage.setItem("opschess_lang", l); } catch (e) {} apply(l); });
+  });
+  apply(lang);
+})();
+</script>
+</body>
+</html>
