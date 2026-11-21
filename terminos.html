@@ -8,13 +8,13 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
-<link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-700-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/newsreader-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-italic.woff2) format("woff2")}
@@ -22,14 +22,14 @@
 </style>
 <style>
 :root{
-  --ink:#1E1E2E;--ink-2:#2E2E42;--accent:#5B5BD6;--accent-d:#4646C2;--lav:#A5A5F0;--tint:#EEEEFC;
+  --ink:#1E1E2E;--ink-2:#2E2E42;--accent:#1F3F8F;--accent-d:#172E69;--lav:#9AABD6;--tint:#EBEEF5;
   --paper:#F4F5F8;--line:#E7E8EE;--muted:#6E7085;--text:#3A3B4E;
   --shadow:0 1px 2px rgba(30,30,46,.04),0 12px 32px -24px rgba(30,30,46,.18);
   --serif:"Newsreader",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6}
+body{font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
@@ -55,7 +55,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .toc a span{color:var(--accent);font-weight:600;min-width:16px;font-variant-numeric:tabular-nums}
 .toc a:hover,.toc a.on{background:var(--tint);color:var(--ink)}
 .doc{background:#fff;border-radius:28px;box-shadow:var(--shadow);padding:44px clamp(22px,5vw,56px)}
-.callout{display:flex;gap:14px;background:var(--tint);border-radius:18px;padding:18px 20px;color:#3F3FB5;font-size:14.5px;line-height:1.55;margin-bottom:34px}
+.callout{display:flex;gap:14px;background:var(--tint);border-radius:18px;padding:18px 20px;color:#1A3478;font-size:14.5px;line-height:1.55;margin-bottom:34px}
 .callout svg{flex:none;margin-top:2px}
 .sec{padding:26px 0;border-top:1px solid var(--line);scroll-margin-top:90px}
 .sec:first-of-type{border-top:0;padding-top:0}
@@ -67,7 +67,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .sec li{margin-bottom:8px;padding-left:4px}
 .sec li::marker{color:var(--accent)}
 .sec strong{color:var(--ink);font-weight:600}
-.sec a{color:var(--accent-d);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(91,91,214,.35)}
+.sec a{color:var(--accent-d);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(31,63,143,.35)}
 .related{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
 .related a{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:12px 16px;font-size:14px;font-weight:600}
 .related a:hover{color:var(--accent-d)}
@@ -94,7 +94,7 @@ html[lang="es"] [data-lang-inline="en"],html[lang="en"] [data-lang-inline="es"]{
 <body>
 <header class="nav">
   <div class="wrap">
-    <a href="index.html" class="brand" aria-label="OpsChess"><svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess</a>
+    <a href="index.html" class="brand" aria-label="OpsChess"><svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><rect x="18.25" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F" opacity=".16"/><rect x="3.75" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F"/><path d="M9.5 25.5V16.75H32.75" fill="none" stroke="#1F3F8F" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="32.75" y="11" width="11.5" height="11.5" rx="2.2" fill="#E0B563"/></svg>OpsChess</a>
     <div class="right">
       <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
       <a class="btn" href="https://app.opschess.com/login"><span data-lang-inline="es">Entrar<span class="long"> a la plataforma</span></span><span data-lang-inline="en">Log in<span class="long"> to the platform</span></span></a>
