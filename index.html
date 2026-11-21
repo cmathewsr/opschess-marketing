@@ -21,13 +21,13 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
-<link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2")}
-@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/ibm-plex-sans-latin-700-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/newsreader-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:Newsreader;font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/newsreader-latin-400-italic.woff2) format("woff2")}
@@ -39,8 +39,8 @@
 </script>
 <style>
 :root{
-  --ink:#1E1E2E;--ink-2:#2E2E42;--night:#14142A;
-  --accent:#5B5BD6;--accent-d:#4646C2;--accent-l:#8E8EE6;--lav:#A5A5F0;--tint:#EEEEFC;
+  --ink:#1E1E2E;--ink-2:#2E2E42;--night:#141A2A;
+  --accent:#1F3F8F;--accent-d:#172E69;--accent-l:#7F95CC;--lav:#9AABD6;--tint:#EBEEF5;
   --paper:#F4F5F8;--line:#E7E8EE;--muted:#6E7085;--ok:#2F9467;
   --shadow:0 1px 2px rgba(30,30,46,.04),0 12px 32px -24px rgba(30,30,46,.18);
   --float:0 1px 2px rgba(30,30,46,.06),0 40px 80px -40px rgba(30,30,46,.35);
@@ -48,7 +48,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.55;overflow-x:hidden}
+body{font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.55;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -60,10 +60,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* Botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:13px;font-weight:600;font-size:15px;white-space:nowrap;transition:background .2s,transform .2s,box-shadow .2s}
 .btn:active{transform:translateY(1px)}
-.btn-acc{background:var(--accent);color:#fff;box-shadow:0 10px 24px -12px rgba(91,91,214,.9)}.btn-acc:hover{background:var(--accent-d)}
+.btn-acc{background:var(--accent);color:#fff;box-shadow:0 10px 24px -12px rgba(31,63,143,.9)}.btn-acc:hover{background:var(--accent-d)}
 .btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--ink-2)}
 .btn-line{border:1px solid var(--line);background:#fff}.btn-line:hover{background:var(--paper)}
-.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:#ECECF6}
+.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:#E5E9F2}
 .btn-sm{height:40px;padding:0 16px;font-size:14px;border-radius:11px}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
 .h2{font-size:clamp(32px,4.4vw,48px);line-height:1.06;letter-spacing:-.035em;font-weight:700;margin-top:14px}
@@ -95,13 +95,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 
 /* Portada */
-.top{background:radial-gradient(1100px 520px at 50% -140px,#E6E6FC 0,rgba(230,230,252,0) 70%),linear-gradient(#FBFBFE,#fff 620px);margin-top:-72px;padding-top:72px}
+.top{background:radial-gradient(1100px 520px at 50% -140px,#DDE2EE 0,rgba(230,230,252,0) 70%),linear-gradient(#FAFAFC,#fff 620px);margin-top:-72px;padding-top:72px}
 .hero{text-align:center;padding:60px 0 0}
 .pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 14px 5px 6px;font-size:13.5px;font-weight:500;box-shadow:var(--shadow);transition:.2s}
-.pill:hover{border-color:#D5D6F5}
+.pill:hover{border-color:#C6CEE2}
 .pill em{font-style:normal;background:var(--tint);color:var(--accent-d);font-weight:700;font-size:11px;border-radius:999px;padding:3px 9px;letter-spacing:.06em}
 .hero h1{margin:26px auto 0;max-width:920px;font-size:clamp(40px,6.4vw,70px);line-height:1.02;letter-spacing:-.045em;font-weight:700}
-.grad{background:linear-gradient(90deg,#5B5BD6,#8B6BE8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad{background:linear-gradient(90deg,#1F3F8F,#3D6BC9);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .sub{margin:22px auto 0;max-width:650px;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
 .ctas{margin-top:32px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
 .trust{margin-top:22px;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px}
@@ -131,7 +131,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .tabs{margin:84px auto 0;display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
 .tabs button{position:relative;overflow:hidden;padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:600;color:var(--muted);transition:.2s}
 .tabs button:hover{color:var(--ink)}
-.tabs button[aria-selected="true"]{color:var(--ink);border-color:#CFCFF5;background:var(--tint)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:#BDC7DE;background:var(--tint)}
 .tabs button i{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent)}
 .tabs button[aria-selected="true"] i{animation:prog var(--dur,6s) linear forwards}
 .tabs.paused button i{animation-play-state:paused}
@@ -184,7 +184,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .tcard p{margin-top:6px;font-size:14.5px;color:var(--muted)}
 .tcard ul{list-style:none;margin-top:14px;display:grid;gap:9px;font-size:14px}.tcard li{display:flex;gap:8px}.tcard li svg{flex:none;color:var(--ok);margin-top:4px}
 .founder{background:var(--night);color:#fff;border:0;position:relative;overflow:hidden}
-.founder:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 100% 0,rgba(91,91,214,.4),transparent 70%)}
+.founder:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 100% 0,rgba(31,63,143,.4),transparent 70%)}
 .founder>*{position:relative}
 .founder blockquote{font-family:var(--serif);font-size:23px;line-height:1.3;letter-spacing:-.01em}
 .founder .who-is small{color:rgba(255,255,255,.6)}
@@ -201,7 +201,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* Día del torneo */
 .live{margin-top:120px;background:var(--night);color:#fff;padding:110px 0;position:relative;overflow:hidden}
-.live:before{content:"";position:absolute;inset:0;background:radial-gradient(760px 420px at 85% 0%,rgba(91,91,214,.38),transparent 70%),radial-gradient(500px 300px at 0% 100%,rgba(91,91,214,.18),transparent 70%)}
+.live:before{content:"";position:absolute;inset:0;background:radial-gradient(760px 420px at 85% 0%,rgba(31,63,143,.38),transparent 70%),radial-gradient(500px 300px at 0% 100%,rgba(31,63,143,.18),transparent 70%)}
 .live:after{content:"";position:absolute;right:-60px;bottom:-60px;width:360px;height:360px;opacity:.06;background:conic-gradient(#fff 25%,transparent 0 50%,#fff 0 75%,transparent 0) 0 0/90px 90px;transform:rotate(-12deg)}
 .live .wrap{position:relative;z-index:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center}
 .live .eyebrow{color:var(--lav)}
@@ -218,7 +218,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* Para quién */
 .who{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .who article{border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .3s}
-.who article:hover{border-color:#D5D6F5;box-shadow:var(--shadow)}
+.who article:hover{border-color:#C6CEE2;box-shadow:var(--shadow)}
 .who h3{margin-top:16px;font-size:20px;letter-spacing:-.02em}
 .who p{margin-top:4px;font-size:14px;color:var(--muted)}
 .who ul{list-style:none;margin-top:16px;display:grid;gap:9px;font-size:14px}
@@ -284,7 +284,7 @@ details p{padding:0 40px 20px 0;color:var(--muted);font-size:15px}
 
 /* Cierre */
 .final{margin:120px 0 0;border-radius:32px;background:var(--night);color:#fff;padding:72px 64px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
-.final:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 360px at 100% 0,rgba(91,91,214,.45),transparent 70%)}
+.final:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 360px at 100% 0,rgba(31,63,143,.45),transparent 70%)}
 .final:after{content:"";position:absolute;right:-40px;bottom:-80px;width:340px;height:340px;opacity:.07;background:conic-gradient(#fff 25%,transparent 0 50%,#fff 0 75%,transparent 0) 0 0/85px 85px;transform:rotate(-12deg)}
 .final>*{position:relative;z-index:1}
 .final h2{font-size:clamp(34px,4vw,50px);line-height:1.05;letter-spacing:-.035em}
@@ -357,7 +357,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 .fxi button:hover{color:var(--ink)}
 .fxi.on button{color:var(--ink)}
 .fic{flex:none;width:36px;height:36px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted);box-shadow:var(--shadow);transition:.25s}
-.fxi.on .fic{background:var(--accent);color:#fff;box-shadow:0 8px 18px -8px rgba(91,91,214,.7)}
+.fxi.on .fic{background:var(--accent);color:#fff;box-shadow:0 8px 18px -8px rgba(31,63,143,.7)}
 .fbar{position:absolute;left:16px;right:16px;bottom:0;height:2px;border-radius:2px;background:transparent;overflow:hidden}
 .fxi.on .fbar{background:var(--tint)}
 .fxi.on .fbar:after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;animation:fxfill 7s linear forwards}
@@ -385,7 +385,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 .fbadge{flex:none;background:#fff;color:var(--ink);font-weight:800;font-size:12px;letter-spacing:.12em;border-radius:9px;padding:7px 9px}
 .fide-s b{display:block;font-size:16px;letter-spacing:-.015em}
 .fide-s span{display:block;margin-top:4px;font-size:13.5px;color:var(--muted);line-height:1.45}
-.pub{margin-top:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;background:radial-gradient(600px 320px at 100% 0%,#E2E1FA 0%,transparent 70%),var(--paper);border-radius:28px;padding:48px 56px;overflow:hidden;position:relative}
+.pub{margin-top:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;background:radial-gradient(600px 320px at 100% 0%,#D7DDEB 0%,transparent 70%),var(--paper);border-radius:28px;padding:48px 56px;overflow:hidden;position:relative}
 .pub-t h3{margin-top:12px;font-size:clamp(28px,3.2vw,38px);line-height:1.08;letter-spacing:-.03em}
 .pub-t h3 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--accent)}
 .pub-t>p{margin-top:12px;color:var(--muted);font-size:16.5px;max-width:470px}
@@ -427,7 +427,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 <header class="nav" id="nav">
   <div class="wrap">
     <a href="#" class="brand" aria-label="OpsChess">
-      <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess
+      <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><rect x="18.25" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F" opacity=".16"/><rect x="3.75" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F"/><path d="M9.5 25.5V16.75H32.75" fill="none" stroke="#1F3F8F" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="32.75" y="11" width="11.5" height="11.5" rx="2.2" fill="#E0B563"/></svg>OpsChess
     </a>
     <nav class="links" aria-label="Principal">
       <a href="#federacion" data-i18n="nav_org">Federación</a>
@@ -754,7 +754,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
         <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_1">Torneos ilimitados</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_2">Cobros en cuotas y recibos</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_3">Presupuesto y patrocinios</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl2_4">Centro de mando y credenciales</span></li></ul>
         <a class="btn btn-acc" href="https://app.opschess.com/login?mode=register" data-i18n="cta_primary">Crear cuenta gratis</a></div>
       <div class="plan-c rv d2"><h3 data-i18n="pl3">Federación</h3><p class="d" data-i18n="pl3_d">Para federaciones con delegaciones internacionales y necesidades propias.</p><div class="p" data-i18n="pl3_p">A medida</div>
-        <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_0">Padrón, cuotas y licencias</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_1">Oficiales y ranking oficial FIDE</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_2">Asambleas y reportes</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_3">Soporte prioritario</span></li></ul>
+        <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_0">Padrón, cuotas y licencias</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_1">Oficiales y ranking oficial FIDE</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_2">Asambleas y reportes</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_wl">Marca blanca y dominio propio</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M4 12.5l5 5L20 6.5"/></svg><span data-i18n="pl3_3">Soporte prioritario</span></li></ul>
         <a class="btn btn-line" href="mailto:contacto@opschess.com" data-i18n="pl_btn3">Hablemos</a></div>
     </div>
     <div class="onboard rv"><b data-i18n="ob_h">Al crear tu cuenta</b><span><i>1</i><span data-i18n="ob1">Verificas tu correo y entras a tu panel.</span></span><span><i>2</i><span data-i18n="ob2">Creas tu primer torneo con fechas y sede.</span></span><span><i>3</i><span data-i18n="ob3">Tu checklist queda listo para asignar.</span></span></div>
@@ -794,7 +794,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><a href="#" class="brand" aria-label="OpsChess"><svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 35V19h18" fill="none" stroke="#5B5BD6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="35" r="3.4" fill="#1E1E2E"/></svg>OpsChess</a><p data-i18n="ft_tag">Gestión para federaciones, clubes y torneos de ajedrez.</p></div>
+      <div><a href="#" class="brand" aria-label="OpsChess"><svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><rect x="18.25" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F" opacity=".16"/><rect x="3.75" y="25.5" width="11.5" height="11.5" rx="2.2" fill="#1F3F8F"/><path d="M9.5 25.5V16.75H32.75" fill="none" stroke="#1F3F8F" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="32.75" y="11" width="11.5" height="11.5" rx="2.2" fill="#E0B563"/></svg>OpsChess</a><p data-i18n="ft_tag">Gestión para federaciones, clubes y torneos de ajedrez.</p></div>
       <div><h4 data-i18n="ft_prod">Producto</h4><a href="#producto" data-i18n="ft_feat">Torneos</a><a href="#federacion" data-i18n="nav_org">Federación</a><a href="#dia-del-torneo" data-i18n="nav_day">Día del torneo</a><a href="#precios" data-i18n="nav_pricing">Precios</a></div>
       <div><h4 data-i18n="ft_for">Para</h4><a href="#para-quien" data-i18n="ft_org">Organizadores</a><a href="https://app.opschess.com/player/login" data-i18n="ft_players">Jugadores y delegados</a></div>
       <div><h4 data-i18n="ft_acc">Cuenta</h4><a href="https://app.opschess.com/login" data-i18n="nav_login">Entrar</a><a href="https://app.opschess.com/login?mode=register" data-i18n="ft_create">Crear cuenta</a></div>
@@ -872,7 +872,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     pl1_d: "For your first tournament or to try the platform.", pl1_p: "Free", pl1_1: "1 active tournament", pl1_2: "Checklist and schedule", pl1_3: "Public registrations", pl_btn1: "Create account",
     pl2_rec: "Recommended for clubs", pl2_d: "For clubs, schools and academies with several tournaments a year.", pl2_p: "Early access", pl2_s: "Free for a limited time",
     pl2_1: "Unlimited tournaments", pl2_2: "Installment payments and receipts", pl2_3: "Budget and sponsorships", pl2_4: "Command center and badges",
-    pl3_d: "For federations with international delegations and specific needs.", pl3_p: "Custom", pl3_1: "Officials and official FIDE ranking", pl3_2: "Assemblies and reports", pl3_3: "Priority support", pl_btn3: "Talk to us",
+    pl3_d: "For federations with international delegations and specific needs.", pl3_p: "Custom", pl3_1: "Officials and official FIDE ranking", pl3_2: "Assemblies and reports", pl3_wl: "White label and own domain", pl3_3: "Priority support", pl_btn3: "Talk to us",
     ob_h: "When you create your account", ob1: "You verify your email and enter your dashboard.", ob2: "You create your first tournament with dates and venue.", ob3: "Your checklist is ready to assign.",
     ab_k: "Why OpsChess", ab_h: "Built by an organizer, for organizers.", ab_p: "OpsChess is in early access. We won't show you invented logos or testimonials: we show you who builds it, how we look after your data and how we support you.",
     bd1: "FIDE International Organizer", bd2: "FIDE Candidate Master", bd3: "Advisor to chess organizations", fide_link: "View FIDE profile →",
@@ -891,7 +891,7 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     fa2_b: "ES / EN", fa2_p: "The whole platform in Spanish and English, for teams and delegations from many countries.",
     fa3_b: "Separate data", fa3_p: "Each organization only sees its own information.",
     fa4_b: "On the web", fa4_p: "Nothing to install: from a computer, tablet or phone.",
-    fq_k: "FAQ", fq_h: "What people ask us before starting.", fq_p: "Another question? Write to us at <a href=\"mailto:contacto@opschess.com\">contacto@opschess.com</a>.",
+    fq_k: "FAQ", fq_h: "What people ask us before starting.", fq_p: "Another question? Write to us at <a href=\"mailto:contact@opschess.com\">contact@opschess.com</a>.",
     q1: "Who is OpsChess for?", a1: "For anyone who organizes chess tournaments: federations, clubs, academies, schools and independent organizers. It isn't a platform for playing and it doesn't replace your pairing software: it handles the whole operation around the tournament.",
     q2: "Can I use it for a single tournament?", a2: "Yes. The Independent plan is free and includes one active tournament with checklist, schedule and public registrations.",
     q3: "Can I collect registration fees in installments?", a3: "Yes. You define payment plans by percentage and date, each registration or delegation picks one, and OpsChess sends reminders, applies a late fee if you set one and issues numbered receipts verifiable by QR.",
@@ -923,6 +923,8 @@ footer{margin-top:100px;border-top:1px solid var(--line);padding:56px 0 36px}
     document.querySelectorAll("img[data-img]").forEach(function (im) { var base = en ? "img/en/" : "img/", name = im.getAttribute("data-img"), src = base + name; if (im.getAttribute("src") === src) return; if (im.hasAttribute("srcset")) im.setAttribute("srcset", base + name.replace(".webp", "-m.webp") + " 800w, " + src + " 1600w"); im.setAttribute("src", src); });
     curLang = lang; if (window.__setCap) window.__setCap();
     document.documentElement.lang = lang;
+    var mail = lang === "en" ? "contact@opschess.com" : "contacto@opschess.com";
+    document.querySelectorAll('a[href^="mailto:conta"]').forEach(function (a) { a.href = "mailto:" + mail; if (/^conta\w*@opschess\.com$/.test(a.textContent.trim())) a.textContent = mail; });
     document.title = META[lang].title;
     document.querySelector('meta[name="description"]').setAttribute("content", META[lang].desc);
   }
